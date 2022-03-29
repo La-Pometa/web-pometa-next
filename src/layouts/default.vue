@@ -1,6 +1,5 @@
 <template>
-  <main class="py-20 px-10 text-center">
+  <main>
     <NuxtPage />
-    <Footer />
   </main>
 </template>
