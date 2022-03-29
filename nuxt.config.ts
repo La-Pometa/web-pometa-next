@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 
   srcDir: 'src',
 
-  css: ['~/styles/main.css'],
+  css: ['~/styles/main.scss'],
 
   buildModules: [
     '@vueuse/nuxt',
