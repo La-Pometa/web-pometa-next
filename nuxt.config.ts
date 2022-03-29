@@ -9,12 +9,17 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   srcDir: 'src',
+
+  css: ['~/styles/main.css'],
+
   buildModules: [
     '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
   ],
+
   vueuse: {
     ssrHandlers: true,
   },
