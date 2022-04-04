@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-dark-toggle />
-    <slice-render :slices="[{ type: 'manel' }]" />
+    <slice-render :slices="[{ type: 'Test' }]" />
   </div>
 </template>
+<script setup lang="ts"></script>

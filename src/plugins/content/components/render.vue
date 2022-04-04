@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import type { slice } from './types/slice'
-const { slices } = defineProps<{ slices: slice[] }>()
+import { h } from 'vue'
+import * as slices from '../slices'
+import type { Slice } from './types/slice'
+
+const props = defineProps<{ slices: Slice[] }>()
 
 const render = () => {
-  if (slices) {
+  if (props.slices.length) {
     return h(
       'div',
       {
-        attrs: { class: 'components' },
+        class: 'slice-render',
       },
-      slices.map((slice) =>
-        h(`slice-${slice.type}`, {
-          props: { params: slice.params },
-        })
-      )
+      props.slices.map((slice) => h(slices[slice.type]))
     )
   }
 }

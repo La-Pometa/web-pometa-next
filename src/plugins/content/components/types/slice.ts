@@ -1,4 +1,4 @@
-export interface slice {
+export interface Slice {
 	type: string;
 	position?: number;
 	params?: Params
