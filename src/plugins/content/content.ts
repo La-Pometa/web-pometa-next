@@ -1,9 +1,7 @@
 import WPAPI from "wpapi";
-
-export default class Content {
-	private wp: WPAPI;
+export default class Content extends WPAPI {
 
 	public constructor(apiUrl: string) {
-		this.wp = new WPAPI({ endpoint: apiUrl });
+		super({ endpoint: apiUrl })
 	}
 }

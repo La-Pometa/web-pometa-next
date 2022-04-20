@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Dearest';
+    src: url('Dearest.eot');
+    src: url('Dearest.eot?#iefix') format('embedded-opentype'),
+        url('Dearest.woff2') format('woff2'),
+        url('Dearest.woff') format('woff'),
+        url('Dearest.ttf') format('truetype'),
+        url('Dearest.svg#Dearest') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

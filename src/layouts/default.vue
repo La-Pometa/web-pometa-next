@@ -1,6 +1,6 @@
 <template>
   <div class="layout-default">
-    <app-sidebar></app-sidebar>
+    <layout-sidebar></layout-sidebar>
     <main>
       <NuxtPage />
     </main>

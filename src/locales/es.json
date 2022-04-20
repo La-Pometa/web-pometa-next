@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "pometa": "¡La Pometa!",
+    "projects": "Proyectos",
+    "manifest": "Manifiesto",
+    "services": {
+      "title": "Servicios",
+      "marketing": "Tu departamento de Marketing",
+      "design": "Diseño gráfico",
+      "web": "Diseño páginas web",
+      "publicity": "Publicidad online y offline"
+    },
+    "blog": "Blog",
+    "contact": "Contacto",
+    "breakfast": "Desayuna con Manzanas",
+    "kitdigital": "Kit Digital"
+  },
+  "footer": {
+    "oficinas": "Oficinas en Lleida y Barcelona",
+    "privacidad": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "aviso": "Aviso legal",
+    "map": "Mapa del sitio"
+  }
+}

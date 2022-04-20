@@ -1,7 +1,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [],
+  content: [
+    './src/components/**/*.{js,vue,ts}',
+    './src/layouts/**/*.vue',
+    './src/pages/**/*.vue',
+    './src/plugins/**/*.{js,ts}',
+    './src/blocks/**/*.{js,ts}',
+    './nuxt.config.{js,ts}',
+  ],
   theme: {
     screens: {
       m2xl: { max: '1535px' },
@@ -22,10 +29,14 @@ module.exports = {
     fontFamily: {
       sset: ['Sukhumvit Set', 'Arial'],
       butler: ['Butler', 'Helvetica', 'Arial'],
+      dearest: ['Dearest'],
     },
     extend: {
       colors: {
-        primary: '#bfd5c2',
+        primary: {
+          DEFAULT: '#bfd5c2',
+          gray: '#F8F8F8',
+        },
         secondary: '#8d9d8f',
         'main-dark': '#3c3c3b',
       },

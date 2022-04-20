@@ -1,9 +1,6 @@
 import Content from "./content";
-import { SliceRender } from "./components"
 
-export default defineNuxtPlugin((app) => {
-	app.vueApp.component("SliceRender", SliceRender);
-
+export default defineNuxtPlugin(() => {
 	const config = useRuntimeConfig();
 
 	return {

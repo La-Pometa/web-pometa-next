@@ -1,13 +1,29 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
   meta: {
-    title: 'Vitesse Nuxt 3',
+    title: 'La Pometa Agencia',
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: 'favicon.png' },
+    ]
+  },
+
+  loading: {
+    color: '#bfd5c2',
+    height: '2px',
   },
 
   srcDir: 'src',
 
-  css: ['~/styles/main.scss'],
+  css: [
+    '~/assets/styles/main.scss',
+    '~/assets/fonts/butler/stylesheet.css',
+    '~/assets/fonts/sset/stylesheet.css',
+    '~/assets/fonts/dearest/stylesheet.css',
+    '@wordpress/block-library/build-style/common.css',
+    '@wordpress/block-library/build-style/theme.css',
+    '@wordpress/block-library/build-style/style.css'
+  ],
 
   modules: [
     '@nuxtjs/i18n',
@@ -20,27 +36,13 @@ export default defineNuxtConfig({
   ],
 
   i18n: {
-    baseUrl: process.env.BASE_URL || 'http://new.lapometa.com',
+    baseUrl: process.env.BASE_URL || 'https://new.lapometa.com',
     langDir: 'locales',
     locales: [
-      { code: 'es', iso: 'es-ES', file: 'es.json', dir: 'ltr' },
-      { code: 'ca', iso: 'ca', file: 'ca.json', dir: 'ltr' },
+      { code: 'es', name: 'Esp', iso: 'es-ES', file: 'es.json', dir: 'ltr' },
+      { code: 'ca', name: 'Cat', iso: 'ca', file: 'ca.json', dir: 'ltr' },
     ],
     defaultLocale: 'es',
-    pages: {
-      proyectos: {
-        ca: '/projectes',
-      },
-      contacto: {
-        ca: '/contacte',
-      },
-      'departamento-marketing-externo': {
-        ca: '/departament-marqueting-extern',
-      },
-      'desayuna-con-manzanas': {
-        ca: '/esmorza-amb-pomes',
-      },
-    },
     vueI18n: {
       legacy: false,
       fallbackLocale: 'es'

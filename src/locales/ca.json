@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "home": "Inici",
+    "pometa": "¡La Pometa!",
+    "projects": "Projectes",
+    "manifest": "Manifest",
+    "services": {
+      "title": "Serveis",
+      "marketing": "El teu departament de Màrqueting",
+      "design": "Disseny gràfic",
+      "web": "Disseny pàgines web",
+      "publicity": "Publicitat online i offline"
+    },
+    "blog": "Blog",
+    "contact": "Contacte",
+    "breakfast": "Esmorza amb Pomes",
+    "kitdigital": "Kit Digital"
+  },
+  "footer": {
+    "oficinas": "Oficines a Lleida i Barcelona",
+    "privacidad": "Política de Privacitat",
+    "cookies": "Política de Cookies",
+    "aviso": "Avís legal",
+    "map": "Mapa del lloc"
+  }
+}
