@@ -25,7 +25,7 @@
       </div>
       <div class="controls">
         <div class="next next-slide">
-          <span>¡Creemos en nuestros clientes!</span>
+          <span> ¡Creemos en nuestros clientes! </span>
         </div>
       </div>
     </SliderSlide>
@@ -60,10 +60,10 @@
       </div>
       <div class="controls">
         <div class="next next-slide">
-          <span>Una historia llena de talento</span>
+          <span> Una historia llena de talento </span>
         </div>
         <div class="prev prev-slide">
-          <span>Nadie se resiste a una buena historia</span>
+          <span> Nadie se resiste a una buena historia </span>
         </div>
       </div>
     </SliderSlide>
@@ -94,7 +94,7 @@
       </div>
       <div class="controls">
         <div class="prev prev-slide">
-          <span>¡Creemos en nuestros clientes!</span>
+          <span> ¡Creemos en nuestros clientes! </span>
         </div>
       </div>
     </SliderSlide>
@@ -131,28 +131,22 @@
 }
 .controls {
   div {
-    @apply absolute z-10 p-4 hover:text-primary text-white mix-blend-difference hover:mix-blend-normal cursor-pointer uppercase text-sm font-thin;
-  }
-  .next {
-    @apply right-0 top-1/2 -translate-y-1/2;
+    @apply absolute z-20 p-4 cursor-pointer;
+    @apply text-white mix-blend-difference uppercase text-sm font-thin;
 
     writing-mode: vertical-lr;
     text-orientation: mixed;
 
-    span {
-      @apply block -rotate-180 origin-center;
+    &:hover {
+      @apply text-primary mix-blend-normal;
     }
+  }
+  .next {
+    @apply right-0 top-1/2 -translate-y-1/2;
   }
 
   .prev {
     @apply left-0 top-1/2 -translate-y-1/2;
-
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-
-    span {
-      @apply block origin-center;
-    }
   }
 }
 </style>
