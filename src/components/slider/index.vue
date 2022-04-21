@@ -36,8 +36,8 @@ const prevSlide = () => {
 }
 
 const setupControls = () => {
-  const next = document.querySelectorAll(props.selectors.next)
-  const prev = document.querySelectorAll(props.selectors.prev)
+  const next = slider.value.querySelectorAll(props.selectors.next)
+  const prev = slider.value.querySelectorAll(props.selectors.prev)
 
   if (next) {
     next.forEach((el) => {
