@@ -22,5 +22,11 @@
     "cookies": "Política de Cookies",
     "aviso": "Avís legal",
     "map": "Mapa del lloc"
+  },
+  "cookies": {
+    "policy": "Política de cookies",
+    "uses": "Utilitzem cookies per millorar la vostra experiència 💚.",
+    "preferences": "Personalitzar",
+    "accept": "Acceptar"
   }
 }

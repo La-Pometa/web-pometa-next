@@ -58,7 +58,7 @@
 
 .controls {
   div {
-    @apply p-4 text-main-dark hover:text-primary cursor-pointer uppercase text-sm font-thin;
+    @apply p-4 hover:text-primary cursor-pointer uppercase text-sm font-thin;
   }
   .next {
     @apply absolute right-0 top-1/2 -translate-y-1/2;

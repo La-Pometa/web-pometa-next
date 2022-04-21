@@ -5,6 +5,7 @@
       <NuxtPage />
     </main>
   </div>
+  <cookie-consent></cookie-consent>
 </template>
 <style lang="scss" scoped>
 .layout-default {

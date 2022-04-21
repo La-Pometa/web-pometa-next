@@ -7,7 +7,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27500257.3979699",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27508761.8d5d964",
     "@types/wpapi": "^1.1.1",
     "@wordpress/block-library": "^7.4.0",
     "node-html-parser": "^5.3.3",
