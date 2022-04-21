@@ -142,7 +142,7 @@
     }
   }
   .next {
-    @apply right-0 top-1/2 -translate-y-1/2;
+    @apply right-0 top-1/2 rotate-180 -translate-y-1/2;
   }
 
   .prev {
