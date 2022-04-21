@@ -89,7 +89,7 @@
             <div>UNA HISTORIA</div>
             <div class="featured ml-24 whitespace-nowrap">llena de talento</div>
           </h2>
-          <AppButton>Descúbrelo</AppButton>
+          <AppButton>Descúbrela</AppButton>
         </div>
       </div>
       <div class="controls">
@@ -113,16 +113,16 @@
     }
 
     .title {
-      @apply text-4xl sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem];
+      @apply text-4xl sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem] font-semibold;
     }
 
     h2 {
-      @apply font-butler text-3xl;
+      @apply font-butler font-semibold text-3xl;
     }
   }
 
   .featured {
-    @apply font-dearest text-primary text-6xl sm:text-9xl leading-[3rem] sm:leading-[4.3rem];
+    @apply font-dearest text-primary text-6xl sm:text-9xl leading-[3rem] sm:leading-[4.3rem] font-normal;
   }
 }
 

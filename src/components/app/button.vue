@@ -19,7 +19,7 @@ defineProps({
 
 <style lang="scss" scoped>
 button {
-  @apply transition-all duration-200 flex items-center justify-center gap-3;
+  @apply transition-all duration-200 flex items-center justify-center gap-3 font-semibold;
 
   &.void {
     &-red {
