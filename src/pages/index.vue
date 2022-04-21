@@ -113,7 +113,7 @@
     }
 
     .title {
-      @apply text-5xl sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem];
+      @apply text-4xl sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem];
     }
 
     h2 {
