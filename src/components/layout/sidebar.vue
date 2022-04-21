@@ -43,7 +43,7 @@ const availableLocales = computed(() => {
                 alt="logo la pometa"
                 :width="300"
                 :height="82"
-                src="@/assets/img/logos-pometa-cat.svg"
+                src="@/assets/img/layout/logos-pometa-cat.svg"
               />
             </div>
             <div class="responsive-image">
@@ -52,7 +52,7 @@ const availableLocales = computed(() => {
                 alt="logo la pometa"
                 :width="300"
                 :height="82"
-                src="@/assets/img/logos-pometa-cat-white.svg"
+                src="@/assets/img/layout/logos-pometa-cat-white.svg"
               />
             </div>
           </div>
@@ -63,7 +63,7 @@ const availableLocales = computed(() => {
                 alt="logo la pometa"
                 :width="300"
                 :height="82"
-                src="@/assets/img/logos-pometa-esp.svg"
+                src="@/assets/img/layout/logos-pometa-esp.svg"
               />
             </div>
             <div class="responsive-image">
@@ -72,7 +72,7 @@ const availableLocales = computed(() => {
                 alt="logo la pometa"
                 :width="300"
                 :height="82"
-                src="@/assets/img/logos-pometa-esp-white.svg"
+                src="@/assets/img/layout/logos-pometa-esp-white.svg"
               />
             </div>
           </div>
@@ -123,14 +123,14 @@ const availableLocales = computed(() => {
                   alt="desayuno con manzanas"
                   :width="141"
                   :height="113"
-                  src="@/assets/img/taza_pometa.svg"
+                  src="@/assets/img/layout/taza_pometa.svg"
                 />
                 <img
                   class="hidden dark:block"
                   alt="desayuno con manzanas"
                   :width="141"
                   :height="113"
-                  src="@/assets/img/taza_pometa_white.svg"
+                  src="@/assets/img/layout/taza_pometa_white.svg"
                 /></div
             ></a>
           </div>
@@ -145,7 +145,7 @@ const availableLocales = computed(() => {
               alt="logo la pometa"
               :width="221"
               :height="300"
-              src="@/assets/img/anagrama-pometa.svg"
+              src="@/assets/img/layout/anagrama-pometa.svg"
             />
           </div>
           <div class="responsive-image">
@@ -154,7 +154,7 @@ const availableLocales = computed(() => {
               alt="logo la pometa"
               :width="221"
               :height="300"
-              src="@/assets/img/anagrama-pometa-white.svg"
+              src="@/assets/img/layout/anagrama-pometa-white.svg"
             />
           </div>
         </div>

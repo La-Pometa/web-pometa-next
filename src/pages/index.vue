@@ -3,10 +3,22 @@
   <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
     <SliderSlide>
       <div class="slide-wrapper">
-        <h1 class="max-w-[45rem]">
-          Nadie se resiste a una buena historia… Comencemos a construirla
-          <span class="featured">juntos.</span>
-        </h1>
+        <div class="content">
+          <h1 class="max-w-[45rem]">
+            Nadie se resiste a una buena historia… Comencemos a construirla
+            <span class="featured">juntos.</span>
+          </h1>
+          <img
+            class="absolute top-0 right-0 mxl:w-32 mxl:translate-x-0 translate-x-2/3 -translate-y-full mb-5"
+            src="@/assets/img/home/arrow-right.svg"
+            alt=""
+          />
+        </div>
+        <img
+          class="absolute bottom-0 right-0 mb-5 mmd:w-2/3"
+          src="@/assets/img/home/hand-apple.png"
+          alt=""
+        />
       </div>
       <div class="controls">
         <div class="next next-slide"><span>¿Hablamos de tu marca?</span></div>
@@ -47,8 +59,12 @@
   @apply w-full h-screen p-14;
   @apply flex items-center justify-center;
 
-  h1 {
-    @apply sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem];
+  .content {
+    @apply relative;
+
+    h1 {
+      @apply sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem];
+    }
   }
 
   .featured {
