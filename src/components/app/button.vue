@@ -28,7 +28,7 @@ button {
   }
 
   &.size-md {
-    @apply px-4 py-2.5;
+    @apply px-7 py-1.5;
   }
 
   &.size-lg {
@@ -48,7 +48,7 @@ button {
   }
 
   &.primary {
-    @apply bg-primary text-white dark:text-main-dark hover:bg-secondary;
+    @apply bg-primary text-main-dark hover:bg-gray-700 hover:text-primary;
   }
 
   &.secondary {

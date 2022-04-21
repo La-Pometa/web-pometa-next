@@ -218,10 +218,6 @@ const availableLocales = computed(() => {
   @apply opacity-0;
 }
 
-.featured-item a {
-  @apply bg-primary py-0.5 px-2 hover:bg-gray-700 text-main-dark;
-}
-
 #sidebar-wrapper {
   @apply transition-all duration-500 bg-white dark:bg-gray-900;
 }
