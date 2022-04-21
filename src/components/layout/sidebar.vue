@@ -12,7 +12,7 @@ const [isOpen, toggleOpen] = useToggle(false)
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const isMobile = breakpoints.smaller('md')
-const isTablet = breakpoints.smaller('lg')
+const isTablet = breakpoints.smaller('xl')
 
 const availableLocales = computed(() => {
   return (locales.value as LocaleObject[]).filter(
