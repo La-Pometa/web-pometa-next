@@ -219,7 +219,7 @@ const availableLocales = computed(() => {
 }
 
 .featured-item a {
-  @apply bg-primary py-0.5 px-2 hover:bg-gray-700 font-bold text-main-dark;
+  @apply bg-primary py-0.5 px-2 hover:bg-gray-700 text-main-dark;
 }
 
 #sidebar-wrapper {
