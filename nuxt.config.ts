@@ -35,6 +35,10 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
+  tailwindcss: {
+    configPath: '~~/tailwind.config.js',
+  },
+
   i18n: {
     baseUrl: process.env.BASE_URL || 'https://new.lapometa.com',
     langDir: 'locales',

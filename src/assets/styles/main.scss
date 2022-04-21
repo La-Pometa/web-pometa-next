@@ -16,7 +16,7 @@ html.dark {
 }
 
 body {
-  @apply text-main-dark font-sset dark:text-white dark:bg-black bg-primary-gray;
+  @apply text-main-dark font-sset dark:text-white dark:bg-dark-800 bg-primary-gray;
   -webkit-tap-highlight-color: transparent;
 }
 

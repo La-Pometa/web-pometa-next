@@ -32,7 +32,7 @@ const availableLocales = computed(() => {
     <div
       id="left-sideBar"
       ref="sidebar"
-      class="transition-all duration-500 fixed inset-y-0 flex bg-white dark:bg-gray-900 z-20"
+      class="transition-all duration-500 fixed inset-y-0 flex bg-white dark:bg-dark-900 z-20"
     >
       <div id="left-sidebar-content" class="p-7 msm:p-5 w-64 flex flex-col">
         <a href="localePath('/')">
@@ -82,7 +82,7 @@ const availableLocales = computed(() => {
       </div>
       <div
         id="sidebar-visible"
-        class="border-l border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-3 transition-all duration-500 relative z-10"
+        class="border-l border-gray-100 dark:border-dark-500 bg-white dark:bg-dark-900 px-3 transition-all duration-500 relative z-10"
       >
         <div
           id="sidebarToggler"
@@ -219,7 +219,7 @@ const availableLocales = computed(() => {
 }
 
 #sidebar-wrapper {
-  @apply transition-all duration-500 bg-white dark:bg-gray-900;
+  @apply transition-all duration-500 bg-white dark:bg-dark-900;
 }
 #sidebar-visible {
   flex: 0 0 3.5rem;
