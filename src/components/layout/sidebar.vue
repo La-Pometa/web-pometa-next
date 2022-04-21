@@ -11,7 +11,8 @@ const switchLocalePath = useSwitchLocalePath()
 const [isOpen, toggleOpen] = useToggle(false)
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
-const isMobile = breakpoints.smaller('sm')
+const isMobile = breakpoints.smaller('md')
+const isTablet = breakpoints.smaller('lg')
 
 const availableLocales = computed(() => {
   return (locales.value as LocaleObject[]).filter(
@@ -24,7 +25,7 @@ const availableLocales = computed(() => {
     id="sidebar-wrapper"
     ref="sidebarWrapper"
     class="flex min-h-screen"
-    :class="{ open: isOpen }"
+    :class="{ open: isOpen, toggleable: isTablet }"
     @mouseover="!isMobile && toggleOpen(true)"
     @mouseleave="!isMobile && toggleOpen(false)"
   >
@@ -86,7 +87,7 @@ const availableLocales = computed(() => {
         <div
           id="sidebarToggler"
           ref="sidebarToggler"
-          class="sm:opacity-0 sm:pointer-events-none absolute top-0 -left-px text-white w-14 h-14 flex items-center justify-center text-xl bg-main-dark transition-all duration-500 z-20"
+          class="md:opacity-0 md:pointer-events-none absolute top-0 -left-px text-white w-14 h-14 flex items-center justify-center text-xl bg-main-dark transition-all duration-500 z-20"
           @click="toggleOpen()"
         >
           <div class="burger">
@@ -166,7 +167,7 @@ const availableLocales = computed(() => {
   </div>
 </template>
 <style lang="scss">
-@screen msm {
+@screen mmd {
   #content {
     flex: 0 0 100vw;
   }
@@ -182,15 +183,15 @@ const availableLocales = computed(() => {
     }
   }
   #sidebar-wrapper.open {
-    /*     #content {
+    & + main {
       transform: translateX(calc(3.5rem + 16rem));
-    } */
+    }
     #left-sideBar {
       transform: translateX(0);
     }
   }
 }
-@screen sm {
+@screen md {
   #sidebar-wrapper.toggleable {
     #left-sideBar {
       transform: translateX(-16rem);
@@ -222,7 +223,7 @@ const availableLocales = computed(() => {
 }
 
 #sidebar-wrapper {
-  @apply transition-all duration-500  bg-white dark:bg-gray-900;
+  @apply transition-all duration-500 bg-white dark:bg-gray-900;
 }
 #sidebar-visible {
   flex: 0 0 3.5rem;

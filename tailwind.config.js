@@ -46,6 +46,9 @@ module.exports = {
         120: '36rem',
         screen2: 'calc(100vh - 60px)',
       },
+      width: {
+        screen2: 'calc(100vw - 312px)',
+      },
       padding: {
         full: '100%',
       },
