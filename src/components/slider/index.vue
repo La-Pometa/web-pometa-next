@@ -64,6 +64,10 @@ onMounted(() => {
 <style lang="scss" scoped>
 .slider {
   @apply flex overflow-x-auto scroll-smooth snap-x snap-mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 </style>
 <style lang="scss">
