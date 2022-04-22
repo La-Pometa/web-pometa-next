@@ -54,17 +54,13 @@
             </div>
           </div>
           <div class="top-right relative bg-white dark:bg-black">
-            <div class="mobile-square mlg:aspect-w-1 mlg:aspect-h-1">
-              <div>
-                <div class="content h-full">
-                  <h3>
-                    Somos una
-                    <span class="text-primary">agencia creativa</span> que cree
-                    en el poder motivador e inspirador de las historias.
-                    ¡Creemos en nuestros clientes!
-                  </h3>
-                </div>
-              </div>
+            <div class="content h-full">
+              <h3>
+                Somos una
+                <span class="text-primary">agencia creativa</span> que cree en
+                el poder motivador e inspirador de las historias. ¡Creemos en
+                nuestros clientes!
+              </h3>
             </div>
             <img
               class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
@@ -73,18 +69,12 @@
             />
           </div>
           <div class="bottom-right">
-            <div class="mobile-square mlg:aspect-w-1 mlg:aspect-h-1">
-              <div>
-                <div class="content h-full">
-                  <h2>
-                    ¿Hablamos de
-                    <div class="featured ml-20 whitespace-nowrap">
-                      tu marca?
-                    </div>
-                  </h2>
-                  <AppButton>Contáctanos</AppButton>
-                </div>
-              </div>
+            <div class="content h-full">
+              <h2>
+                ¿Hablamos de
+                <div class="featured ml-20 whitespace-nowrap">tu marca?</div>
+              </h2>
+              <AppButton>Contáctanos</AppButton>
             </div>
           </div>
         </div>
