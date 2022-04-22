@@ -3,6 +3,9 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   meta: {
     title: 'La Pometa Agencia',
+    meta: [
+      { name: 'theme-color', content: '#bfd5c2' },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.png' },
     ]
