@@ -32,14 +32,30 @@
     <SliderSlide>
       <div class="slide-wrapper">
         <div class="w-full h-full grid lg:grid-cols-2 grid-rows-2">
-          <div class="left lg:row-span-2"></div>
+          <div class="left relative lg:row-span-2">
+            <div class="content">
+              <img
+                src="@/assets/img/home/claranuts.jpg"
+                class="bg-image"
+                alt="Claranuts"
+              />
+              <div class="hover-overlay">
+                <h2>
+                  LAS NUECES <br />
+                  MÁS LOCAS
+                  <div class="featured ml-20">del mundo</div>
+                </h2>
+                <AppButton class="sm:mt-5">Descúbrelas</AppButton>
+              </div>
+            </div>
+          </div>
           <div class="top-right relative bg-white dark:bg-black">
             <div class="content h-full">
-              <h2>
+              <h3>
                 Somos una <span class="text-primary">agencia creativa</span> que
                 cree en el poder motivador e inspirador de las historias.
                 ¡Creemos en nuestros clientes!
-              </h2>
+              </h3>
             </div>
             <img
               class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
@@ -49,9 +65,9 @@
           </div>
           <div class="bottom-right">
             <div class="content h-full">
-              <h2 class="title">
-                <div>¿Hablamos de</div>
-                <div class="featured ml-8 whitespace-nowrap">tu marca?</div>
+              <h2>
+                ¿Hablamos de
+                <div class="featured ml-20 whitespace-nowrap">tu marca?</div>
               </h2>
               <AppButton>Contáctanos</AppButton>
             </div>
@@ -85,8 +101,8 @@
         </video>
         <div class="overlay"></div>
         <div class="content relative z-10">
-          <h2 class="title text-white">
-            <div>UNA HISTORIA</div>
+          <h2 class="text-white">
+            UNA HISTORIA
             <div class="featured ml-24 whitespace-nowrap">llena de talento</div>
           </h2>
           <AppButton>Descúbrela</AppButton>
@@ -102,27 +118,50 @@
 </template>
 <style lang="scss" scoped>
 .slide-wrapper {
-  @apply w-full h-screen;
+  @apply w-full h-screen min-h-[45rem];
   @apply flex items-center justify-center;
 
   .content {
-    @apply relative p-14 flex flex-col items-center justify-center gap-7;
+    @apply relative h-full p-14 flex flex-col items-center justify-center gap-7;
+
+    .hover-overlay {
+      @apply absolute inset-0 bg-black/60 text-white h-full p-14 flex flex-col items-center justify-center gap-7;
+
+      @screen lg {
+        @apply opacity-0 transition duration-300;
+
+        &:hover {
+          @apply opacity-100;
+        }
+      }
+    }
+
+    .bg-image {
+      @apply absolute inset-0 w-full h-full object-cover;
+    }
 
     .inner {
       @apply relative flex flex-col items-center justify-center gap-7;
     }
 
     .title {
-      @apply text-4xl sm:text-7xl text-center leading-[3rem] sm:leading-[4.3rem] font-semibold;
+      @apply text-4xl lg:text-7xl text-center leading-[3rem] lg:leading-[4.3rem] font-semibold;
     }
 
-    h2 {
+    h3 {
       @apply font-butler font-semibold text-3xl;
+    }
+    h2 {
+      @apply font-butler font-semibold text-3xl lg:text-5xl text-center leading-[2rem] lg:leading-[3rem];
+
+      .featured {
+        @apply font-dearest text-primary text-5xl lg:text-8xl leading-[2rem] lg:leading-[3rem] font-normal;
+      }
     }
   }
 
   .featured {
-    @apply font-dearest text-primary text-6xl sm:text-9xl leading-[3rem] sm:leading-[4.3rem] font-normal;
+    @apply font-dearest text-primary text-6xl lg:text-9xl leading-[3rem] lg:leading-[4.3rem] font-normal;
   }
 }
 
