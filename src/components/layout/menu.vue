@@ -5,10 +5,10 @@
       <nuxt-link class="item" to="/">{{ $t('menu.home') }}</nuxt-link>
     </span>
     <span class="item">
-      <a href="localePath('/pometa')">{{ $t('menu.pometa') }}</a>
+      <nuxt-link to="/pometa">{{ $t('menu.pometa') }}</nuxt-link>
     </span>
     <span class="item">
-      <a href="localePath('/manifiesto')">{{ $t('menu.manifest') }}</a>
+      <nuxt-link to="/manifiesto">{{ $t('menu.manifest') }}</nuxt-link>
     </span>
     <span class="item">
       <a href="localePath('/proyectos')">{{ $t('menu.projects') }}</a>

@@ -10,6 +10,7 @@
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27508761.8d5d964",
     "@types/wpapi": "^1.1.1",
     "@wordpress/block-library": "^7.4.0",
+    "gsap": "^3.10.4",
     "pinia": "^2.0.13",
     "swiper": "^8.1.4",
     "wpapi": "^1.2.2"
@@ -27,7 +28,7 @@
     "@vueuse/nuxt": "^8.3.1",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
-    "nuxt": "3.0.0-rc.1",
+    "nuxt": "npm:nuxt3@latest",
     "sass": "^1.50.1",
     "typescript": "^4.6.3"
   },

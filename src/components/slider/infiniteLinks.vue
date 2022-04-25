@@ -1,45 +1,88 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
-import type { Swiper as SwiperClass } from 'swiper/types'
-import { Autoplay, FreeMode } from 'swiper'
+import { gsap } from 'gsap'
 
-import 'swiper/css'
+const slider = ref<HTMLElement>(null)
+const wrapper = ref<HTMLElement>(null)
 
-import 'swiper/css/free-mode'
+const tween: gsap.core.Tween[] = []
+
+const duration = 12
+
+onMounted(() => {
+  const wrapperWidth = wrapper.value.clientWidth
+  const sliderWidth = slider.value.clientWidth
+
+  const nToClone = Math.ceil(sliderWidth / wrapperWidth) * 2
+
+  const duplicates = Array.from({ length: nToClone }, () =>
+    wrapper.value.cloneNode(true)
+  )
+
+  if (duplicates.length > 0) {
+    duplicates.forEach((duplicate) => {
+      slider.value.appendChild(duplicate)
+
+      tween.push(
+        gsap.to(duplicate, {
+          duration,
+          x: -wrapperWidth,
+          ease: 'linear',
+          repeat: -1,
+          animationTimingFunction: 'linear',
+        })
+      )
+    })
+  }
+
+  tween.push(
+    gsap.to(wrapper.value, {
+      duration,
+      x: -wrapperWidth,
+      ease: 'linear',
+      repeat: -1,
+      animationTimingFunction: 'linear',
+    })
+  )
+})
+
+const pause = () => {
+  tween.forEach((tween) => tween.pause())
+}
+
+const play = () => {
+  tween.forEach((tween) => tween.play())
+}
 
 defineProps<{
   links: { title: string; url: string }[]
 }>()
-
-const modules = [FreeMode, Autoplay]
 </script>
 <template>
-  <Swiper
-    :autoplay="{
-      delay: 0,
-    }"
-    :slides-per-view="'auto'"
-    :speed="7000"
-    :loop="true"
-    :modules="modules"
-    class="swiper-infinite-links"
+  <div
+    ref="slider"
+    class="infinite-links"
+    @mouseenter="pause"
+    @mouseleave="play"
   >
-    <SwiperSlide
-      v-for="(link, index) of links"
-      :key="index"
-      class="slide-wrapper"
-    >
-      <nuxt-link :to="link.url" class="slide-link">
-        {{ link.title }}
-      </nuxt-link>
-    </SwiperSlide>
-  </Swiper>
+    <div ref="wrapper" class="wrapper">
+      <div
+        v-for="(link, index) of links"
+        ref="slider"
+        :key="index"
+        class="link-wrapper"
+      >
+        <nuxt-link :to="link.url" class="slide-link">
+          {{ link.title }}
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
 </template>
 <style lang="scss">
-.swiper-infinite-links {
-  @apply mix-blend-difference;
+.infinite-links {
+  @apply mix-blend-difference overflow-x-hidden flex;
 
-  .slide-wrapper {
+  .link-wrapper {
     @apply w-auto;
   }
 }
@@ -48,8 +91,11 @@ const modules = [FreeMode, Autoplay]
 }
 </style>
 <style lang="scss" scoped>
+.wrapper {
+  @apply flex;
+}
 .slide-link {
-  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block relative hover:text-primary;
+  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block relative hover:text-primary whitespace-nowrap;
 
   &::after {
     content: '';
