@@ -35,7 +35,7 @@ const availableLocales = computed(() => {
       class="transition-all duration-500 fixed inset-y-0 flex bg-white dark:bg-dark-900 z-20"
     >
       <div id="left-sidebar-content" class="p-7 msm:p-5 w-64 flex flex-col">
-        <a href="localePath('/')">
+        <NuxtLink :to="localePath('/')">
           <div v-if="$i18n.locale == 'ca'" class="logo cat">
             <div class="responsive-image">
               <img
@@ -76,7 +76,7 @@ const availableLocales = computed(() => {
               />
             </div>
           </div>
-        </a>
+        </NuxtLink>
         <LayoutMenu></LayoutMenu>
         <LayoutFooter></LayoutFooter>
       </div>

@@ -16,7 +16,7 @@
             </h1>
             <AppButton class="sm:mt-5">Manifiesto</AppButton>
             <img
-              class="absolute top-0 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full mb-5"
+              class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
               src="@/assets/img/home/arrow-right.svg"
               alt=""
             />
