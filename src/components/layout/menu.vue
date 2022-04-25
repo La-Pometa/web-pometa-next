@@ -59,10 +59,10 @@
   .item {
     a,
     span {
-      @apply transition-all duration-500  hover:text-primary;
+      @apply hover:text-primary;
     }
     .not-click {
-      @apply transition-all duration-500  hover:text-primary cursor-pointer;
+      @apply hover:text-primary cursor-pointer;
     }
     & > a {
       @apply cursor-pointer;
@@ -79,5 +79,6 @@
 }
 .featured-item a {
   @apply bg-primary py-0.5 px-2 hover:bg-gray-700 text-main-dark;
+  @apply transition duration-300;
 }
 </style>
