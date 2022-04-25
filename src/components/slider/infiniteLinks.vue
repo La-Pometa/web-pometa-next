@@ -36,8 +36,12 @@ const modules = [FreeMode, Autoplay]
   </Swiper>
 </template>
 <style lang="scss">
-.swiper-infinite-links .slide-wrapper {
-  @apply w-auto;
+.swiper-infinite-links {
+  @apply mix-blend-difference;
+
+  .slide-wrapper {
+    @apply w-auto;
+  }
 }
 .swiper-infinite-links .swiper-wrapper {
   @apply ease-linear;
@@ -45,7 +49,7 @@ const modules = [FreeMode, Autoplay]
 </style>
 <style lang="scss" scoped>
 .slide-link {
-  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block bg-blend-difference relative hover:text-primary;
+  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block relative hover:text-primary;
 
   &::after {
     content: '';
