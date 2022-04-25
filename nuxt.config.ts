@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     ]
   },
 
+  experimental: {
+    reactivityTransform: true,
+    // viteNode: true,
+  },
+
   loading: {
     color: '#bfd5c2',
     height: '2px',

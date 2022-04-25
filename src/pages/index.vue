@@ -123,8 +123,12 @@
 </template>
 <style lang="scss" scoped>
 .slide-wrapper {
-  @apply w-full h-screen overflow-y-auto min-h-[45rem];
+  @apply w-full overflow-y-auto overflow-x-hidden h-screen relative;
   @apply flex items-center justify-center;
+
+  max-height: 100vh;
+  /* mobile viewport bug fix */
+  max-height: -webkit-fill-available;
 
   .mobile-square {
     @apply h-full;

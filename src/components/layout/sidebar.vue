@@ -24,7 +24,7 @@ const availableLocales = computed(() => {
   <div
     id="sidebar-wrapper"
     ref="sidebarWrapper"
-    class="flex min-h-screen"
+    class="flex"
     :class="{ open: isOpen, toggleable: isTablet }"
     @mouseover="!isMobile && toggleOpen(true)"
     @mouseleave="!isMobile && toggleOpen(false)"
@@ -98,7 +98,7 @@ const availableLocales = computed(() => {
         </div>
         <div
           id="visible-content"
-          class="transition-all duration-500 h-screen flex items-center justify-center sticky top-0"
+          class="transition-all duration-500 h-full flex items-center justify-center sticky top-0"
         >
           <div class="grid items-center justify-items-center gap-5">
             <span class="font-butler text-sm">
@@ -162,7 +162,7 @@ const availableLocales = computed(() => {
     </div>
     <div
       id="content-margin"
-      class="transition-all duration-500 min-h-screen h-full inline-block"
+      class="transition-all duration-500 h-full inline-block"
     ></div>
   </div>
 </template>
