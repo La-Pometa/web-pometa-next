@@ -20,7 +20,7 @@ specifiers:
   '@wordpress/block-library': ^7.4.0
   eslint: ^8.14.0
   eslint-config-prettier: ^8.5.0
-  nuxt: rc
+  nuxt: 3.0.0-rc.1
   pinia: ^2.0.13
   sass: ^1.50.1
   swiper: ^8.1.4
@@ -1182,11 +1182,11 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /@rollup/plugin-commonjs/21.1.0_rollup@2.70.2:
-    resolution: {integrity: sha512-6ZtHx3VHIp2ReNNDxHjuUml6ur+WcQ28N1yHgCQwsbNkQg2suhxGMDQGJOn/KuDxKtd1xuZP5xSTwBA4GQ8hbA==}
-    engines: {node: '>= 8.0.0'}
+  /@rollup/plugin-commonjs/22.0.0_rollup@2.70.2:
+    resolution: {integrity: sha512-Ktvf2j+bAO+30awhbYoCaXpBcyPmJbaEUYClQns/+6SNCYFURbvBiNbWgHITEsIgDDWCDUclWRKEuf8cwZCFoQ==}
+    engines: {node: '>= 12.0.0'}
     peerDependencies:
-      rollup: ^2.38.3
+      rollup: ^2.68.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.70.2
       commondir: 1.0.1
@@ -5483,8 +5483,8 @@ packages:
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  /listhen/0.2.10:
-    resolution: {integrity: sha512-A2JclV3okrZ/do9ICqdoFGWJHIHrFl71CdwyCWIFJyQAc+QjIKaMks2FKTbXRsa9i0OOSUMHZK2vWHmMfVp00A==}
+  /listhen/0.2.11:
+    resolution: {integrity: sha512-AJPi6PByg78TEvmB9XWB15Cgv00MXDT0BWF+8LVFozbF9qLbOPjXXfwxkYIAmGjPOAAsPzBMEYytj7RSBhkaeg==}
     dependencies:
       clipboardy: 3.0.0
       colorette: 2.0.16
@@ -5879,8 +5879,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /nitropack/0.3.6:
-    resolution: {integrity: sha512-eVzyGyBMB1gHnPLwBlRgKXZd3Q0+d7KKLNPWXI3zXQ3ETyVJn4kouDfkU8YceXiCx7nj/dVsWosJXh0E+FtOXg==}
+  /nitropack/0.3.7:
+    resolution: {integrity: sha512-tEKu6ZTNwSmsWk2JRK2GgUElTj3amDDy2eCZdz0FXVoX3q4Wciaw1SUGwHuuVVHewpVGjUZTMjV/2RZ5Yh21ug==}
     engines: {node: ^14.16.0 || ^16.11.0 || ^17.0.0 || ^18.0.0}
     hasBin: true
     dependencies:
@@ -5888,7 +5888,7 @@ packages:
       '@netlify/functions': 1.0.0
       '@nuxt/devalue': 2.0.0
       '@rollup/plugin-alias': 3.1.9_rollup@2.70.2
-      '@rollup/plugin-commonjs': 21.1.0_rollup@2.70.2
+      '@rollup/plugin-commonjs': 22.0.0_rollup@2.70.2
       '@rollup/plugin-inject': 4.0.4_rollup@2.70.2
       '@rollup/plugin-json': 4.1.0_rollup@2.70.2
       '@rollup/plugin-node-resolve': 13.2.1_rollup@2.70.2
@@ -5924,7 +5924,7 @@ packages:
       is-primitive: 3.0.1
       jiti: 1.13.0
       klona: 2.0.5
-      listhen: 0.2.10
+      listhen: 0.2.11
       mime: 3.0.0
       mlly: 0.5.2
       mri: 1.2.0
@@ -6149,7 +6149,7 @@ packages:
       knitwork: 0.1.1
       magic-string: 0.26.1
       mlly: 0.5.2
-      nitropack: 0.3.6
+      nitropack: 0.3.7
       nuxi: 3.0.0-rc.1
       ohash: 0.1.0
       ohmyfetch: 0.4.15
@@ -8505,7 +8505,7 @@ packages:
       destr: 1.1.1
       h3: 0.3.9
       ioredis: 4.28.5
-      listhen: 0.2.10
+      listhen: 0.2.11
       mri: 1.2.0
       ohmyfetch: 0.4.15
       ufo: 0.7.11
@@ -8859,7 +8859,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 4.2.3
+      string-width: 1.0.2
     dev: true
 
   /word-wrap/1.2.3:

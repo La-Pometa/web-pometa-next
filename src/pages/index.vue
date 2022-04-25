@@ -50,6 +50,23 @@
                     <AppButton class="sm:mt-5">Descúbrelas</AppButton>
                   </div>
                 </div>
+                <SliderInfiniteLinks
+                  class="links"
+                  :links="[
+                    {
+                      title: 'Claranuts',
+                      url: 'claranuts',
+                    },
+                    {
+                      title: 'Conreem Talent',
+                      url: 'csadsadsa',
+                    },
+                    {
+                      title: 'Esther Grup',
+                      url: 'dsdsadsaasdaad',
+                    },
+                  ]"
+                ></SliderInfiniteLinks>
               </div>
             </div>
           </div>
@@ -129,6 +146,10 @@
   max-height: 100vh;
   /* mobile viewport bug fix */
   max-height: -webkit-fill-available;
+
+  .links {
+    @apply absolute bottom-0 w-full;
+  }
 
   .mobile-square {
     @apply h-full;

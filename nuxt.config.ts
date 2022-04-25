@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     '~/assets/fonts/dearest/stylesheet.css',
     '@wordpress/block-library/build-style/common.css',
     '@wordpress/block-library/build-style/theme.css',
-    '@wordpress/block-library/build-style/style.css'
+    '@wordpress/block-library/build-style/style.css',
   ],
 
   modules: [
