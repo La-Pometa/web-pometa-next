@@ -4,12 +4,10 @@
 
 html,
 body,
-#app {
+#__nuxt {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+  height: 100%;
 }
 
 html.dark {
@@ -23,5 +21,16 @@ body {
 }
 
 h1 {
-  @apply font-butler text-4xl;
+  @apply font-butler text-4xl lg:text-7xl font-bold;
+}
+
+h2.subtitle {
+  @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[1.5rem] lg:leading-[4rem] mb-10 lg:mb-20;
+}
+
+.margins {
+  @apply mx-auto py-20 msm:py-10 px-10 msm:px-3;
+}
+.margins-header {
+  @apply mx-auto py-10 msm:py-10 px-10 msm:px-3;
 }

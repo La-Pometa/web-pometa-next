@@ -172,7 +172,7 @@
       @apply absolute inset-0 bg-black/60 text-white h-full p-14 flex flex-col items-center justify-center gap-7;
 
       &.overlay-invert {
-        @apply bg-white text-main-dark;
+        @apply bg-white dark:bg-black text-main-dark dark:text-white;
       }
 
       @screen lg {

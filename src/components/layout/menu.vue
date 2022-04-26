@@ -1,14 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useLocalePath } from 'vue-i18n-routing'
+const localePath = useLocalePath()
+</script>
 <template>
   <nav id="menu" class="flex flex-col mt-7 font-medium text-sm gap-3">
     <span class="item">
-      <nuxt-link class="item" to="/">{{ $t('menu.home') }}</nuxt-link>
+      <nuxt-link class="item" :to="localePath('/')">{{
+        $t('menu.home')
+      }}</nuxt-link>
     </span>
     <span class="item">
-      <nuxt-link to="/pometa">{{ $t('menu.pometa') }}</nuxt-link>
+      <nuxt-link :to="localePath('/pometa')">{{ $t('menu.pometa') }}</nuxt-link>
     </span>
     <span class="item">
-      <nuxt-link to="/manifiesto">{{ $t('menu.manifest') }}</nuxt-link>
+      <nuxt-link :to="localePath('/manifiesto')">{{
+        $t('menu.manifest')
+      }}</nuxt-link>
     </span>
     <span class="item">
       <a href="localePath('/proyectos')">{{ $t('menu.projects') }}</a>
@@ -37,7 +44,9 @@
       </div>
     </span>
     <span class="item"
-      ><a href="localePath('/blog')">{{ $t('menu.blog') }}</a></span
+      ><nuxt-link :to="localePath('/blog')">{{
+        $t('menu.blog')
+      }}</nuxt-link></span
     >
     <span class="item"
       ><a href="localePath('/contacto')">{{ $t('menu.contact') }}</a></span

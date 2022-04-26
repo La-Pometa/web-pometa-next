@@ -28,5 +28,12 @@
     "uses": "Utilitzem cookies per millorar la vostra experiència 💚.",
     "preferences": "Personalitzar",
     "accept": "Acceptar"
+  },
+  "blog": {
+    "title": "T'expliquem coses",
+    "subtitle": "Blog",
+    "post": {
+      "readmore": "Explica'm més"
+    }
   }
 }

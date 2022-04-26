@@ -28,5 +28,12 @@
     "uses": "Utilizamos cookies para mejorar vuestra experiencia 💚.",
     "preferences": "Personalizar",
     "accept": "Aceptar"
+  },
+  "blog": {
+    "title": "Te explicamos cosas ",
+    "subtitle": "Blog",
+    "post": {
+      "readmore": "Cuéntame más"
+    }
   }
 }

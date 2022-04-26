@@ -4,6 +4,8 @@ import { useI18n } from 'vue-i18n'
 import type { LocaleObject } from 'vue-i18n-routing'
 import { useLocalePath, useSwitchLocalePath } from 'vue-i18n-routing'
 
+const emit = defineEmits(['toggled'])
+
 const router = useRouter()
 
 const sidebarWrapper = ref()
@@ -13,6 +15,10 @@ const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
 const [isOpen, toggleOpen] = useToggle(false)
+
+watch(isOpen, (isOpen) => {
+  emit('toggled', isOpen)
+})
 
 onClickOutside(sidebarWrapper, () => {
   toggleOpen(false)
@@ -96,12 +102,7 @@ const availableLocales = computed(() => {
         id="sidebar-visible"
         class="border-l border-gray-100 dark:border-dark-500 bg-white dark:bg-dark-900 px-3 transition-all duration-500 relative z-10"
       >
-        <div
-          id="sidebarToggler"
-          ref="sidebarToggler"
-          class="md:opacity-0 md:pointer-events-none absolute top-0 -left-px text-white w-14 h-14 flex items-center justify-center text-xl bg-main-dark transition-all duration-500 z-20"
-          @click="toggleOpen()"
-        >
+        <div id="sidebarToggler" ref="sidebarToggler" @click="toggleOpen()">
           <div class="burger">
             <span></span>
             <span></span>
@@ -179,6 +180,9 @@ const availableLocales = computed(() => {
   </div>
 </template>
 <style lang="scss">
+#sidebarToggler {
+  @apply md:opacity-0 md:pointer-events-none absolute top-0 -left-px text-white w-14 h-14 flex items-center justify-center text-xl bg-main-dark transition-all duration-500 z-20;
+}
 @screen mmd {
   #content {
     flex: 0 0 100vw;
@@ -232,6 +236,7 @@ const availableLocales = computed(() => {
 
 #sidebar-wrapper {
   @apply transition-all duration-500 bg-white dark:bg-dark-900;
+  @apply relative z-50;
 }
 #sidebar-visible {
   flex: 0 0 3.5rem;
