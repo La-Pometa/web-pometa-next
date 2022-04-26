@@ -9,40 +9,42 @@ const tween: gsap.core.Tween[] = []
 const duration = 12
 
 onMounted(() => {
-  const wrapperWidth = wrapper.value.clientWidth
-  const sliderWidth = slider.value.clientWidth
+  setTimeout(() => {
+    const wrapperWidth = wrapper.value.clientWidth
+    const sliderWidth = slider.value.clientWidth
 
-  const nToClone = Math.ceil(sliderWidth / wrapperWidth) * 2
+    const nToClone = Math.ceil(sliderWidth / wrapperWidth) * 2
 
-  const duplicates = Array.from({ length: nToClone }, () =>
-    wrapper.value.cloneNode(true)
-  )
+    const duplicates = Array.from({ length: nToClone }, () =>
+      wrapper.value.cloneNode(true)
+    )
 
-  if (duplicates.length > 0) {
-    duplicates.forEach((duplicate) => {
-      slider.value.appendChild(duplicate)
+    if (duplicates.length > 0) {
+      duplicates.forEach((duplicate) => {
+        slider.value.appendChild(duplicate)
 
-      tween.push(
-        gsap.to(duplicate, {
-          duration,
-          x: -wrapperWidth,
-          ease: 'linear',
-          repeat: -1,
-          animationTimingFunction: 'linear',
-        })
-      )
-    })
-  }
+        tween.push(
+          gsap.to(duplicate, {
+            duration,
+            x: -wrapperWidth,
+            ease: 'linear',
+            repeat: -1,
+            animationTimingFunction: 'linear',
+          })
+        )
+      })
+    }
 
-  tween.push(
-    gsap.to(wrapper.value, {
-      duration,
-      x: -wrapperWidth,
-      ease: 'linear',
-      repeat: -1,
-      animationTimingFunction: 'linear',
-    })
-  )
+    tween.push(
+      gsap.to(wrapper.value, {
+        duration,
+        x: -wrapperWidth,
+        ease: 'linear',
+        repeat: -1,
+        animationTimingFunction: 'linear',
+      })
+    )
+  }, 200)
 })
 
 const pause = () => {
@@ -60,17 +62,12 @@ defineProps<{
 <template>
   <div
     ref="slider"
-    class="infinite-links"
+    class="infinite-links slider"
     @mouseenter="pause"
     @mouseleave="play"
   >
     <div ref="wrapper" class="wrapper">
-      <div
-        v-for="(link, index) of links"
-        ref="slider"
-        :key="index"
-        class="link-wrapper"
-      >
+      <div v-for="(link, index) of links" :key="index" class="link-wrapper">
         <nuxt-link :to="link.url" class="slide-link">
           {{ link.title }}
         </nuxt-link>

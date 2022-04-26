@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27508761.8d5d964",
+    "@nuxtjs/tailwindcss": "^5.0.3",
     "@types/wpapi": "^1.1.1",
     "@wordpress/block-library": "^7.4.0",
     "gsap": "^3.10.4",
@@ -19,7 +20,6 @@
     "@antfu/eslint-config": "^0.18.9",
     "@iconify-json/carbon": "^1.1.3",
     "@iconify-json/twemoji": "^1.1.3",
-    "@nuxtjs/tailwindcss": "^5.0.3",
     "@pinia/nuxt": "^0.1.8",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
@@ -29,7 +29,7 @@
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "nuxt": "npm:nuxt3@latest",
-    "sass": "^1.50.1",
+    "sass": "^1.51.0",
     "typescript": "^4.6.3"
   },
   "pnpm": {
