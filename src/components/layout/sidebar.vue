@@ -4,11 +4,23 @@ import { useI18n } from 'vue-i18n'
 import type { LocaleObject } from 'vue-i18n-routing'
 import { useLocalePath, useSwitchLocalePath } from 'vue-i18n-routing'
 
+const router = useRouter()
+
+const sidebarWrapper = ref()
+
 const { locale, locales } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
 const [isOpen, toggleOpen] = useToggle(false)
+
+onClickOutside(sidebarWrapper, () => {
+  toggleOpen(false)
+})
+
+watch(router.currentRoute, () => {
+  toggleOpen(false)
+})
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const isMobile = breakpoints.smaller('md')

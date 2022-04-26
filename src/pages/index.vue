@@ -72,18 +72,25 @@
           </div>
           <div class="top-right relative bg-white dark:bg-black">
             <div class="content h-full">
-              <h3>
-                Somos una
-                <span class="text-primary">agencia creativa</span> que cree en
-                el poder motivador e inspirador de las historias. ¡Creemos en
-                nuestros clientes!
-              </h3>
+              <img
+                src="@/assets/img/home/equipo.jpg"
+                class="bg-image"
+                alt="Equipo"
+              />
+              <div class="hover-overlay overlay-invert">
+                <h3>
+                  Somos una
+                  <span class="text-primary">agencia creativa</span> que cree en
+                  el poder motivador e inspirador de las historias. ¡Creemos en
+                  nuestros clientes!
+                </h3>
+              </div>
+              <img
+                class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
+                src="@/assets/img/home/arrow-down.svg"
+                alt=""
+              />
             </div>
-            <img
-              class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
-              src="@/assets/img/home/arrow-down.svg"
-              alt=""
-            />
           </div>
           <div class="bottom-right">
             <div class="content h-full">
@@ -113,7 +120,7 @@
           muted
           playsinline
           poster="https://cms.lapometa.com/wp-content/uploads/2021/09/campanya-conreem-talent-lapometa.png.webp"
-          class="z absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-cover"
         >
           <source
             src="https://cms.lapometa.com/wp-content/uploads/2021/09/VIDEO_CONREEM_TALENT_OPT.mp4"
@@ -140,7 +147,7 @@
 </template>
 <style lang="scss" scoped>
 .slide-wrapper {
-  @apply w-full overflow-y-auto overflow-x-hidden h-screen relative;
+  @apply w-full overflow-y-auto overflow-x-hidden h-screen relative min-h-[40rem];
   @apply flex items-center justify-center;
 
   max-height: 100vh;
@@ -160,9 +167,13 @@
   }
 
   .content {
-    @apply relative h-full p-14 flex flex-col items-center justify-center gap-7;
+    @apply relative min-h-[15rem] h-full p-14 flex flex-col items-center justify-center gap-7;
     .hover-overlay {
       @apply absolute inset-0 bg-black/60 text-white h-full p-14 flex flex-col items-center justify-center gap-7;
+
+      &.overlay-invert {
+        @apply bg-white text-main-dark;
+      }
 
       @screen lg {
         @apply opacity-0 transition duration-300;
