@@ -9,10 +9,42 @@ const { $content } = useNuxtApp()
 
 const { locale } = useI18n()
 
-const { data: postsArchive } = await useAsyncData<ArchiveResponse<Post>>(
-  `posts_${locale.value}`,
-  () => $content.posts().perPage(9).param('lang', locale.value).get()
+const page = ref(1)
+
+const {
+  data: postsArchive,
+  refresh,
+  pending,
+} = await useAsyncData<ArchiveResponse<Post>>(`posts_${locale.value}`, () =>
+  $content
+    .posts()
+    .perPage(9)
+    .page(page.value)
+    .param('lang', locale.value)
+    .orderby('date')
+    .get()
 )
+
+const pagination = ref<HTMLElement>(null)
+
+const posts = ref<Post[]>(postsArchive.value.data)
+
+watch(postsArchive, (archive) => {
+  posts.value = [...posts.value, ...archive.data]
+})
+
+const loadMore = () => {
+  if (postsArchive.value._paging.totalPages > page.value && !pending.value) {
+    page.value++
+    refresh()
+  }
+}
+
+useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
+  if (isIntersecting) {
+    loadMore()
+  }
+})
 </script>
 <template>
   <section
@@ -23,43 +55,24 @@ const { data: postsArchive } = await useAsyncData<ArchiveResponse<Post>>(
       <h1>{{ $t('blog.title') }}</h1>
       <h2 class="subtitle">{{ $t('blog.subtitle') }}</h2>
     </div>
-    <!--     <div v-show="posts.length > 0">
-      <div
-        id="pagination"
-        ref="pagination"
-        :class="!more ? 'hide' : !loadingMore ? 'opacity-0' : ''"
-      >
+
+    <div v-if="posts.length > 0">
+      <div class="layout">
+        <nuxt-link
+          v-for="(item, index) in posts"
+          :key="item.id"
+          :to="localePath(`/${item.slug}`)"
+          class="hover:text-main-dark dark:hover:text-white no-highlight"
+          :title="item.title.rendered"
+        >
+          <post-card :post="item" :index="index"></post-card>
+        </nuxt-link>
+      </div>
+    </div>
+    <div :class="{ 'opacity-0': !pending }">
+      <div id="pagination" ref="pagination">
         <div id="loadMore" class="loader"></div>
       </div>
-    </div> -->
-    <div v-if="postsArchive.data.length > 0">
-      <client-only>
-        <masonry-wall :items="postsArchive.data" :column-width="300" :gap="40">
-          <template #default="{ item, index }">
-            <nuxt-link
-              :key="item.id"
-              :to="localePath(`/${item.slug}`)"
-              class="hover:text-main-dark dark:hover:text-white no-highlight"
-              :title="item.title.rendered"
-            >
-              <post-card :post="item" :index="index"></post-card>
-            </nuxt-link>
-          </template>
-        </masonry-wall>
-        <template #placeholder>
-          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
-            <nuxt-link
-              v-for="(item, index) in postsArchive.data"
-              :key="item.id"
-              :to="localePath(`/${item.slug}`)"
-              class="hover:text-main-dark dark:hover:text-white no-highlight"
-              :title="item.title.rendered"
-            >
-              <post-card :post="item" :index="index"></post-card>
-            </nuxt-link>
-          </div>
-        </template>
-      </client-only>
     </div>
   </section>
 </template>
@@ -68,10 +81,13 @@ const { data: postsArchive } = await useAsyncData<ArchiveResponse<Post>>(
   @apply grid msm:grid-cols-1 mlg:grid-cols-2 grid-cols-3 gap-10;
 }
 #pagination {
-  @apply h-14 flex justify-center;
+  @apply h-14 flex justify-center items-center;
 
   &.hide {
     @apply hidden;
   }
+}
+.loader {
+  @apply w-14 h-14 rounded-full border-4 border-gray-200 dark:border-gray-400 border-t-primary animate-spin;
 }
 </style>

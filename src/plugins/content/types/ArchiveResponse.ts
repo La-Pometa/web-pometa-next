@@ -4,7 +4,37 @@ export interface ArchiveResponse<T> {
 	page_id: string;
 	post_type: PostTypeEnum;
 	meta_page_id: string;
+	_paging: ArchiveResponsePaging
 }
+
+export interface ArchiveResponsePaging {
+	total: number;
+	totalPages: number;
+	links: Links;
+	next: Next;
+	prev: Next;
+}
+
+export interface Links {
+	prev: string;
+	next: string;
+}
+
+export interface Next {
+	_options: Options;
+	transport: Params;
+	_params: Params;
+	_supportedMethods: string[];
+	_path: Params;
+}
+
+export interface Options {
+	endpoint: string;
+}
+
+export interface Params {
+}
+
 
 
 export enum PostTypeEnum {
