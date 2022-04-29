@@ -94,11 +94,7 @@
           </div>
           <div class="bottom-right">
             <div class="content h-full">
-              <h2>
-                ¿Hablamos de
-                <div class="featured ml-20 whitespace-nowrap">tu marca?</div>
-              </h2>
-              <AppButton>Contáctanos</AppButton>
+              <cta-contact />
             </div>
           </div>
         </div>

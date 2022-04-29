@@ -15,22 +15,28 @@ const {
   data: postsArchive,
   refresh,
   pending,
-} = await useAsyncData<ArchiveResponse<Post>>(`posts_${locale.value}`, () =>
-  $content
-    .posts()
-    .perPage(9)
-    .page(page.value)
-    .param('lang', locale.value)
-    .orderby('date')
-    .get()
+} = useAsyncData<ArchiveResponse<Post>>(
+  `posts_${locale.value}`,
+  () =>
+    $content
+      .posts()
+      .perPage(9)
+      .page(page.value)
+      .param('lang', locale.value)
+      .orderby('date')
+      .get(),
+  {
+    initialCache: false,
+    lazy: true,
+  }
 )
 
 const pagination = ref<HTMLElement>(null)
 
-const posts = ref<Post[]>(postsArchive.value.data)
+const posts = ref<Post[]>(postsArchive.value ? postsArchive.value.data : [])
 
-watch(postsArchive, (archive) => {
-  posts.value = [...posts.value, ...archive.data]
+watch(postsArchive, (postsArchive) => {
+  posts.value = [...posts.value, ...postsArchive.data]
 })
 
 const loadMore = () => {

@@ -38,31 +38,26 @@
     </div>
     <div class="bottom">
       <div class="top">
-        <app-button variant="void" @click.native="save(false, true)">{{
+        <app-button variant="void" @click="save(false, true)">{{
           $t('cookies.reject')
         }}</app-button>
-        <app-button variant="void" @click.native="save(false)">{{
+        <app-button variant="void" @click="save(false)">{{
           $t('cookies.save')
         }}</app-button>
       </div>
-      <app-button variant="black" @click.native="save(true)">{{
+      <app-button variant="black" @click="save(true)">{{
         $t('cookies.acceptAll')
       }}</app-button>
     </div>
   </div>
 </template>
 <script lang="ts">
-import {
-  computed,
-  defineComponent,
-  nextTick,
-  useContext,
-} from '@nuxtjs/composition-api'
+import { computed, defineComponent, nextTick } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 export default defineComponent({
   setup(_props, { emit }) {
-    const { $content, i18n } = useContext()
+    const { $content, i18n } = useNuxtApp()
 
     const cookiesGroups = $content.getSettings()[i18n.locale].cookies
 
@@ -108,7 +103,7 @@ export default defineComponent({
       }
     }
 
-    const save = (acceptAll: boolean = false, rejectAll: boolean = false) => {
+    const save = (acceptAll = false, rejectAll = false) => {
       if (acceptAll) {
         cookiesConfig.value.forEach((c: any) => (c.enabled = true))
       }
@@ -143,7 +138,7 @@ export default defineComponent({
   }
 
   input {
-    @apply text-primary-black focus:ring-black;
+    @apply text-main-dark focus:ring-black;
   }
 }
 </style>

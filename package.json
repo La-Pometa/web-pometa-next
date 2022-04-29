@@ -7,10 +7,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27508761.8d5d964",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27516108.1766d8d",
     "@nuxtjs/tailwindcss": "^5.0.3",
     "@types/wpapi": "^1.1.1",
-    "@wordpress/block-library": "^7.4.0",
     "@yeger/vue-masonry-wall": "^3.0.29",
     "gsap": "^3.10.4",
     "pinia": "^2.0.13",
@@ -28,6 +27,8 @@
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
     "@vueuse/nuxt": "^8.3.1",
+    "@wordpress/base-styles": "^4.4.0",
+    "@wordpress/block-library": "^7.4.0",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "nuxt": "npm:nuxt3@latest",

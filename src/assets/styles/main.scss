@@ -1,6 +1,19 @@
+@use 'sass:math';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import '@wordpress/base-styles/colors';
+@import '@wordpress/base-styles/variables';
+@import '@wordpress/base-styles/mixins';
+@import '@wordpress/base-styles/breakpoints';
+@import '@wordpress/base-styles/animations';
+@import '@wordpress/base-styles/z-index';
+@import '@wordpress/block-library/src/columns/style.scss';
+@import '@wordpress/block-library/src/style.scss';
+@import '@wordpress/block-library/src/theme.scss';
+@import '@wordpress/block-library/src/common.scss';
 
 html,
 body,
@@ -28,9 +41,11 @@ h2.subtitle {
   @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[1.5rem] lg:leading-[4rem] mb-10 lg:mb-20;
 }
 
-.margins {
-  @apply mx-auto py-20 msm:py-10 px-10 msm:px-3;
-}
-.margins-header {
-  @apply mx-auto py-10 msm:py-10 px-10 msm:px-3;
+@layer {
+  .margins {
+    @apply mx-auto py-20 msm:py-10 px-10 msm:px-3 msm:mt-14;
+  }
+  .margins-header {
+    @apply mx-auto py-10 msm:py-10 px-10 msm:px-3;
+  }
 }

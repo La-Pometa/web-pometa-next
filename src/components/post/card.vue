@@ -30,7 +30,7 @@ defineProps<{
 </template>
 <style lang="scss">
 .blog-card {
-  @apply space-y-5 h-full flex flex-col;
+  @apply gap-5 h-full flex flex-col;
 
   .blog-card-img {
     @apply aspect-w-1 aspect-h-1 relative;

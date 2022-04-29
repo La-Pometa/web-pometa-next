@@ -11,6 +11,11 @@ export default defineNuxtConfig({
     ]
   },
 
+  components: {
+    global: true,
+    dirs: ['components', 'singles'],
+  },
+
   experimental: {
     reactivityTransform: true,
     // viteNode: true,
@@ -28,9 +33,6 @@ export default defineNuxtConfig({
     '~/assets/fonts/butler/stylesheet.css',
     '~/assets/fonts/sset/stylesheet.css',
     '~/assets/fonts/dearest/stylesheet.css',
-    '@wordpress/block-library/build-style/common.css',
-    '@wordpress/block-library/build-style/theme.css',
-    '@wordpress/block-library/build-style/style.css',
   ],
 
   modules: [
