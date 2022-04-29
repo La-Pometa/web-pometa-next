@@ -1,7 +1,31 @@
 <script setup lang="ts">
+import { gsap } from 'gsap'
 import { useLocalePath } from 'vue-i18n-routing'
 import { useI18n } from 'vue-i18n'
 import type { ArchiveResponse, Post } from '@/plugins/content/types'
+
+definePageMeta({
+  pageTransition: {
+    mode: 'in-out',
+    appear: true,
+    css: false,
+    onLeave(el, done) {
+      gsap
+        .fromTo(
+          el,
+          {
+            position: 'absolute',
+            left: 0,
+            right: 0,
+          },
+          {
+            duration: 1.2,
+          }
+        )
+        .then(() => done())
+    },
+  },
+})
 
 const localePath = useLocalePath()
 
@@ -11,11 +35,9 @@ const { locale } = useI18n()
 
 const page = ref(1)
 
-const {
-  data: postsArchive,
-  refresh,
-  pending,
-} = useAsyncData<ArchiveResponse<Post>>(
+const { data: postsArchive, pending } = await useAsyncData<
+  ArchiveResponse<Post>
+>(
   `posts_${locale.value}`,
   () =>
     $content
@@ -27,7 +49,7 @@ const {
       .get(),
   {
     initialCache: false,
-    lazy: true,
+    watch: [page],
   }
 )
 
@@ -39,10 +61,14 @@ watch(postsArchive, (postsArchive) => {
   posts.value = [...posts.value, ...postsArchive.data]
 })
 
+const morePosts = computed(() => {
+  if (!postsArchive.value) return false
+  return posts.value.length < postsArchive.value._paging.total
+})
+
 const loadMore = () => {
-  if (postsArchive.value._paging.totalPages > page.value && !pending.value) {
+  if (morePosts.value && !pending.value) {
     page.value++
-    refresh()
   }
 }
 
@@ -61,7 +87,6 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
       <h1>{{ $t('blog.title') }}</h1>
       <h2 class="subtitle">{{ $t('blog.subtitle') }}</h2>
     </div>
-
     <div v-if="posts.length > 0">
       <div class="layout">
         <nuxt-link
@@ -74,10 +99,13 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
           <post-card :post="item" :index="index"></post-card>
         </nuxt-link>
       </div>
+      <div v-if="morePosts" ref="pagination" class="layout loadmore">
+        <post-card v-for="index in 3" :key="index"></post-card>
+      </div>
     </div>
-    <div :class="{ 'opacity-0': !pending }">
-      <div id="pagination" ref="pagination">
-        <div id="loadMore" class="loader"></div>
+    <div v-else>
+      <div class="layout">
+        <post-card v-for="index in 9" :key="index"></post-card>
       </div>
     </div>
   </section>
@@ -85,6 +113,10 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
 <style lang="scss" scoped>
 .layout {
   @apply grid msm:grid-cols-1 mlg:grid-cols-2 grid-cols-3 gap-10;
+
+  &.loadmore {
+    @apply mt-10;
+  }
 }
 #pagination {
   @apply h-14 flex justify-center items-center;

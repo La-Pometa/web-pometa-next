@@ -56,6 +56,7 @@ export default defineNuxtConfig({
       { code: 'es', name: 'Esp', iso: 'es-ES', file: 'es.json', dir: 'ltr' },
       { code: 'ca', name: 'Cat', iso: 'ca', file: 'ca.json', dir: 'ltr' },
     ],
+    lazy: true,
     defaultLocale: 'es',
     vueI18n: {
       legacy: false,

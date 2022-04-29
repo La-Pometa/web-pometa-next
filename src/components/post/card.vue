@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Post } from '@/plugins/content/types'
 defineProps<{
-  post: Post
-  index: number
+  post?: Post
+  index?: number
 }>()
 </script>
 <template>
@@ -10,7 +10,7 @@ defineProps<{
     <div v-if="post.featured_source" class="blog-card-img">
       <app-image :data="post?.featured_source" :lazy="index > 6"></app-image>
     </div>
-    <!-- <div v-else class="blog-card-img"><PuSkeleton height="100%" /></div> -->
+    <div v-else class="blog-card-img"><PuSkeleton height="100%" /></div>
     <div>
       <h2 class="blog-card-title" v-html="post.title.rendered"></h2>
     </div>
@@ -19,14 +19,13 @@ defineProps<{
     </div>
     <div class="read-more">{{ $t('blog.post.readmore') }}</div>
   </div>
-  <!--   <div v-else class="blog-card">
+  <div v-else class="blog-card">
     <div class="blog-card-img"><PuSkeleton height="100%" /></div>
     <div>
-      <span class="date"><PuSkeleton width="20%" /></span>
       <h2 class="blog-card-title"><PuSkeleton /></h2>
     </div>
     <p class="blog-card-excerpt"><PuSkeleton :count="3" /></p>
-  </div> -->
+  </div>
 </template>
 <style lang="scss">
 .blog-card {

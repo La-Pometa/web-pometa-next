@@ -1,147 +1,214 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { gsap } from 'gsap'
+
+definePageMeta({
+  pageTransition: {
+    mode: 'in-out',
+    appear: true,
+    css: false,
+    onLeave(el, done) {
+      const mainContent = document.querySelector('main')
+      const mainWidth = mainContent ? mainContent.clientWidth : 0
+
+      gsap
+        .fromTo(
+          el,
+          {
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            zIndex: 10,
+          },
+          {
+            duration: 1.2,
+            x: -mainWidth,
+          }
+        )
+        .then(() => done())
+    },
+    onEnter(el, done) {
+      const mainContent = document.querySelector('main')
+      const mainWidth = mainContent ? mainContent.clientWidth : 0
+
+      gsap
+        .fromTo(
+          el,
+          {
+            x: -mainWidth,
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            zIndex: 10,
+          },
+          {
+            duration: 1.2,
+            x: 0,
+          }
+        )
+        .then(() => {
+          mainContent.scrollTo({
+            top: 0,
+          })
+          gsap.to(el, {
+            duration: 0,
+            y: 0,
+          })
+          done()
+        })
+    },
+  },
+})
+</script>
 <template>
-  <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
-    <SliderSlide>
-      <div class="slide-wrapper">
-        <img
-          class="absolute bottom-0 right-0 mb-5 msm:w-2/3"
-          src="@/assets/img/home/hand-apple.png"
-          alt=""
-        />
-        <div class="content">
-          <div class="inner">
-            <h1 class="title max-w-[45rem]">
-              Nadie se resiste a una buena historia… Comencemos a construirla
-              <span class="featured">juntos.</span>
-            </h1>
-            <AppButton class="sm:mt-5">Manifiesto</AppButton>
-            <img
-              class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
-              src="@/assets/img/home/arrow-right.svg"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div class="controls">
-        <div class="next next-slide">
-          <span> ¡Creemos en nuestros clientes! </span>
-        </div>
-      </div>
-    </SliderSlide>
-    <SliderSlide>
-      <div class="slide-wrapper">
-        <div class="w-full h-full grid lg:grid-cols-2 lg:grid-rows-2">
-          <div class="left relative lg:row-span-2">
-            <div class="mobile-square mlg:aspect-w-1 mlg:aspect-h-1">
-              <div>
-                <div class="content">
-                  <img
-                    src="@/assets/img/home/claranuts.jpg"
-                    class="bg-image"
-                    alt="Claranuts"
-                  />
-                  <div class="hover-overlay">
-                    <h2>
-                      LAS NUECES <br />
-                      MÁS LOCAS
-                      <div class="featured ml-20">del mundo</div>
-                    </h2>
-                    <AppButton class="sm:mt-5">Descúbrelas</AppButton>
-                  </div>
-                </div>
-                <SliderInfiniteLinks
-                  class="links"
-                  :links="[
-                    {
-                      title: 'Claranuts',
-                      url: 'claranuts',
-                    },
-                    {
-                      title: 'Conreem Talent',
-                      url: 'csadsadsa',
-                    },
-                    {
-                      title: 'Esther Grup',
-                      url: 'dsdsadsaasdaad',
-                    },
-                  ]"
-                ></SliderInfiniteLinks>
-              </div>
-            </div>
-          </div>
-          <div class="top-right relative bg-white dark:bg-black">
-            <div class="content h-full">
+  <div class="wrapper">
+    <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
+      <SliderSlide>
+        <div class="slide-wrapper">
+          <img
+            class="absolute bottom-0 right-0 mb-5 msm:w-2/3"
+            src="@/assets/img/home/hand-apple.png"
+            alt=""
+          />
+          <div class="content">
+            <div class="inner">
+              <h1 class="title max-w-[45rem]">
+                Nadie se resiste a una buena historia… Comencemos a construirla
+                <span class="featured">juntos.</span>
+              </h1>
+              <AppButton class="sm:mt-5">Manifiesto</AppButton>
               <img
-                src="@/assets/img/home/equipo.jpg"
-                class="bg-image"
-                alt="Equipo"
-              />
-              <div class="hover-overlay overlay-invert">
-                <h3>
-                  Somos una
-                  <span class="text-primary">agencia creativa</span> que cree en
-                  el poder motivador e inspirador de las historias. ¡Creemos en
-                  nuestros clientes!
-                </h3>
-              </div>
-              <img
-                class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
-                src="@/assets/img/home/arrow-down.svg"
+                class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
+                src="@/assets/img/home/arrow-right.svg"
                 alt=""
               />
             </div>
           </div>
-          <div class="bottom-right">
-            <div class="content h-full">
-              <cta-contact />
+        </div>
+        <div class="controls">
+          <div class="next next-slide">
+            <span> ¡Creemos en nuestros clientes! </span>
+          </div>
+        </div>
+      </SliderSlide>
+      <SliderSlide>
+        <div class="slide-wrapper">
+          <div class="w-full h-full grid lg:grid-cols-2 lg:grid-rows-2">
+            <div class="left relative lg:row-span-2">
+              <div class="mobile-square mlg:aspect-w-1 mlg:aspect-h-1">
+                <div>
+                  <div class="content">
+                    <img
+                      src="@/assets/img/home/claranuts.jpg"
+                      class="bg-image"
+                      alt="Claranuts"
+                    />
+                    <div class="hover-overlay">
+                      <h2>
+                        LAS NUECES <br />
+                        MÁS LOCAS
+                        <div class="featured ml-20">del mundo</div>
+                      </h2>
+                      <AppButton class="sm:mt-5">Descúbrelas</AppButton>
+                    </div>
+                  </div>
+                  <SliderInfiniteLinks
+                    class="links"
+                    :links="[
+                      {
+                        title: 'Claranuts',
+                        url: 'claranuts',
+                      },
+                      {
+                        title: 'Conreem Talent',
+                        url: 'csadsadsa',
+                      },
+                      {
+                        title: 'Esther Grup',
+                        url: 'dsdsadsaasdaad',
+                      },
+                    ]"
+                  ></SliderInfiniteLinks>
+                </div>
+              </div>
+            </div>
+            <div class="top-right relative bg-white dark:bg-black">
+              <div class="content h-full">
+                <img
+                  src="@/assets/img/home/equipo.jpg"
+                  class="bg-image"
+                  alt="Equipo"
+                />
+                <div class="hover-overlay overlay-invert">
+                  <h3>
+                    Somos una
+                    <span class="text-primary">agencia creativa</span> que cree
+                    en el poder motivador e inspirador de las historias.
+                    ¡Creemos en nuestros clientes!
+                  </h3>
+                </div>
+                <img
+                  class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
+                  src="@/assets/img/home/arrow-down.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bottom-right">
+              <div class="content h-full">
+                <cta-contact />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="controls">
-        <div class="next next-slide">
-          <span> Una historia llena de talento </span>
+        <div class="controls">
+          <div class="next next-slide">
+            <span> Una historia llena de talento </span>
+          </div>
+          <div class="prev prev-slide">
+            <span> Nadie se resiste a una buena historia </span>
+          </div>
         </div>
-        <div class="prev prev-slide">
-          <span> Nadie se resiste a una buena historia </span>
+      </SliderSlide>
+      <SliderSlide>
+        <div class="slide-wrapper">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="https://cms.lapometa.com/wp-content/uploads/2021/09/campanya-conreem-talent-lapometa.png.webp"
+            class="absolute inset-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://cms.lapometa.com/wp-content/uploads/2021/09/VIDEO_CONREEM_TALENT_OPT.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="overlay"></div>
+          <div class="content relative z-10">
+            <h2 class="text-white">
+              UNA HISTORIA
+              <div class="featured ml-24 whitespace-nowrap">
+                llena de talento
+              </div>
+            </h2>
+            <AppButton>Descúbrela</AppButton>
+          </div>
         </div>
-      </div>
-    </SliderSlide>
-    <SliderSlide>
-      <div class="slide-wrapper">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          poster="https://cms.lapometa.com/wp-content/uploads/2021/09/campanya-conreem-talent-lapometa.png.webp"
-          class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source
-            src="https://cms.lapometa.com/wp-content/uploads/2021/09/VIDEO_CONREEM_TALENT_OPT.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div class="overlay"></div>
-        <div class="content relative z-10">
-          <h2 class="text-white">
-            UNA HISTORIA
-            <div class="featured ml-24 whitespace-nowrap">llena de talento</div>
-          </h2>
-          <AppButton>Descúbrela</AppButton>
+        <div class="controls">
+          <div class="prev prev-slide">
+            <span> ¡Creemos en nuestros clientes! </span>
+          </div>
         </div>
-      </div>
-      <div class="controls">
-        <div class="prev prev-slide">
-          <span> ¡Creemos en nuestros clientes! </span>
-        </div>
-      </div>
-    </SliderSlide>
-  </Slider>
+      </SliderSlide>
+    </Slider>
+  </div>
 </template>
 <style lang="scss" scoped>
+.wrapper {
+  @apply dark:bg-dark-800 bg-primary-gray;
+}
 .slide-wrapper {
   @apply w-full overflow-y-auto overflow-x-hidden h-screen relative min-h-[40rem];
   @apply flex items-center justify-center;
