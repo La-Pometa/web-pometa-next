@@ -9,7 +9,7 @@ defineProps<{
 
 const localePath = useLocalePath()
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 const formatDate = (date) => {
   const newDate = new Date(date)
@@ -22,39 +22,39 @@ const formatDate = (date) => {
 
 const categories = ref<{ name: string; slug: string }[]>([
   {
-    name: 'Agencia',
+    name: t('post.category.agency'),
     slug: 'agencia',
   },
   {
-    name: 'Consejos y trucos',
+    name: t('post.category.tips'),
     slug: 'consejos-y-trucos',
   },
   {
-    name: 'Definiciones',
+    name: t('post.category.definitions'),
     slug: 'definiciones',
   },
   {
-    name: 'Evento',
+    name: t('post.category.event'),
     slug: 'evento',
   },
   {
-    name: 'Herramientas',
+    name: t('post.category.tools'),
     slug: 'herramientas',
   },
   {
-    name: 'Infografías',
+    name: t('post.category.info'),
     slug: 'infografias',
   },
   {
-    name: 'Noticias',
+    name: t('post.category.news'),
     slug: 'noticias',
   },
   {
-    name: 'Proyectos',
+    name: t('post.category.projects'),
     slug: 'proyectos',
   },
   {
-    name: 'Tendencias',
+    name: t('post.category.trends'),
     slug: 'tendencias',
   },
 ])
@@ -75,14 +75,13 @@ const categories = ref<{ name: string; slug: string }[]>([
       </div>
       <div class="left">
         <div class="wrapper">
-          <div class="author">
-            <div
-              class="avatar-circle"
-              v-html="data.author_info.image.rendered"
-            ></div>
-            <span>{{ $t('post.author_by') }} {{ data.author_info.name }}</span>
-          </div>
-          <app-button>¡Compárteme!</app-button>
+          <post-author
+            :data="{
+              name: data.author_info.name,
+              image: data.author_info.image.rendered,
+            }"
+          ></post-author>
+          <app-button>{{ $t('post.share') }}</app-button>
           <div class="categories">
             <span class="title">{{ $t('post.categories') }}</span>
             <div class="list">
@@ -94,8 +93,7 @@ const categories = ref<{ name: string; slug: string }[]>([
                 <nuxt-link
                   :to="
                     localePath({
-                      path: '/blog',
-                      params: { slug: category.slug },
+                      path: `/blog/${category.slug}`,
                     })
                   "
                   >{{ category.name }}</nuxt-link
@@ -105,7 +103,7 @@ const categories = ref<{ name: string; slug: string }[]>([
           </div>
         </div>
       </div>
-      <article class="post-container space-y-10">
+      <div class="post-container space-y-10">
         <div class="single-post">
           <div class="top">
             <div class="header">
@@ -127,10 +125,17 @@ const categories = ref<{ name: string; slug: string }[]>([
                 <span class="date">{{ formatDate(data.date) }}</span>
               </div>
             </div>
+            <post-author
+              :data="{
+                name: data.author_info.name,
+                image: data.author_info.image.rendered,
+              }"
+            ></post-author>
           </div>
           <div class="post-content" v-html="data.content.rendered"></div>
         </div>
-      </article>
+      </div>
+      <cta-contact />
     </article>
   </div>
 </template>
@@ -170,6 +175,10 @@ const categories = ref<{ name: string; slug: string }[]>([
     @apply xl:col-span-9;
   }
 
+  .cta-contact {
+    @apply xl:col-start-4 xl:col-span-9;
+  }
+
   .sub-image {
     @apply py-3 text-main-dark/70 dark:text-white/70;
 
@@ -180,6 +189,10 @@ const categories = ref<{ name: string; slug: string }[]>([
 
   .top {
     @apply relative;
+
+    .author {
+      @apply xl:hidden;
+    }
   }
 
   .left {
@@ -188,17 +201,8 @@ const categories = ref<{ name: string; slug: string }[]>([
     .wrapper {
       @apply sticky top-10 flex flex-col gap-5 sm:gap-10;
 
-      @screen mxl {
-        @apply max-w-[12rem];
-      }
-
-      .avatar-circle {
-        @apply aspect-w-1 aspect-h-1 rounded-full overflow-hidden;
-        @apply bg-light-500;
-      }
-
       .author {
-        @apply text-center flex flex-col gap-4;
+        @apply mxl:hidden;
       }
 
       .categories {

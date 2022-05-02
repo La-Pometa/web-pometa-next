@@ -39,6 +39,18 @@
   },
   "post": {
     "author_by": "Per",
-    "categories": "Categories"
+    "categories": "Categories",
+    "share": "Comparteix-me!",
+    "category": {
+      "agency": "Agència",
+      "tips": "Consells i trucs",
+      "definitions": "Definicions",
+      "event": "Esdeveniment",
+      "tools": "Eines",
+      "info": "Infografies",
+      "news": "Notícies",
+      "projects": "Projectes",
+      "trends": "Tendències"
+    }
   }
 }

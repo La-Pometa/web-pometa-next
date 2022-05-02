@@ -39,6 +39,18 @@
   },
   "post": {
     "author_by": "Por",
-    "categories": "Categorias"
+    "categories": "Categorias",
+    "share": "¡Compárteme!",
+    "category": {
+      "agency": "Agencia",
+      "tips": "Consejos y trucos",
+      "definitions": "Definiciones",
+      "event": "Evento",
+      "tools": "Herramientas",
+      "info": "Infografías",
+      "news": "Noticias",
+      "projects": "Proyectos",
+      "trends": "Tendencias"
+    }
   }
 }
