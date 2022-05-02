@@ -31,7 +31,7 @@
     "@wordpress/block-library": "^7.4.0",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
-    "nuxt": "rc",
+    "nuxt": "npm:nuxt3@latest",
     "sass": "^1.51.0",
     "typescript": "^4.6.3"
   },
