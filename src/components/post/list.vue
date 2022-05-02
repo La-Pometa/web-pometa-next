@@ -14,7 +14,7 @@ const page = ref(1)
 const { data: postsArchive, pending } = await useAsyncData<
   ArchiveResponse<Post>
 >(
-  `posts_${locale.value}`,
+  `posts_${locale}`,
   () =>
     $content
       .posts()
@@ -77,7 +77,7 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .layout {
   @apply grid msm:grid-cols-1 mlg:grid-cols-2 grid-cols-3 gap-10;
 
