@@ -36,5 +36,9 @@
       "readmore": "Cuéntame más"
     },
     "back": "Volver al blog"
+  },
+  "post": {
+    "author_by": "Por",
+    "categories": "Categorias"
   }
 }

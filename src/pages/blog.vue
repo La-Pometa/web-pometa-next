@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { gsap } from 'gsap'
+// import { gsap } from 'gsap'
 import { useLocalePath } from 'vue-i18n-routing'
 import { useI18n } from 'vue-i18n'
 import type { ArchiveResponse, Post } from '@/plugins/content/types'
 
-definePageMeta({
+/* definePageMeta({
   pageTransition: {
     mode: 'in-out',
     appear: true,
@@ -25,7 +25,7 @@ definePageMeta({
         .then(() => done())
     },
   },
-})
+}) */
 
 const localePath = useLocalePath()
 

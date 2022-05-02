@@ -18,10 +18,10 @@ const [isOpen, toggleOpen] = useToggle(false)
 </template>
 <style lang="scss" scoped>
 .layout-default {
-  @apply flex max-w-[100vw] overflow-x-hidden relative h-full;
+  @apply flex max-w-[100vw] msm:overflow-x-hidden relative min-h-full;
 
   main {
-    @apply flex-1 relative max-w-full overflow-x-hidden;
+    @apply flex-1 relative max-w-full msm:overflow-x-hidden;
     @apply transition duration-500;
 
     min-height: 100vh;

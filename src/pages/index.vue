@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { gsap } from 'gsap'
+/* import { gsap } from 'gsap'
 
 definePageMeta({
   pageTransition: {
@@ -57,7 +57,7 @@ definePageMeta({
         })
     },
   },
-})
+}) */
 </script>
 <template>
   <div class="wrapper">

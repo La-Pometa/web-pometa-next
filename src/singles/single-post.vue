@@ -19,6 +19,45 @@ const formatDate = (date) => {
     year: 'numeric',
   })
 }
+
+const categories = ref<{ name: string; slug: string }[]>([
+  {
+    name: 'Agencia',
+    slug: 'agencia',
+  },
+  {
+    name: 'Consejos y trucos',
+    slug: 'consejos-y-trucos',
+  },
+  {
+    name: 'Definiciones',
+    slug: 'definiciones',
+  },
+  {
+    name: 'Evento',
+    slug: 'evento',
+  },
+  {
+    name: 'Herramientas',
+    slug: 'herramientas',
+  },
+  {
+    name: 'Infografías',
+    slug: 'infografias',
+  },
+  {
+    name: 'Noticias',
+    slug: 'noticias',
+  },
+  {
+    name: 'Proyectos',
+    slug: 'proyectos',
+  },
+  {
+    name: 'Tendencias',
+    slug: 'tendencias',
+  },
+])
 </script>
 <template>
   <div class="single-wrapper">
@@ -36,8 +75,34 @@ const formatDate = (date) => {
       </div>
       <div class="left">
         <div class="wrapper">
-          <div class="avatar"></div>
+          <div class="author">
+            <div
+              class="avatar-circle"
+              v-html="data.author_info.image.rendered"
+            ></div>
+            <span>{{ $t('post.author_by') }} {{ data.author_info.name }}</span>
+          </div>
           <app-button>¡Compárteme!</app-button>
+          <div class="categories">
+            <span class="title">{{ $t('post.categories') }}</span>
+            <div class="list">
+              <div
+                v-for="(category, index) of categories"
+                :key="index"
+                class="item"
+              >
+                <nuxt-link
+                  :to="
+                    localePath({
+                      path: '/blog',
+                      params: { slug: category.slug },
+                    })
+                  "
+                  >{{ category.name }}</nuxt-link
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <article class="post-container space-y-10">
@@ -77,7 +142,7 @@ const formatDate = (date) => {
   }
 
   .go-back {
-    @apply absolute left-0 top-1/2 -translate-y-1/2 z-50 uppercase p-4;
+    @apply absolute left-0 top-0 h-screen text-center z-50 uppercase p-4;
     @apply text-sm hover:text-primary cursor-pointer;
     @apply msm:hidden;
 
@@ -127,9 +192,29 @@ const formatDate = (date) => {
         @apply max-w-[12rem];
       }
 
-      .avatar {
-        @apply aspect-w-1 aspect-h-1 rounded-full;
+      .avatar-circle {
+        @apply aspect-w-1 aspect-h-1 rounded-full overflow-hidden;
         @apply bg-light-500;
+      }
+
+      .author {
+        @apply text-center flex flex-col gap-4;
+      }
+
+      .categories {
+        @apply space-y-4;
+
+        .title {
+          @apply font-butler font-bold text-2xl;
+        }
+
+        .list {
+          @apply divide-y divide-primary;
+
+          .item {
+            @apply py-1 hover:text-primary;
+          }
+        }
       }
     }
   }

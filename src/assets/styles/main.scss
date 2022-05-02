@@ -18,9 +18,7 @@
 html,
 body,
 #__nuxt {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  @apply m-0 p-0 min-h-full;
 }
 
 html.dark {
@@ -45,6 +43,7 @@ h2.subtitle {
   .margins {
     @apply mx-auto py-20 msm:py-10 px-10 msm:px-3 msm:mt-14;
   }
+
   .margins-header {
     @apply mx-auto py-10 msm:py-10 px-10 msm:px-3;
   }

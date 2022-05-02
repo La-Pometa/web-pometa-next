@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { gsap } from 'gsap'
+// import { gsap } from 'gsap'
 import { useI18n } from 'vue-i18n'
 import type { Page, Post } from '../plugins/content/types'
 
-definePageMeta({
+/* definePageMeta({
   pageTransition: {
     mode: 'in-out',
     appear: true,
@@ -58,7 +58,7 @@ definePageMeta({
         })
     },
   },
-})
+}) */
 
 const route = useRoute()
 const { $content } = useNuxtApp()

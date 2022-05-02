@@ -36,5 +36,9 @@
       "readmore": "Explica'm més"
     },
     "back": "Tornar al bloc"
+  },
+  "post": {
+    "author_by": "Per",
+    "categories": "Categories"
   }
 }
