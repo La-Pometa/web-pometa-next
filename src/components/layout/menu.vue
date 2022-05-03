@@ -49,12 +49,14 @@ const localePath = useLocalePath()
       }}</nuxt-link></span
     >
     <span class="item"
-      ><a href="localePath('/contacto')">{{ $t('menu.contact') }}</a></span
+      ><nuxt-link :to="localePath('/contacto')">{{
+        $t('menu.contact')
+      }}</nuxt-link></span
     >
     <span class="item"
-      ><a href="localePath('/desayuna-con-manzanas')">{{
+      ><nuxt-link :to="localePath('/desayuna-con-manzanas')">{{
         $t('menu.breakfast')
-      }}</a></span
+      }}</nuxt-link></span
     >
     <span class="item featured-item"
       ><a href="localePath($t('kitdigital'))">{{
