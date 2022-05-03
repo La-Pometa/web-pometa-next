@@ -1,69 +1,9 @@
-<script setup lang="ts">
-/* import { gsap } from 'gsap'
-
-definePageMeta({
-  pageTransition: {
-    mode: 'in-out',
-    appear: true,
-    css: false,
-    onLeave(el, done) {
-      const mainContent = document.querySelector('main')
-      const mainWidth = mainContent ? mainContent.clientWidth : 0
-
-      gsap
-        .fromTo(
-          el,
-          {
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            zIndex: 10,
-          },
-          {
-            duration: 1.2,
-            x: -mainWidth,
-          }
-        )
-        .then(() => done())
-    },
-    onEnter(el, done) {
-      const mainContent = document.querySelector('main')
-      const mainWidth = mainContent ? mainContent.clientWidth : 0
-
-      gsap
-        .fromTo(
-          el,
-          {
-            x: -mainWidth,
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            zIndex: 10,
-          },
-          {
-            duration: 1.2,
-            x: 0,
-          }
-        )
-        .then(() => {
-          mainContent.scrollTo({
-            top: 0,
-          })
-          gsap.to(el, {
-            duration: 0,
-            y: 0,
-          })
-          done()
-        })
-    },
-  },
-}) */
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="wrapper">
     <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
       <SliderSlide>
-        <div class="slide-wrapper">
+        <div class="slide-wrapper slide-1">
           <img
             class="absolute bottom-0 right-0 mb-5 msm:w-2/3"
             src="@/assets/img/home/hand-apple.png"
@@ -170,7 +110,7 @@ definePageMeta({
         </div>
       </SliderSlide>
       <SliderSlide>
-        <div class="slide-wrapper">
+        <div class="slide-wrapper slide-2">
           <video
             autoplay
             loop
@@ -229,6 +169,12 @@ definePageMeta({
     }
   }
 
+  &.slide-1,
+  &.slide-2 {
+    .content {
+      @apply absolute inset-0 w-full h-full;
+    }
+  }
   .content {
     @apply relative min-h-[15rem] h-full p-14 flex flex-col items-center justify-center gap-7;
     .hover-overlay {

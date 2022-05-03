@@ -18,6 +18,10 @@ defineProps<{
 .avatar-circle {
   @apply aspect-w-1 aspect-h-1 rounded-full overflow-hidden mxl:w-10;
   @apply bg-light-500;
+
+  img {
+    @apply w-full h-full object-cover;
+  }
 }
 
 .author {

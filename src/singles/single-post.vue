@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useLocaleLocation, useLocalePath } from 'vue-i18n-routing'
+import { useLocalePath } from 'vue-i18n-routing'
 import type { Post } from '../plugins/content/types'
 
 defineProps<{
