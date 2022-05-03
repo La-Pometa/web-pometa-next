@@ -84,18 +84,6 @@ const generateVnodesWithChildren = (blocks: Block[]): VNode[] => {
         const tag = getHtmlTag(innerHTML)
         const content = getHtmlContent(innerHTML)
 
-        console.log(
-          innerContent.map((string: string | null) => {
-            if (string === null) {
-              return null
-            }
-
-            return {
-              tag: getHtmlTag(string),
-            }
-          })
-        )
-
         const vnode: VNode = h(
           tag,
           getHtmlParams(innerHTML),
