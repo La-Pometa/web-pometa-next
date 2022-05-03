@@ -11,30 +11,35 @@ const { locale } = useI18n()
 
 const page = ref(1)
 
-const { data: postsArchive, pending } = await useAsyncData<
-  ArchiveResponse<Post>
->(
-  `posts_${locale}`,
-  () =>
-    $content
-      .posts()
-      .perPage(9)
-      .page(page.value)
-      .param('lang', locale.value)
-      .orderby('date')
-      .get(),
-  {
-    initialCache: false,
-    watch: [page],
-  }
-)
+const getPosts = async (page: number) => {
+  return useLazyAsyncData<ArchiveResponse<Post>>(
+    `posts_${locale.value}_${page}`,
+    () =>
+      $content
+        .posts()
+        .perPage(9)
+        .page(page)
+        .param('lang', locale.value)
+        .orderby('date')
+        .get()
+  )
+}
+
+const { data: postsArchive, pending } = await getPosts(page.value)
 
 const pagination = ref<HTMLElement>(null)
 
 const posts = ref<Post[]>(postsArchive.value ? postsArchive.value.data : [])
 
-watch(postsArchive, (postsArchive) => {
-  posts.value = [...posts.value, ...postsArchive.data]
+watch(postsArchive, (archive) => {
+  if (archive) {
+    posts.value = archive.data
+  }
+})
+
+watch(page, async (page) => {
+  const { data } = await getPosts(page)
+  posts.value = [...posts.value, ...data.value.data]
 })
 
 const morePosts = computed(() => {

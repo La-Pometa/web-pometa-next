@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  pageTransition: {
+    mode: 'in-out',
+    appear: true,
+    css: false,
+  },
+})
+</script>
 <template>
   <section
     id="archive-blog"
