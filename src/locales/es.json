@@ -52,5 +52,9 @@
       "projects": "Proyectos",
       "trends": "Tendencias"
     }
+  },
+  "manifest": {
+    "title": "¿En qué creemos?",
+    "subtitle": "Manifiesto"
   }
 }

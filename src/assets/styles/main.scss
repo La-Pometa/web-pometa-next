@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'typography';
+
 @import '@wordpress/base-styles/colors';
 @import '@wordpress/base-styles/variables';
 @import '@wordpress/base-styles/mixins';
@@ -29,14 +31,6 @@ html.dark {
 body {
   @apply text-main-dark font-sset dark:text-white dark:bg-dark-800 bg-primary-gray;
   -webkit-tap-highlight-color: transparent;
-}
-
-h1 {
-  @apply font-butler text-4xl lg:text-7xl font-bold;
-}
-
-h2.subtitle {
-  @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[1.5rem] lg:leading-[4rem] mb-10 lg:mb-20;
 }
 
 @layer {

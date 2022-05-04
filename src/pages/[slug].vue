@@ -66,12 +66,5 @@ if (error.value) {
 }
 </script>
 <template>
-  <div class="wrapper">
-    <component :is="`single-${data.type}`" :data="data"></component>
-  </div>
+  <component :is="`single-${data.type}`" :data="data"></component>
 </template>
-<style lang="scss" scoped>
-.wrapper {
-  @apply bg-primary-gray dark:bg-dark-800;
-}
-</style>

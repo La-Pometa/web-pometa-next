@@ -60,84 +60,82 @@ const categories = ref<{ name: string; slug: string }[]>([
 ])
 </script>
 <template>
-  <div class="single-wrapper">
-    <article id="single-post" class="layout margins">
-      <nuxt-link :to="localePath('/blog')" class="go-back">
-        {{ $t('blog.back') }}
-      </nuxt-link>
-      <div class="post-title">
-        <img
-          class="arrow"
-          src="@/assets/img/single-post/arrow-to-left.svg"
-          alt=""
-        />
-        <h1 v-html="data.title.rendered"></h1>
+  <article id="single-post" class="layout margins">
+    <nuxt-link :to="localePath('/blog')" class="go-back">
+      {{ $t('blog.back') }}
+    </nuxt-link>
+    <div class="post-title">
+      <img
+        class="arrow"
+        src="@/assets/img/single-post/arrow-to-left.svg"
+        alt=""
+      />
+      <h1 v-html="data.title.rendered"></h1>
+    </div>
+    <div class="left">
+      <div class="wrapper">
+        <post-author
+          :data="{
+            name: data.author_info.name,
+            image: data.author_info.image.rendered,
+          }"
+        ></post-author>
+        <app-button>{{ $t('post.share') }}</app-button>
+        <div class="categories">
+          <span class="title">{{ $t('post.categories') }}</span>
+          <div class="list">
+            <div
+              v-for="(category, index) of categories"
+              :key="index"
+              class="item"
+            >
+              <nuxt-link
+                :to="
+                  localePath({
+                    path: `/blog/${category.slug}`,
+                  })
+                "
+                >{{ category.name }}</nuxt-link
+              >
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="left">
-        <div class="wrapper">
+    </div>
+    <div class="post-container space-y-10">
+      <div class="single-post">
+        <div class="top">
+          <div class="header">
+            <app-image
+              :data="data.featured_source"
+              :lazy="false"
+              class="featured"
+            ></app-image>
+          </div>
+          <div>
+            <div class="sub-image">
+              <span
+                v-for="(tax, i) in data.tax_info"
+                :key="tax.term_id"
+                class="category"
+                ><span v-if="i != 0">, </span>{{ tax.name }}</span
+              >
+              <span v-if="data.tax_info.length > 0"> | </span>
+              <span class="date">{{ formatDate(data.date) }}</span>
+            </div>
+          </div>
           <post-author
             :data="{
               name: data.author_info.name,
               image: data.author_info.image.rendered,
             }"
           ></post-author>
-          <app-button>{{ $t('post.share') }}</app-button>
-          <div class="categories">
-            <span class="title">{{ $t('post.categories') }}</span>
-            <div class="list">
-              <div
-                v-for="(category, index) of categories"
-                :key="index"
-                class="item"
-              >
-                <nuxt-link
-                  :to="
-                    localePath({
-                      path: `/blog/${category.slug}`,
-                    })
-                  "
-                  >{{ category.name }}</nuxt-link
-                >
-              </div>
-            </div>
-          </div>
         </div>
+        <div class="post-content" v-html="data.content.rendered"></div>
       </div>
-      <div class="post-container space-y-10">
-        <div class="single-post">
-          <div class="top">
-            <div class="header">
-              <app-image
-                :data="data.featured_source"
-                :lazy="false"
-                class="featured"
-              ></app-image>
-            </div>
-            <div>
-              <div class="sub-image">
-                <span
-                  v-for="(tax, i) in data.tax_info"
-                  :key="tax.term_id"
-                  class="category"
-                  ><span v-if="i != 0">, </span>{{ tax.name }}</span
-                >
-                <span v-if="data.tax_info.length > 0"> | </span>
-                <span class="date">{{ formatDate(data.date) }}</span>
-              </div>
-            </div>
-            <post-author
-              :data="{
-                name: data.author_info.name,
-                image: data.author_info.image.rendered,
-              }"
-            ></post-author>
-          </div>
-          <div class="post-content" v-html="data.content.rendered"></div>
-        </div>
-      </div>
-      <cta-contact />
-    </article>
-  </div>
+    </div>
+    <cta-contact />
+  </article>
 </template>
 <style lang="scss">
 #single-post {

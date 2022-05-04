@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="wrapper">
+  <section id="page-home" class="wrapper">
     <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
       <SliderSlide>
         <div class="slide-wrapper slide-1">
@@ -73,19 +73,12 @@
             </div>
             <div class="top-right relative bg-white dark:bg-black">
               <div class="content h-full">
-                <img
-                  src="@/assets/img/home/equipo.jpg"
-                  class="bg-image"
-                  alt="Equipo"
-                />
-                <div class="hover-overlay overlay-invert">
-                  <h3>
-                    Somos una
-                    <span class="text-primary">agencia creativa</span> que cree
-                    en el poder motivador e inspirador de las historias.
-                    ¡Creemos en nuestros clientes!
-                  </h3>
-                </div>
+                <h3>
+                  Somos una
+                  <span class="text-primary">agencia creativa</span> que cree en
+                  el poder motivador e inspirador de las historias. ¡Creemos en
+                  nuestros clientes!
+                </h3>
                 <img
                   class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
                   src="@/assets/img/home/arrow-down.svg"
@@ -143,7 +136,7 @@
         </div>
       </SliderSlide>
     </Slider>
-  </div>
+  </section>
 </template>
 <style lang="scss" scoped>
 .wrapper {
@@ -201,10 +194,6 @@
       @apply relative flex flex-col items-center justify-center gap-7;
     }
 
-    .title {
-      @apply text-4xl lg:text-7xl text-center leading-[2.3rem] lg:leading-[4.3rem] font-semibold;
-    }
-
     h3 {
       @apply font-butler font-semibold text-xl lg:text-3xl;
     }
@@ -215,10 +204,6 @@
         @apply font-dearest text-primary text-5xl lg:text-8xl leading-[2rem] lg:leading-[3rem] font-normal;
       }
     }
-  }
-
-  .featured {
-    @apply font-dearest text-primary text-6xl lg:text-9xl leading-[2.3rem] lg:leading-[4.3rem] font-normal;
   }
 }
 

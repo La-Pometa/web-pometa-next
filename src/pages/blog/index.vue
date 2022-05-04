@@ -10,7 +10,7 @@ definePageMeta({
 <template>
   <section
     id="archive-blog"
-    class="container max-w-screen-xl margins msm:mt-14 space-y-10"
+    class="container max-w-screen-xl margins space-y-10"
   >
     <div class="header text-center">
       <h1>{{ $t('blog.title') }}</h1>
