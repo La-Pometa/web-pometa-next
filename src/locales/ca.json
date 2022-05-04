@@ -55,6 +55,7 @@
   },
   "manifest": {
     "title": "En què creiem?",
-    "subtitle": "Manifest"
+    "subtitle": "Manifest",
+    "claim": "Practiquem el <span class=\"featured\">Storybuilding experience</span> per sobre de totes les coses."
   }
 }

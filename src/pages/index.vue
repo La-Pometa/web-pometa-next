@@ -11,7 +11,7 @@
           />
           <div class="content">
             <div class="inner">
-              <h1 class="title max-w-[45rem]">
+              <h1 class="title text-center max-w-[45rem]">
                 Nadie se resiste a una buena historia… Comencemos a construirla
                 <span class="featured">juntos.</span>
               </h1>

@@ -70,7 +70,10 @@ const localePath = useLocalePath()
   .item {
     a,
     span {
-      @apply hover:text-primary;
+      &:hover,
+      &.router-link-active {
+        @apply text-primary;
+      }
     }
     .not-click {
       @apply hover:text-primary cursor-pointer;

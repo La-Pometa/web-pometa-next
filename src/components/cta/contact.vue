@@ -1,10 +1,20 @@
+<script setup lang="ts">
+const { variant } = defineProps({
+  variant: {
+    type: String as () => 'default' | 'light',
+    default: 'default',
+  },
+})
+</script>
 <template>
-  <div class="cta-contact">
+  <div class="cta-contact" :class="variant">
     <h2>
       ¿Hablamos de
       <div class="featured ml-20 whitespace-nowrap">tu marca?</div>
     </h2>
-    <AppButton>Contáctanos</AppButton>
+    <AppButton :variant="variant === 'light' ? 'light' : 'primary'"
+      >Contáctanos</AppButton
+    >
   </div>
 </template>
 <style lang="scss" scoped>
@@ -16,6 +26,12 @@
 
     .featured {
       @apply font-dearest text-primary text-5xl lg:text-8xl leading-[2rem] lg:leading-[3rem] font-normal;
+    }
+  }
+
+  &.light {
+    h2 .featured {
+      @apply text-white;
     }
   }
 }

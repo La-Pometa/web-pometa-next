@@ -11,7 +11,7 @@ defineProps({
     default: 'md',
   },
   variant: {
-    type: String,
+    type: String as () => 'primary' | 'secondary' | 'black' | 'light',
     default: 'primary',
   },
 })
@@ -49,6 +49,10 @@ button {
 
   &.primary {
     @apply bg-primary text-main-dark hover:bg-gray-700 hover:text-primary;
+  }
+
+  &.light {
+    @apply bg-white text-main-dark hover:bg-gray-700 hover:text-primary;
   }
 
   &.secondary {

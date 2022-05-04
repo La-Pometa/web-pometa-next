@@ -60,7 +60,7 @@ const categories = ref<{ name: string; slug: string }[]>([
 ])
 </script>
 <template>
-  <article id="single-post" class="layout margins">
+  <article id="single-post" class="layout">
     <nuxt-link :to="localePath('/blog')" class="go-back">
       {{ $t('blog.back') }}
     </nuxt-link>
@@ -140,7 +140,7 @@ const categories = ref<{ name: string; slug: string }[]>([
 <style lang="scss">
 #single-post {
   &.layout {
-    @apply container sm:px-14;
+    @apply container margins sm:px-14;
     @apply grid xl:grid-cols-12 max-w-screen-lg gap-x-14 gap-y-6;
   }
 

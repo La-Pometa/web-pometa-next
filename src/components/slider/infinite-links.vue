@@ -44,7 +44,7 @@ onMounted(() => {
         animationTimingFunction: 'linear',
       })
     )
-  }, 200)
+  }, 500)
 })
 
 const pause = () => {
