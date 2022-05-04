@@ -98,13 +98,13 @@
     @apply absolute;
   }
 
-  @screen sm {
+  @screen lg {
     .arrow {
       @apply right-0 top-0 translate-x-[120%];
     }
   }
 
-  @screen msm {
+  @screen mlg {
     .arrow {
       @apply right-0 bottom-0 translate-y-full rotate-90 w-24;
     }
@@ -115,7 +115,7 @@
   @apply bg-primary py-20 relative;
 
   .hand {
-    @apply absolute top-0 right-0 msm:w-44;
+    @apply absolute top-0 right-0 mlg:w-44;
     @apply -translate-y-1/2;
   }
 
@@ -124,14 +124,14 @@
   }
 
   .left {
-    @apply p-[13%] -m-[13%] relative flex items-center justify-center msm:translate-x-8;
+    @apply p-[13%] -m-[13%] relative flex items-center justify-center mlg:translate-x-8;
 
     .bg-image {
-      @apply absolute w-full max-w-md msm:max-w-[22rem] -translate-x-8;
+      @apply absolute w-full max-w-md mlg:max-w-[22rem] -translate-x-8;
     }
 
     h4 {
-      @apply relative max-w-[24rem] msm:max-w-[18rem];
+      @apply relative max-w-[24rem] mlg:max-w-[18rem];
     }
   }
 
@@ -139,15 +139,15 @@
     @apply absolute;
   }
 
-  @screen sm {
+  @screen lg {
     .arrow {
       @apply bottom-0 translate-x-[150%] translate-y-1/3;
     }
   }
 
-  @screen msm {
+  @screen mlg {
     .arrow {
-      @apply bottom-0 translate-y-full rotate-90 left-0 w-16;
+      @apply bottom-0 translate-y-1/3 -translate-x-[350%] rotate-90 w-16;
     }
   }
 }
