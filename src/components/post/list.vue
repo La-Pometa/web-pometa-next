@@ -29,17 +29,17 @@ const { data: postsArchive, pending } = await getPosts(page.value)
 
 const pagination = ref<HTMLElement>(null)
 
-const posts = ref<Post[]>(postsArchive.value ? postsArchive.value.data : [])
+const posts = ref<Post[]>(postsArchive.value ? postsArchive.value.entries : [])
 
 watch(postsArchive, (archive) => {
   if (archive) {
-    posts.value = archive.data
+    posts.value = archive.entries
   }
 })
 
 watch(page, async (page) => {
   const { data } = await getPosts(page)
-  posts.value = [...posts.value, ...data.value.data]
+  posts.value = [...posts.value, ...data.value.entries]
 })
 
 const morePosts = computed(() => {

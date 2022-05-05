@@ -1,6 +1,6 @@
 export interface ArchiveResponse<T> {
 	meta: ArchiveResponseMeta;
-	data: T[];
+	entries: T[];
 	page_id: string;
 	post_type: PostTypeEnum;
 	meta_page_id: string;
