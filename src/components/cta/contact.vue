@@ -8,16 +8,13 @@ const { variant } = defineProps({
 </script>
 <template>
   <div class="cta-contact" :class="variant">
-    <h2>
-      ¿Hablamos de
-      <div class="featured ml-20 whitespace-nowrap">tu marca?</div>
-    </h2>
-    <AppButton :variant="variant === 'light' ? 'light' : 'primary'"
-      >Contáctanos</AppButton
-    >
+    <h2 v-html="$t('cta.contact.title')"></h2>
+    <AppButton :variant="variant === 'light' ? 'light' : 'primary'">{{
+      $t('cta.contact.button')
+    }}</AppButton>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 .cta-contact {
   @apply flex flex-col items-center justify-center gap-7 py-5;
 

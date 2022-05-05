@@ -73,5 +73,23 @@
   },
   "breakfast": {
     "title": "Esmorza<br /><span class=\"featured\">amb Pomes</span>"
+  },
+  "error": {
+    "return": "Tornar a l'inici"
+  },
+  "cta": {
+    "contact": {
+      "button": "Contacta'ns",
+      "title": "Parlem de <br /> <span class=\"featured ml-20 whitespace-nowrap\">la teva marca?</span>"
+    }
+  },
+  "home": {
+    "manifest": "Manifest",
+    "next1": "Creiem als nostres clients!",
+    "next2": "Una història plena de talent",
+    "prev1": "Ningú es resisteix a una bona història",
+    "prev2": "Creiem als nostres clients!",
+    "title1": "Ningú es resisteix a una bona història… Comencem a construir-la <span class=\"featured\">junts.</span>",
+    "title2": "Som una <span class=\"text-primary\">agència creativa</span> que creu en el poder motivador i inspirador de les històries. \nCreiem als nostres clients!"
   }
 }

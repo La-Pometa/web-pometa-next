@@ -71,4 +71,18 @@ export default defineNuxtConfig({
   publicRuntimeConfig: {
     WP_URL: process.env.WP_URL
   },
+
+  build: {
+    extractCSS: true,
+    optimizeCSS: true,
+    html: {
+      minify: {
+        minifyCSS: true,
+        minifyJS: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+      }
+    }
+  },
+
 })

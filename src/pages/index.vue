@@ -11,11 +11,11 @@
           />
           <div class="content">
             <div class="inner">
-              <h1 class="title text-center max-w-[45rem]">
-                Nadie se resiste a una buena historia… Comencemos a construirla
-                <span class="featured">juntos.</span>
-              </h1>
-              <AppButton>Manifiesto</AppButton>
+              <h1
+                class="title text-center max-w-[45rem]"
+                v-html="$t('home.title1')"
+              ></h1>
+              <AppButton>{{ $t('home.manifest') }}</AppButton>
               <img
                 class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
                 src="@/assets/img/home/arrow-right.svg"
@@ -26,7 +26,7 @@
         </div>
         <div class="controls">
           <div class="next next-slide">
-            <span> ¡Creemos en nuestros clientes! </span>
+            <span> {{ $t('home.next1') }} </span>
           </div>
         </div>
       </SliderSlide>
@@ -73,12 +73,7 @@
             </div>
             <div class="top-right relative bg-white dark:bg-black">
               <div class="content h-full">
-                <h3>
-                  Somos una
-                  <span class="text-primary">agencia creativa</span> que cree en
-                  el poder motivador e inspirador de las historias. ¡Creemos en
-                  nuestros clientes!
-                </h3>
+                <h3 v-html="$t('home.title2')"></h3>
                 <img
                   class="absolute bottom-0 left-1/2 mlg:w-16 -translate-x-1/2 translate-y-1/2"
                   src="@/assets/img/home/arrow-down.svg"
@@ -95,10 +90,10 @@
         </div>
         <div class="controls">
           <div class="next next-slide">
-            <span> Una historia llena de talento </span>
+            <span> {{ $t('home.next2') }} </span>
           </div>
           <div class="prev prev-slide">
-            <span> Nadie se resiste a una buena historia </span>
+            <span> {{ $t('home.prev1') }} </span>
           </div>
         </div>
       </SliderSlide>
@@ -131,7 +126,7 @@
         </div>
         <div class="controls">
           <div class="prev prev-slide">
-            <span> ¡Creemos en nuestros clientes! </span>
+            <span> {{ $t('home.next1') }} </span>
           </div>
         </div>
       </SliderSlide>

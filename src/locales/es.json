@@ -76,5 +76,20 @@
   },
   "error": {
     "return": "Volver al inicio"
+  },
+  "home": {
+    "title1": "Nadie se resiste a una buena historia… Comencemos a construirla                 <span class=\"featured\">juntos.</span>",
+    "manifest": "Manifiesto",
+    "next1": "¡Creemos en nuestros clientes!",
+    "title2": "Somos una                   <span class=\"text-primary\">agencia creativa</span> que cree en                   el poder motivador e inspirador de las historias. ¡Creemos en                   nuestros clientes!",
+    "next2": "Una historia llena de talento",
+    "prev1": "Nadie se resiste a una buena historia",
+    "prev2": "¡Creemos en nuestros clientes!"
+  },
+  "cta": {
+    "contact": {
+      "title": "      ¿Hablamos de <br /> <span class=\"featured ml-20 whitespace-nowrap\">tu marca?</span>",
+      "button": "Contáctanos"
+    }
   }
 }
