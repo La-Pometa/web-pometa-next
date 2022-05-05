@@ -15,13 +15,10 @@
     <div class="first bg-white dark:bg-black">
       <div class="content">
         <div class="left">
-          <blockquote class="title-2">
-            <span class="featured"
-              >Creemos en el poder inspirador y motivador de las historias</span
-            >
-            para que los demás sientan tu marca igual que nosotros, como parte
-            de nuestras vidas.
-          </blockquote>
+          <blockquote
+            class="title-2"
+            v-html="$t('manifest.lefttext')"
+          ></blockquote>
           <img
             class="arrow"
             src="@/assets/img/manifest/arrow-right.svg"

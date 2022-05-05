@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { createError } from 'h3'
 import { useI18n } from 'vue-i18n'
 import type { Page, Post } from '../plugins/content/types'
 
@@ -62,9 +63,15 @@ const { data, error } = await useAsyncData<Post | Page>(
   () => $content.path().slug(slug.toString()).param('lang', locale.value).get()
 )
 if (error.value) {
-  throwError(error.value as Error)
+  const errorCaptured = error.value as any
+  throwError(
+    createError({
+      statusCode: errorCaptured.status,
+      message: JSON.parse(errorCaptured.response.text).message,
+    })
+  )
 }
 </script>
 <template>
-  <component :is="`single-${data.type}`" :data="data"></component>
+  <component :is="`single-${data.type}`" v-if="data" :data="data"></component>
 </template>

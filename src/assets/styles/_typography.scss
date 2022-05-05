@@ -2,12 +2,16 @@ h1 {
   @apply font-butler text-4xl lg:text-7xl font-bold;
 }
 
+h3.subtitle {
+  @apply font-dearest font-normal text-6xl lg:text-8xl text-primary leading-[1.2rem] lg:leading-[3rem] mb-10 lg:mb-20;
+}
+
 h2.subtitle {
   @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[1.5rem] lg:leading-[4rem] mb-10 lg:mb-20;
 }
 
 .title {
-  @apply text-4xl lg:text-7xl leading-[2.3rem] lg:leading-[4.3rem] font-semibold mb-10 lg:mb-20;
+  @apply text-4xl lg:text-7xl leading-[2.3rem] lg:leading-[4.3rem] font-semibold  mb-5 lg:mb-10;
   .featured {
     @apply font-dearest text-primary text-6xl lg:text-9xl leading-[2.3rem] lg:leading-[4.3rem] font-normal;
   }

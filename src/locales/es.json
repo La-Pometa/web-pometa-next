@@ -56,7 +56,8 @@
   "manifest": {
     "title": "¿En qué creemos?",
     "subtitle": "Manifiesto",
-    "claim": "Practicamos el <span class=\"featured\">Storybuilding experience</span> por encima de todas las cosas."
+    "claim": "Practicamos el <span class=\"featured\">Storybuilding experience</span> por encima de todas las cosas.",
+    "lefttext": " <span class=\"featured\"               >Creemos en el poder inspirador y motivador de las historias</span             >             para que los demás sientan tu marca igual que nosotros, como parte             de nuestras vidas."
   },
   "pometa": {
     "title": "Fresh ideas for new",
@@ -72,5 +73,8 @@
   },
   "breakfast": {
     "title": "Desayuna<br /><span class=\"featured\">con Manzanas</span>"
+  },
+  "error": {
+    "return": "Volver al inicio"
   }
 }

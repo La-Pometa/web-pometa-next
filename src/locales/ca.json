@@ -56,7 +56,8 @@
   "manifest": {
     "title": "En què creiem?",
     "subtitle": "Manifest",
-    "claim": "Practiquem el <span class=\"featured\">Storybuilding experience</span> per sobre de totes les coses."
+    "claim": "Practiquem el <span class=\"featured\">Storybuilding experience</span> per sobre de totes les coses.",
+    "lefttext": "<span class=\"featured\" >Creiem en el poder inspirador i motivador de les històries</span > perquè els altres sentin la teva marca igual que nosaltres, com a part de les nostres vides."
   },
   "contact": {
     "title": "Parlem de <br /><span class=\"featured\"> la teva Marca?</span>"
@@ -69,5 +70,8 @@
   "projects": {
     "subtitle": "Marques",
     "title": "Històries de les nostres"
+  },
+  "breakfast": {
+    "title": "Esmorza<br /><span class=\"featured\">amb Pomes</span>"
   }
 }
