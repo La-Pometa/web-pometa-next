@@ -57,5 +57,17 @@
     "title": "En què creiem?",
     "subtitle": "Manifest",
     "claim": "Practiquem el <span class=\"featured\">Storybuilding experience</span> per sobre de totes les coses."
+  },
+  "contact": {
+    "title": "Parlem de <br /><span class=\"featured\"> la teva Marca?</span>"
+  },
+  "pometa": {
+    "claim": "<span class=\"featured\">Frescs, creatius i disruptius</span>, <br />tenim totes les propietats de la fruita reina: la poma! \nAssaborim la nostra feina a mossegades, amb passió!",
+    "subtitle": "times",
+    "title": "Fresh idees for new"
+  },
+  "projects": {
+    "subtitle": "Marques",
+    "title": "Històries de les nostres"
   }
 }

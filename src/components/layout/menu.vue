@@ -18,7 +18,9 @@ const localePath = useLocalePath()
       }}</nuxt-link>
     </span>
     <span class="item">
-      <a href="localePath('/proyectos')">{{ $t('menu.projects') }}</a>
+      <nuxt-link :to="localePath('/proyectos')">{{
+        $t('menu.projects')
+      }}</nuxt-link>
     </span>
     <span class="item" tabindex="0"
       ><a class="not-click">{{ $t('menu.services.title') }}</a>
