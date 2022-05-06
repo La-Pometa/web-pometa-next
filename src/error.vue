@@ -14,7 +14,7 @@ const localePath = useLocalePath()
 <template>
   <div class="wrapper">
     <h1>{{ error.statusCode }}</h1>
-    <h3 class="subtitle" v-html="error.message"></h3>
+    <h3 class="subtitle text-center" v-html="error.message"></h3>
     <a :href="localePath('/')">
       <app-button>{{ $t('error.return') }}</app-button>
     </a>

@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import type { Image } from './Image'
 export interface Content {
   rendered: string
 }
@@ -145,7 +144,7 @@ export interface PostEmbedded {
 export interface Author {
   id: string;
   name: string;
-  image: Image;
+  image: any;
   url: string;
 }
 

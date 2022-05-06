@@ -76,8 +76,8 @@ const categories = ref<{ name: string; slug: string }[]>([
       <div class="wrapper">
         <post-author
           :data="{
-            name: data.author_info.name,
-            image: data.author_info.image.rendered,
+            name: data.embedded.author.name,
+            image: data.embedded.author.image.rendered,
           }"
         ></post-author>
         <app-button>{{ $t('post.share') }}</app-button>
@@ -120,14 +120,14 @@ const categories = ref<{ name: string; slug: string }[]>([
                 class="category"
                 ><span v-if="i != 0">, </span>{{ tax.name }}</span
               >
-              <span v-if="data.tax_info.length > 0"> | </span>
+              <span v-if="data.embedded.taxes.length > 0"> | </span>
               <span class="date">{{ formatDate(data.date) }}</span>
             </div>
           </div>
           <post-author
             :data="{
-              name: data.author_info.name,
-              image: data.author_info.image.rendered,
+              name: data.embedded.author.name,
+              image: data.embedded.author.image.rendered,
             }"
           ></post-author>
         </div>
