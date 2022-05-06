@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+import type { Image } from './Image'
 export interface Content {
   rendered: string
 }
@@ -122,6 +123,7 @@ export interface Post {
   parent: number
   menu_order: number
   comment_status: string
+  embedded: PostEmbedded
   ping_status: string
   template: string
   meta: any[]
@@ -131,4 +133,22 @@ export interface Post {
   featured_source: boolean
   yoast_head: string
   yoast_head_json: YoastHeadJSON
+}
+
+export interface PostEmbedded {
+  postmeta: Record<string, any>;
+  taxes: any[];
+  taxonomies: Taxonomies;
+  author: Author;
+}
+
+export interface Author {
+  id: string;
+  name: string;
+  image: Image;
+  url: string;
+}
+
+export interface Taxonomies {
+  membertipus: any[];
 }
