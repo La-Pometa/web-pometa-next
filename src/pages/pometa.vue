@@ -85,6 +85,39 @@ const featuredMembers = computed(() =>
               {{ member.embedded.postmeta.membersSurname }}
             </span>
           </div>
+          <div
+            class="claim"
+            v-html="member.embedded.postmeta.membersTitle"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div v-else class="content">
+      <div class="featured-members">
+        <div v-for="index in 1" :key="index" class="member featured">
+          <div class="image">
+            <PuSkeleton height="100%" />
+          </div>
+          <div class="inner">
+            <div class="name title-3">
+              <PuSkeleton />
+            </div>
+            <div class="position"><PuSkeleton :count="3" /></div>
+            <div class="claim"><PuSkeleton :count="3" /></div>
+          </div>
+        </div>
+      </div>
+      <div class="members">
+        <div v-for="index in 6" :key="index" class="member">
+          <div class="image">
+            <PuSkeleton height="100%" />
+          </div>
+          <div class="title-3 mt-2">
+            <PuSkeleton />
+          </div>
+          <div>
+            <PuSkeleton />
+          </div>
         </div>
       </div>
     </div>
@@ -99,7 +132,7 @@ const featuredMembers = computed(() =>
     @apply space-y-16;
 
     .featured-members {
-      @apply flex max-w-screen-lg mx-auto;
+      @apply grid grid-flow-col max-w-screen-lg mx-auto;
     }
     .members {
       @apply sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-7;
@@ -164,6 +197,9 @@ const featuredMembers = computed(() =>
           .featured {
             @apply leading-[4rem];
           }
+        }
+        .claim {
+          @apply text-center -mt-4;
         }
       }
 
