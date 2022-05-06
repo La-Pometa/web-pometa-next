@@ -48,8 +48,32 @@ const featuredMembers = computed(() =>
         v-html="$t('pometa.claim')"
       ></h3>
     </header>
-    <div class="content">
-      <div v-if="members" class="members">
+    <div v-if="members" class="content">
+      <div class="featured-members">
+        <div
+          v-for="(member, index) in featuredMembers"
+          :key="index"
+          class="member featured"
+        >
+          <div v-if="member.featured_source" class="image">
+            <app-image :data="member.featured_source"></app-image>
+          </div>
+          <div class="inner">
+            <div class="name title-3">
+              {{ member.embedded.postmeta.membersName }}
+              <span class="featured">
+                {{ member.embedded.postmeta.membersSurname }}
+              </span>
+            </div>
+            <div
+              class="position"
+              v-html="member.embedded.postmeta.membersTitle"
+            ></div>
+            <div class="claim" v-html="member.content.rendered"></div>
+          </div>
+        </div>
+      </div>
+      <div class="members">
         <div v-for="(member, index) in members" :key="index" class="member">
           <div v-if="member.featured_source" class="image">
             <app-image :data="member.featured_source"></app-image>
@@ -72,12 +96,17 @@ const featuredMembers = computed(() =>
   @apply container margins space-y-10 sm:space-y-14;
 
   .content {
+    @apply space-y-16;
+
+    .featured-members {
+      @apply flex max-w-screen-lg mx-auto;
+    }
     .members {
       @apply sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-7;
 
       @screen msm {
         @apply snap-mandatory snap-x overflow-x-auto;
-        @apply flex -m-3 pb-3;
+        @apply flex -m-5 pb-3;
 
         &::-webkit-scrollbar {
           display: none;
@@ -85,12 +114,13 @@ const featuredMembers = computed(() =>
 
         .member {
           @apply snap-center;
+          --slider-margin: 1.25rem;
 
-          margin: 0 calc(0.75rem / 4);
-          flex: 0 0 calc(100% - (0.75rem * 2));
+          margin: 0 calc(var(--slider-margin) / 4);
+          flex: 0 0 calc(100% - (var(--slider-margin) * 2));
 
           &:first-child {
-            margin-left: 0.75rem;
+            margin-left: var(--slider-margin);
           }
         }
 
@@ -103,8 +133,38 @@ const featuredMembers = computed(() =>
     .member {
       @apply relative;
 
+      &.featured {
+        @apply grid lg:grid-cols-12 gap-5 lg:gap-10;
+
+        .image {
+          @apply lg:col-span-5;
+        }
+
+        .inner {
+          @apply lg:col-span-7;
+        }
+
+        .position {
+          @apply mt-3 lg:mt-5;
+        }
+
+        .claim {
+          @apply mt-8 lg:mt-16;
+        }
+      }
+
       .name {
-        @apply text-center z-20 relative -mt-4;
+        @apply leading-[4rem];
+      }
+
+      &:not(.featured) {
+        .name {
+          @apply text-center z-20 relative -mt-4;
+
+          .featured {
+            @apply leading-[4rem];
+          }
+        }
       }
 
       .image {
@@ -134,9 +194,8 @@ const featuredMembers = computed(() =>
               @apply absolute inset-0 bg-primary;
             }
 
-            &:after {
-              content: '';
-              @apply absolute inset-0 border border-primary;
+            &:before {
+              @apply -translate-y-3 translate-x-3;
             }
           }
         }
@@ -160,15 +219,6 @@ const featuredMembers = computed(() =>
       &:hover {
         .overlay {
           @apply opacity-100;
-        }
-
-        .image {
-          &:after {
-            @apply -translate-y-6 translate-x-6;
-          }
-          &:before {
-            @apply -translate-y-3 translate-x-3;
-          }
         }
       }
     }

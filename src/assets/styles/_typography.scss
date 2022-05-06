@@ -34,11 +34,11 @@ h2.subtitle {
 }
 
 .title-3 {
-  @apply text-3xl leading-[4rem] font-medium;
+  @apply text-3xl leading-[2rem] font-medium;
   @apply font-butler font-bold relative;
 
   .featured {
-    @apply font-dearest font-normal text-6xl text-primary leading-[4rem];
+    @apply font-dearest font-normal text-6xl text-primary leading-[2rem];
   }
 }
 
