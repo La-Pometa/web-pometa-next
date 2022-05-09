@@ -20,8 +20,8 @@ h2.subtitle {
 .title-2 {
   @apply text-2xl lg:text-3xl leading-[1.5rem] lg:leading-[2rem] font-medium;
 
-  .featured,
-  .featured-2 {
+  .featured-2,
+  b {
     @apply font-butler font-bold relative;
   }
 

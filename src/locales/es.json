@@ -56,13 +56,13 @@
   "manifest": {
     "title": "¿En qué creemos?",
     "subtitle": "Manifiesto",
-    "claim": "Practicamos el <span class=\"featured\">Storybuilding experience</span> por encima de todas las cosas.",
-    "lefttext": " <span class=\"featured\"               >Creemos en el poder inspirador y motivador de las historias</span             >             para que los demás sientan tu marca igual que nosotros, como parte             de nuestras vidas."
+    "claim": "Practicamos el <b>Storybuilding experience</b> por encima de todas las cosas.",
+    "lefttext": " <b>Creemos en el poder inspirador y motivador de las historias</b>             para que los demás sientan tu marca igual que nosotros, como parte             de nuestras vidas."
   },
   "pometa": {
     "title": "Fresh ideas for new",
     "subtitle": "times",
-    "claim": "<span class=\"featured\">Frescos, creativos y disruptivos</span>, <br />tenemos todas las propiedades de la fruta reina: ¡la manzana! Saboreamos nuestro trabajo a mordiscos, ¡con pasión!"
+    "claim": "<b>Frescos, creativos y disruptivos</b>, <br />tenemos todas las propiedades de la fruta reina: ¡la manzana! Saboreamos nuestro trabajo a mordiscos, ¡con pasión!"
   },
   "projects": {
     "title": "Historias de nuestras",

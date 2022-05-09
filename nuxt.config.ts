@@ -1,4 +1,5 @@
 import { defineNuxtConfig } from 'nuxt'
+import Icons from 'unplugin-icons/vite'
 
 export default defineNuxtConfig({
   meta: {
@@ -9,6 +10,10 @@ export default defineNuxtConfig({
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.png' },
     ]
+  },
+
+  vite: {
+    plugins: [Icons({})],
   },
 
   components: {

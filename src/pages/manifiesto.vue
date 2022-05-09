@@ -27,13 +27,13 @@
         </div>
         <div class="right">
           <h4 class="title-2">
-            <span class="featured">Queremos ser partícipes de tu marca,</span>
+            <b>Queremos ser partícipes de tu marca,</b>
             de tu historia…. Queremos sentir cosas, ¡y todas ellas buenas!
           </h4>
         </div>
         <div class="center">
           <h4 class="title-2 text-center max-w-screen-sm mx-auto">
-            <span class="featured-2">Juntos co-crearemos tu marca</span>
+            <b>Juntos co-crearemos tu marca</b>
             con un relato cargado de pasión, esfuerzo, creatividad y estrategia.
           </h4>
         </div>
@@ -50,13 +50,13 @@
             alt=""
           />
           <h4 class="title-2">
-            <span class="featured">Nos va la disrupción,</span> el trabajo duro,
-            el traspasar los límites, crear, soñar y vivir a tope.
+            <b>Nos va la disrupción,</b> el trabajo duro, el traspasar los
+            límites, crear, soñar y vivir a tope.
           </h4>
         </div>
         <div class="right">
           <h4 class="title-2">
-            <span class="featured">Iremos de la mano en este viaje</span>
+            <b>Iremos de la mano en este viaje</b>
             siempre que nos necesites: como sabes,
             <u>las buenas historias nunca se acaban.</u>
           </h4>

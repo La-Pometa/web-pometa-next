@@ -56,14 +56,14 @@
   "manifest": {
     "title": "En què creiem?",
     "subtitle": "Manifest",
-    "claim": "Practiquem el <span class=\"featured\">Storybuilding experience</span> per sobre de totes les coses.",
-    "lefttext": "<span class=\"featured\" >Creiem en el poder inspirador i motivador de les històries</span > perquè els altres sentin la teva marca igual que nosaltres, com a part de les nostres vides."
+    "claim": "Practiquem el <b>Storybuilding experience</b> per sobre de totes les coses.",
+    "lefttext": "<b>Creiem en el poder inspirador i motivador de les històries</b> perquè els altres sentin la teva marca igual que nosaltres, com a part de les nostres vides."
   },
   "contact": {
     "title": "Parlem de <br /><span class=\"featured\"> la teva Marca?</span>"
   },
   "pometa": {
-    "claim": "<span class=\"featured\">Frescs, creatius i disruptius</span>, <br />tenim totes les propietats de la fruita reina: la poma! \nAssaborim la nostra feina a mossegades, amb passió!",
+    "claim": "<b>Frescs, creatius i disruptius</b>, <br />tenim totes les propietats de la fruita reina: la poma! \nAssaborim la nostra feina a mossegades, amb passió!",
     "subtitle": "times",
     "title": "Fresh idees for new"
   },
