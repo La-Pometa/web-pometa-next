@@ -57,6 +57,7 @@ const featuredMembers = computed(() =>
         >
           <div v-if="member.featured_source" class="image">
             <app-image :data="member.featured_source"></app-image>
+            <div class="overlay" v-html="member.content.rendered"></div>
           </div>
           <div class="inner">
             <div class="name title-3">
@@ -69,7 +70,6 @@ const featuredMembers = computed(() =>
               class="position"
               v-html="member.embedded.postmeta.membersTitle"
             ></div>
-            <div class="claim" v-html="member.content.rendered"></div>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@ const featuredMembers = computed(() =>
     </div>
     <div v-else class="content">
       <div class="featured-members">
-        <div v-for="index in 1" :key="index" class="member featured">
+        <div v-for="index in 2" :key="index" class="member featured">
           <div class="image">
             <PuSkeleton height="100%" />
           </div>
@@ -126,13 +126,14 @@ const featuredMembers = computed(() =>
 </template>
 <style lang="scss">
 #page-pometa {
-  @apply container margins space-y-10 sm:space-y-14;
+  @apply container margins max-w-screen-xl space-y-10 sm:space-y-14;
 
   .content {
     @apply space-y-16;
 
     .featured-members {
-      @apply grid grid-flow-col max-w-screen-lg mx-auto;
+      @apply grid max-w-screen-md mx-auto justify-center justify-items-stretch gap-8;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .members {
       @apply sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-7;
@@ -167,58 +168,23 @@ const featuredMembers = computed(() =>
       @apply relative;
 
       &.featured {
-        @apply grid lg:grid-cols-12 gap-5 lg:gap-10;
-
-        .image {
-          @apply lg:col-span-5;
-        }
-
-        .inner {
-          @apply lg:col-span-7;
-        }
-
-        .position {
-          @apply mt-3 lg:mt-5;
-        }
-
-        .claim {
-          @apply mt-8 lg:mt-16;
-        }
-      }
-
-      .name {
-        @apply leading-[4rem];
-      }
-
-      &:not(.featured) {
         .name {
-          @apply text-center z-20 relative -mt-4;
+          @apply mt-5;
+        }
 
-          .featured {
-            @apply leading-[4rem];
+        &:nth-child(even) {
+          .image {
+            &:before {
+              @apply translate-y-3;
+            }
           }
         }
-        .claim {
-          @apply text-center -mt-4;
-        }
-      }
 
-      .image {
-        @apply aspect-w-9 aspect-h-12;
-
-        .overlay {
-          @apply absolute inset-0 flex items-center justify-center z-10;
-          @apply font-butler text-white text-2xl text-center bg-dark-100/70 p-5;
-          @apply sm:opacity-0 transition duration-300;
-        }
-
-        img {
-          @apply absolute w-full h-full object-cover grayscale z-10;
-        }
-      }
-
-      &.featured {
         .image {
+          .overlay {
+            @apply msm:opacity-0;
+          }
+
           @screen sm {
             &:after,
             &:before {
@@ -228,14 +194,43 @@ const featuredMembers = computed(() =>
             &:before {
               content: '';
               @apply absolute inset-0 bg-primary;
-            }
-
-            &:before {
               @apply -translate-y-3 translate-x-3;
             }
           }
         }
       }
+
+      .position {
+        @apply text-center;
+      }
+
+      .name {
+        @apply text-center z-20 relative -mt-4;
+        @apply leading-[4rem];
+
+        .featured {
+          @apply leading-[4rem];
+        }
+      }
+
+      .claim {
+        @apply text-center -mt-4;
+      }
+
+      .image {
+        @apply aspect-w-9 aspect-h-12;
+
+        .overlay {
+          @apply absolute inset-0 flex flex-col items-center justify-center z-10;
+          @apply font-butler text-white text-2xl text-center bg-dark-100/70 p-5;
+          @apply sm:opacity-0 transition duration-300;
+        }
+
+        img {
+          @apply absolute w-full h-full object-cover grayscale z-10;
+        }
+      }
+
       /* 
       &:not(.featured) {
         .image {
