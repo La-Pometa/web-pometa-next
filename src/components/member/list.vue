@@ -39,27 +39,29 @@ const featuredMembers = computed(() =>
 <template>
   <div id="member-list">
     <div v-if="members" class="content">
-      <div class="featured-members">
-        <div
-          v-for="(member, index) in featuredMembers"
-          :key="index"
-          class="member featured"
-        >
-          <div v-if="member.featured_source" class="image">
-            <app-image :data="member.featured_source"></app-image>
-            <div class="overlay" v-html="member.content.rendered"></div>
-          </div>
-          <div class="inner">
-            <div class="name title-3">
-              {{ member.embedded.postmeta.membersName }}
-              <span class="featured">
-                {{ member.embedded.postmeta.membersSurname }}
-              </span>
+      <div class="featured-wrapper">
+        <div class="featured-members">
+          <div
+            v-for="(member, index) in featuredMembers"
+            :key="index"
+            class="member featured"
+          >
+            <div v-if="member.featured_source" class="image">
+              <app-image :data="member.featured_source"></app-image>
+              <div class="overlay" v-html="member.content.rendered"></div>
             </div>
-            <div
-              class="position"
-              v-html="member.embedded.postmeta.membersTitle"
-            ></div>
+            <div class="inner">
+              <div class="name title-3">
+                {{ member.embedded.postmeta.membersName }}
+                <span class="featured">
+                  {{ member.embedded.postmeta.membersSurname }}
+                </span>
+              </div>
+              <div
+                class="position"
+                v-html="member.embedded.postmeta.membersTitle"
+              ></div>
+            </div>
           </div>
         </div>
       </div>
@@ -83,17 +85,19 @@ const featuredMembers = computed(() =>
       </div>
     </div>
     <div v-else class="content">
-      <div class="featured-members">
-        <div v-for="index in 2" :key="index" class="member featured">
-          <div class="image">
-            <PuSkeleton height="100%" />
-          </div>
-          <div class="inner">
-            <div class="name title-3">
-              <PuSkeleton />
+      <div class="featured-wrapper">
+        <div class="featured-members">
+          <div v-for="index in 2" :key="index" class="member featured">
+            <div class="image">
+              <PuSkeleton height="100%" />
             </div>
-            <div class="position"><PuSkeleton :count="3" /></div>
-            <div class="claim"><PuSkeleton :count="3" /></div>
+            <div class="inner">
+              <div class="name title-3">
+                <PuSkeleton />
+              </div>
+              <div class="position"><PuSkeleton :count="3" /></div>
+              <div class="claim"><PuSkeleton :count="3" /></div>
+            </div>
           </div>
         </div>
       </div>
@@ -119,8 +123,11 @@ const featuredMembers = computed(() =>
     @apply space-y-16;
   }
 
+  .featured-wrapper {
+    @apply max-w-screen-md mx-auto;
+  }
   .featured-members {
-    @apply grid max-w-screen-md mx-auto justify-center justify-items-stretch gap-8;
+    @apply grid justify-center justify-items-stretch gap-8;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .members {
