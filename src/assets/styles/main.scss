@@ -36,6 +36,16 @@ body {
 @layer components {
   .margins-x {
     @apply mx-auto px-10 msm:px-5;
+
+    &-header {
+      @apply mx-auto px-10 msm:px-5 msm:mt-14 pt-10 sm:pt-20;
+    }
+    &-footer {
+      @apply mx-auto px-10 msm:px-5 pb-10 sm:pb-20;
+    }
+  }
+  .margins-y {
+    @apply py-20 msm:py-10 msm:mt-14;
   }
   .margins {
     @apply mx-auto py-20 msm:py-10 px-10 msm:px-5 msm:mt-14;
@@ -49,5 +59,25 @@ body {
 @media (prefers-color-scheme: dark) {
   .pu-skeleton {
     filter: invert(0.9);
+  }
+}
+
+section.common {
+  @apply container margins-x;
+
+  &-sm {
+    @apply container margins-x max-w-screen-sm;
+  }
+
+  &-md {
+    @apply container margins-x max-w-screen-md;
+  }
+
+  &-lg {
+    @apply container margins-x max-w-screen-lg;
+  }
+
+  &-xl {
+    @apply container margins-x max-w-screen-xl;
   }
 }

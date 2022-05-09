@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
-  <section id="page-pometa">
-    <header class="text-center container margins">
+  <div id="page-pometa" class="margins-y">
+    <header class="text-center container margins-x">
       <h1 class="title">
         {{ $t('pometa.title') }} <br />
         <span class="featured"> {{ $t('pometa.subtitle') }} </span>
@@ -11,7 +11,7 @@
         v-html="$t('pometa.claim')"
       ></h3>
     </header>
-    <member-list />
+    <section class="common-xl"><member-list /></section>
     <div class="brands">
       <div class="inner">
         <h4 class="title-2 text-center">
@@ -21,8 +21,10 @@
         </h4>
       </div>
     </div>
-    <cta-contact />
-  </section>
+    <section class="common">
+      <cta-contact />
+    </section>
+  </div>
 </template>
 <style lang="scss">
 #page-pometa {

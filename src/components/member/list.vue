@@ -38,7 +38,7 @@ const featuredMembers = computed(() =>
 </script>
 <template>
   <div id="member-list">
-    <div v-if="members">
+    <div v-if="members" class="content">
       <div class="featured-members">
         <div
           v-for="(member, index) in featuredMembers"
@@ -115,15 +115,17 @@ const featuredMembers = computed(() =>
 </template>
 <style lang="scss">
 #member-list {
-  @apply container margins-x max-w-screen-xl;
-  @apply space-y-16;
+  .content {
+    @apply space-y-16;
+  }
 
   .featured-members {
     @apply grid max-w-screen-md mx-auto justify-center justify-items-stretch gap-8;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .members {
-    @apply sm:grid sm:grid-cols-2 xl:grid-cols-3 sm:gap-7;
+    @apply sm:grid sm:gap-7;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
 
     @screen msm {
       @apply snap-mandatory snap-x overflow-x-auto;
