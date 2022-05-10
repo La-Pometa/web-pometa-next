@@ -94,6 +94,26 @@ const availableLocales = computed(() => {
               />
             </div>
           </div>
+          <div v-if="$i18n.locale == 'en'" class="logo eng">
+            <div class="responsive-image">
+              <img
+                class="dark:hidden"
+                alt="logo la pometa"
+                :width="300"
+                :height="82"
+                src="@/assets/img/layout/logos-pometa-eng.svg"
+              />
+            </div>
+            <div class="responsive-image">
+              <img
+                class="hidden dark:block"
+                alt="logo la pometa"
+                :width="300"
+                :height="82"
+                src="@/assets/img/layout/logos-pometa-eng-white.svg"
+              />
+            </div>
+          </div>
         </NuxtLink>
         <LayoutMenu></LayoutMenu>
         <LayoutFooter></LayoutFooter>
@@ -119,11 +139,11 @@ const availableLocales = computed(() => {
                 v-for="l in availableLocales"
                 :key="l.code"
                 :to="switchLocalePath(l.code)"
-                class="py-2"
+                class="py-2 last:pb-0 first:pt-0"
                 >{{ l.name }}</NuxtLink
               >
             </span>
-            <div class="msm:hidden cursor-pointer">
+            <div class="burger-wrapper">
               <div class="burger black small">
                 <span></span>
                 <span></span>
@@ -210,6 +230,9 @@ const availableLocales = computed(() => {
 }
 @screen md {
   #sidebar-wrapper.toggleable {
+    .burger-wrapper {
+      @apply block;
+    }
     #left-sideBar {
       transform: translateX(-16rem);
     }
@@ -242,6 +265,10 @@ const availableLocales = computed(() => {
 #sidebar-visible {
   flex: 0 0 3.5rem;
   width: 3.5rem;
+}
+
+.burger-wrapper {
+  @apply msm:hidden cursor-pointer hidden;
 }
 
 .burger {

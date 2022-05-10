@@ -26,16 +26,13 @@
           />
         </div>
         <div class="right">
-          <h4 class="title-2">
-            <b>Queremos ser partícipes de tu marca,</b>
-            de tu historia…. Queremos sentir cosas, ¡y todas ellas buenas!
-          </h4>
+          <h4 class="title-2" v-html="$t('manifest.wewant')"></h4>
         </div>
         <div class="center">
-          <h4 class="title-2 text-center max-w-screen-sm mx-auto">
-            <b>Juntos co-crearemos tu marca</b>
-            con un relato cargado de pasión, esfuerzo, creatividad y estrategia.
-          </h4>
+          <h4
+            class="title-2 text-center max-w-screen-sm mx-auto"
+            v-html="$t('manifest.cocreate')"
+          ></h4>
         </div>
       </div>
     </div>
@@ -49,17 +46,10 @@
             src="@/assets/img/manifest/arrow-white.svg"
             alt=""
           />
-          <h4 class="title-2">
-            <b>Nos va la disrupción,</b> el trabajo duro, el traspasar los
-            límites, crear, soñar y vivir a tope.
-          </h4>
+          <h4 class="title-2" v-html="$t('manifest.bottom.topleft')"></h4>
         </div>
         <div class="right">
-          <h4 class="title-2">
-            <b>Iremos de la mano en este viaje</b>
-            siempre que nos necesites: como sabes,
-            <u>las buenas historias nunca se acaban.</u>
-          </h4>
+          <h4 class="title-2" v-html="$t('manifest.bottom.topright')"></h4>
         </div>
         <div class="center">
           <cta-contact variant="light" />
