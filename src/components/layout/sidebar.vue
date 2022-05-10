@@ -114,11 +114,12 @@ const availableLocales = computed(() => {
           class="transition-all duration-500 h-full flex items-center justify-center sticky top-0"
         >
           <div class="grid items-center justify-items-center gap-5">
-            <span class="font-butler text-sm">
+            <span class="font-butler text-sm divide-y grid">
               <NuxtLink
                 v-for="l in availableLocales"
                 :key="l.code"
                 :to="switchLocalePath(l.code)"
+                class="py-2"
                 >{{ l.name }}</NuxtLink
               >
             </span>

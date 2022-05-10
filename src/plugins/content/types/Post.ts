@@ -137,7 +137,7 @@ export interface Post {
 export interface PostEmbedded {
   postmeta: Record<string, any>;
   taxes: any[];
-  taxonomies: Taxonomies;
+  taxonomies: Record<string, any>;
   author: Author;
 }
 
@@ -148,6 +148,3 @@ export interface Author {
   url: string;
 }
 
-export interface Taxonomies {
-  membertipus: any[];
-}

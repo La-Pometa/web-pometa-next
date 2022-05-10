@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n'
 import { useLocalePath } from 'vue-i18n-routing'
 import type { Post } from '../plugins/content/types'
 
-defineProps<{
+const { data } = defineProps<{
   data: Post
 }>()
 
@@ -20,44 +20,9 @@ const formatDate = (date) => {
   })
 }
 
-const categories = ref<{ name: string; slug: string }[]>([
-  {
-    name: t('post.category.agency'),
-    slug: 'agencia',
-  },
-  {
-    name: t('post.category.tips'),
-    slug: 'consejos-y-trucos',
-  },
-  {
-    name: t('post.category.definitions'),
-    slug: 'definiciones',
-  },
-  {
-    name: t('post.category.event'),
-    slug: 'evento',
-  },
-  {
-    name: t('post.category.tools'),
-    slug: 'herramientas',
-  },
-  {
-    name: t('post.category.info'),
-    slug: 'infografias',
-  },
-  {
-    name: t('post.category.news'),
-    slug: 'noticias',
-  },
-  {
-    name: t('post.category.projects'),
-    slug: 'proyectos',
-  },
-  {
-    name: t('post.category.trends'),
-    slug: 'tendencias',
-  },
-])
+const categories = ref<{ name: string; slug: string }[]>(
+  data.embedded.taxonomies.category
+)
 </script>
 <template>
   <article id="single-post" class="layout">

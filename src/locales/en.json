@@ -1,0 +1,95 @@
+{
+  "blog": {
+    "back": "back to blog",
+    "post": {
+      "readmore": "Tell me more"
+    },
+    "subtitle": "Blog",
+    "title": "We explain things to you"
+  },
+  "breakfast": {
+    "title": "Have breakfast<br /><span class=\"featured\">with Apples</span>"
+  },
+  "contact": {
+    "title": "Are we talking about <br /><span class=\"featured\"> your Brand?</span>"
+  },
+  "cookies": {
+    "accept": "To accept",
+    "policy": "Cookies policy",
+    "preferences": "Personalize",
+    "uses": "We use cookies to improve your experience 💚."
+  },
+  "cta": {
+    "contact": {
+      "button": "contact us",
+      "title": "Are we talking about <br /> <span class=\"featured ml-20 whitespace-nowrap\">your brand?</span>"
+    }
+  },
+  "error": {
+    "return": "Back to top"
+  },
+  "footer": {
+    "aviso": "Legal warning",
+    "cookies": "Cookies policy",
+    "map": "Site Map",
+    "oficinas": "Offices in Lleida and Barcelona",
+    "privacidad": "Privacy Policy"
+  },
+  "home": {
+    "manifest": "Manifest",
+    "next1": "We believe in our clients!",
+    "next2": "A story full of talent",
+    "prev1": "No one resists a good story",
+    "prev2": "We believe in our clients!",
+    "title1": "No one can resist a good story… Let's start building it <span class=\"featured\">together.</span>",
+    "title2": "We are a <span class=\"text-primary\">creative agency</span> that believes in the motivating and inspiring power of stories. \nWe believe in our clients!"
+  },
+  "manifest": {
+    "claim": "We practice the <b>Storybuilding experience</b> above all things.",
+    "lefttext": "<b>We believe in the inspiring and motivating power of stories</b> so that others feel your brand as much as we do, as part of our lives.",
+    "subtitle": "Manifest",
+    "title": "What do we believe?"
+  },
+  "menu": {
+    "blog": "Blog",
+    "breakfast": "Breakfast with apples",
+    "contact": "Contact",
+    "home": "Home",
+    "kitdigital": "digital-kit",
+    "manifest": "Manifest",
+    "pometa": "The pomegranate!",
+    "projects": "Projects",
+    "services": {
+      "design": "Graphic design",
+      "marketing": "Your Marketing Department",
+      "publicity": "Online and offline advertising",
+      "title": "Services",
+      "web": "I design websites"
+    }
+  },
+  "pometa": {
+    "claim": "<b>Fresh, creative and disruptive</b>, <br />we have all the properties of the queen fruit: the apple! \nWe savor our work with bites, with passion!",
+    "subtitle": "times",
+    "title": "Fresh ideas for new"
+  },
+  "post": {
+    "author_by": "For",
+    "categories": "Categories",
+    "category": {
+      "agency": "Agency",
+      "definitions": "Definitions",
+      "event": "Event",
+      "info": "infographics",
+      "news": "News",
+      "projects": "Projects",
+      "tips": "tips and tricks",
+      "tools": "Tools",
+      "trends": "Trends"
+    },
+    "share": "Share me!"
+  },
+  "projects": {
+    "subtitle": "brands",
+    "title": "stories of our"
+  }
+}
