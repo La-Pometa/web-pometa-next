@@ -1,10 +1,11 @@
 import { defineStore } from "pinia"
+import type { Translation } from "../plugins/content/types/Post";
 
 export const useI18nStore = defineStore('i18n', () => {
 
-	const routeParamsByLang = ref<Record<string, Record<string, string>>>();
+	const routeParamsByLang = ref<Translation>();
 
-	function setRouteParams(value: Record<string, Record<string, string>>) {
+	function setRouteParams(value: Translation) {
 		routeParamsByLang.value = value;
 	}
 

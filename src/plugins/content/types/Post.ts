@@ -129,6 +129,7 @@ export interface Post {
   author_info: AuthorInfo
   tax_info: any[]
   meta_info: MetaInfo
+  translation: Translation
   featured_source: boolean
   yoast_head: string
   yoast_head_json: YoastHeadJSON
@@ -148,3 +149,4 @@ export interface Author {
   url: string;
 }
 
+export type Translation = Record<string, Record<string, string>>;

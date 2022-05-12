@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { createError } from 'h3'
 import { useI18n } from 'vue-i18n'
+import { useI18nStore } from '../stores/i18n'
 import type { Page, Post } from '../plugins/content/types'
 
 definePageMeta({
@@ -62,6 +63,7 @@ const { data, error } = await useAsyncData<Post | Page>(
   `${slug}_${locale.value}`,
   () => $content.path().slug(slug.toString()).param('lang', locale.value).get()
 )
+
 if (error.value) {
   const errorCaptured = error.value as any
   throwError(
@@ -71,6 +73,10 @@ if (error.value) {
     })
   )
 }
+
+const i18nStore = useI18nStore()
+
+i18nStore.setRouteParams(data.value.translation)
 </script>
 <template>
   <component :is="`single-${data.type}`" v-if="data" :data="data"></component>

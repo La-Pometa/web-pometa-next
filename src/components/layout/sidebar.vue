@@ -2,7 +2,8 @@
 import { breakpointsTailwind } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import type { LocaleObject } from 'vue-i18n-routing'
-import { useLocalePath, useSwitchLocalePath } from 'vue-i18n-routing'
+import { useLocalePath } from 'vue-i18n-routing'
+import { switchLocalePath } from '~~/src/plugins/i18n'
 
 const emit = defineEmits(['toggled'])
 
@@ -12,7 +13,6 @@ const sidebarWrapper = ref()
 
 const { locale, locales } = useI18n()
 const localePath = useLocalePath()
-const switchLocalePath = useSwitchLocalePath()
 
 const [isOpen, toggleOpen] = useToggle(false)
 
