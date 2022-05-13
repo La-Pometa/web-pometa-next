@@ -61,7 +61,6 @@ const categories = ref<{ name: string; slug: string }[]>(
           <div class="header">
             <app-image
               :data="data.featured_source"
-              :lazy="false"
               class="featured"
             ></app-image>
           </div>
@@ -174,9 +173,6 @@ const categories = ref<{ name: string; slug: string }[]>(
 
   .header {
     @apply aspect-w-7 aspect-h-4;
-    .responsive-image img {
-      @apply w-full h-full object-cover;
-    }
   }
 
   video,

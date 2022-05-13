@@ -188,19 +188,17 @@ export default {
 </script>
 <style lang="scss" scoped>
 .responsive-image {
-  @apply max-w-full overflow-hidden;
+  @apply max-w-full overflow-hidden relative;
 }
-/* picture {
+picture {
   img {
-    transition: all 0.4s ease-in;
-    @apply filter blur-lg;
+    @apply filter blur-md w-full h-full object-cover object-center;
     &.loaded {
       @apply filter blur-0;
     }
     &.no-blur {
-      transition: all 0s ease-in;
       filter: blur(0px) !important;
     }
   }
-} */
+}
 </style>

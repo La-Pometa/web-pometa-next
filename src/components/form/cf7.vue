@@ -4,11 +4,12 @@
   </div>
 </template>
 <script>
-export default {
+export default defineComponent({
   data() {
     return {
       elm: null,
       inputs: [],
+      render: '',
       formId: 0,
       submitElm: null,
       acceptanceElm: null,
@@ -37,9 +38,8 @@ export default {
       this.removeAllSpans()
       this.fetchAllInputs()
       this.submitElm.classList.add('loading')
-      console.log(this.inputs)
       this.parseResponse(
-        await this.$content.postContactForm(this.inputs, this.formId)
+        await this.$content.postFormCf7(this.inputs, this.formId)
       )
       this.submitElm.classList.remove('loading')
     })
@@ -89,7 +89,7 @@ export default {
     parseResponse(res) {
       if (res.status === 'validation_failed') {
         res.invalid_fields.forEach((field) => {
-          field.elm = this.elm.querySelector(field.into + '> *')
+          field.elm = this.elm.querySelector(`${field.into} > *`)
 
           const errorSpan = document.createElement('span')
           errorSpan.innerHTML = field.message
@@ -116,7 +116,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 <style lang="scss">
 .cf7-form {
@@ -136,7 +136,7 @@ export default {
   textarea,
   select {
     max-width: 100%;
-    @apply w-full border-gray-300  focus:border-secondary focus:ring-4 focus:ring-secondary/20;
+    @apply w-full border-transparent border-2 border-b-primary bg-transparent focus:ring-0 focus:ring-secondary/20 px-0;
 
     &.invalid {
       @apply bg-red-600 bg-opacity-10 border-red-400 ring ring-red-400 ring-opacity-50;
@@ -182,7 +182,7 @@ export default {
     @apply mr-2;
   }
   [type='checkbox'] {
-    @apply border-gray-300 text-secondary focus:border-secondary checked:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20 mr-2;
+    @apply inline-block border-primary rounded-full text-secondary focus:border-secondary checked:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20 mr-2;
 
     & ~ span {
       @apply text-sm;

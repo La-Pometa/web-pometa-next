@@ -5,7 +5,7 @@ const { slices } = defineProps<{
   slices: Slice[]
 }>()
 </script>
-.
+
 <template>
   <div class="slices">
     <component
@@ -22,7 +22,7 @@ const { slices } = defineProps<{
   @apply container mx-auto py-5 px-3;
 }
 .slices {
-  @apply space-y-8 sm:space-y-16;
+  @apply space-y-8 sm:space-y-16 margins-y;
 
   .the-content:first-child {
     @apply mt-8 sm:mt-16;

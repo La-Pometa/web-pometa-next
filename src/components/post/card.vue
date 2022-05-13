@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <div v-if="post" class="blog-card">
     <div v-if="post.featured_source" class="blog-card-img">
-      <app-image :data="post?.featured_source" :lazy="index > 6"></app-image>
+      <app-image :data="post?.featured_source"></app-image>
     </div>
     <div v-else class="blog-card-img"><PuSkeleton height="100%" /></div>
     <div>
