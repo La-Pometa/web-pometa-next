@@ -230,9 +230,6 @@ const availableLocales = computed(() => {
 }
 @screen md {
   #sidebar-wrapper.toggleable {
-    .burger-wrapper {
-      @apply block;
-    }
     #left-sideBar {
       transform: translateX(-16rem);
     }

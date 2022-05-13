@@ -14,7 +14,7 @@ export default {
         attrs: { class: 'components' },
       },
       this.slices.map((slice) =>
-        h('slice-' + slice.type, {
+        h(`slice-${  slice.type}`, {
           props: { params: slice.params },
         })
       )
