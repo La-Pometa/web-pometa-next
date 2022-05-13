@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { useLocalePath } from 'vue-i18n-routing'
 import type { Post } from '../plugins/content/types'
 
@@ -8,17 +7,6 @@ const { data } = defineProps<{
 }>()
 
 const localePath = useLocalePath()
-
-const { locale, t } = useI18n()
-
-const formatDate = (date) => {
-  const newDate = new Date(date)
-
-  return newDate.toLocaleDateString(locale.value, {
-    month: 'short',
-    year: 'numeric',
-  })
-}
 
 const categories = ref<{ name: string; slug: string }[]>(
   data.embedded.taxonomies.category
@@ -79,14 +67,9 @@ const categories = ref<{ name: string; slug: string }[]>(
           </div>
           <div>
             <div class="sub-image">
-              <span
-                v-for="(tax, i) in data.tax_info"
-                :key="tax.term_id"
-                class="category"
-                ><span v-if="i != 0">, </span>{{ tax.name }}</span
-              >
+              <post-taxes :taxes="data.embedded.taxes" />
               <span v-if="data.embedded.taxes.length > 0"> | </span>
-              <span class="date">{{ formatDate(data.date) }}</span>
+              <post-date :date="data.date" />
             </div>
           </div>
           <post-author

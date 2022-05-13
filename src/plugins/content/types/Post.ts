@@ -137,10 +137,18 @@ export interface Post {
 
 export interface PostEmbedded {
   postmeta: Record<string, any>;
-  taxes: any[];
+  taxes: Tax[];
   taxonomies: Record<string, any>;
   author: Author;
 }
+
+export interface Tax {
+  taxonomy: string;
+  name: string;
+  link: string;
+  term_id: number;
+}
+
 
 export interface Author {
   id: string;
