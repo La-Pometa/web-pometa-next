@@ -21,7 +21,25 @@ h2.subtitle {
   @apply text-2xl lg:text-3xl leading-[1.5rem] lg:leading-[2rem] font-medium;
 
   .featured-2,
-  b {
+  b,
+  strong {
+    @apply font-butler font-bold relative;
+  }
+
+  .featured-2 {
+    &::before {
+      content: '';
+      @apply bg-primary absolute -inset-2 -translate-y-1 -z-10;
+    }
+  }
+}
+
+.title-4 {
+  @apply text-xl lg:text-2xl leading-[1.5rem] font-medium;
+
+  .featured-2,
+  b,
+  strong {
     @apply font-butler font-bold relative;
   }
 

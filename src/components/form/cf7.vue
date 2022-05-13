@@ -136,11 +136,14 @@ export default defineComponent({
   textarea,
   select {
     max-width: 100%;
-    @apply w-full border-transparent border-2 border-b-primary bg-transparent focus:ring-0 focus:ring-secondary/20 px-0;
+    @apply dark:placeholder:text-white w-full border-0 border-b-2 focus:placeholder:text-primary border-b-primary bg-transparent focus:ring-0 focus:ring-secondary/20 px-0;
 
     &.invalid {
-      @apply bg-red-600 bg-opacity-10 border-red-400 ring ring-red-400 ring-opacity-50;
+      @apply border-b-red-400;
     }
+  }
+  select {
+    @apply focus:text-primary;
   }
   form > p {
     @apply mb-5;

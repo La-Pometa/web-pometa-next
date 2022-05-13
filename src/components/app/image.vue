@@ -1,5 +1,5 @@
 <template>
-  <div class="responsive-image">
+  <div class="responsive-image" :class="{ loaded }">
     <picture v-if="!format">
       <source v-if="!loaded && lazy" data="mini" :srcset="srcMini" />
       <source
@@ -173,9 +173,6 @@ export default {
 
       if (this.lazy) {
         this.$refs.image.addEventListener('load', () => {
-          this.$refs.image.classList.remove('hidden')
-          this.$refs.image.classList.remove('loading')
-          this.$refs.image.classList.add('loaded')
           this.loaded = true
           this.observer.disconnect()
         })
@@ -189,16 +186,24 @@ export default {
 <style lang="scss" scoped>
 .responsive-image {
   @apply max-w-full overflow-hidden relative;
+
+  &::after {
+    content: '';
+    @apply absolute inset-0 backdrop-blur-3xl;
+  }
+  &.loaded {
+    &::after {
+      @apply backdrop-blur-0;
+    }
+  }
+  &.no-blur {
+    &::after {
+      @apply backdrop-blur-0;
+    }
+  }
 }
 picture {
   img {
-    @apply filter blur-md w-full h-full object-cover object-center;
-    &.loaded {
-      @apply filter blur-0;
-    }
-    &.no-blur {
-      filter: blur(0px) !important;
-    }
   }
 }
 </style>

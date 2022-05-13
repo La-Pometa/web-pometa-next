@@ -173,6 +173,9 @@ const categories = ref<{ name: string; slug: string }[]>(
 
   .header {
     @apply aspect-w-7 aspect-h-4;
+    .responsive-image img {
+      @apply w-full h-full object-cover;
+    }
   }
 
   video,
