@@ -67,8 +67,8 @@ export default defineNuxtConfig({
     vueI18n: {
       legacy: false,
       locale: 'es',
-      fallbackLocale: 'es'
-    }
+      fallbackLocale: 'es',
+    },
   },
 
   vueuse: {

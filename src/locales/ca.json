@@ -14,7 +14,13 @@
     "blog": "Blog",
     "contact": "Contacte",
     "breakfast": "Esmorza amb Pomes",
-    "kitdigital": "Kit Digital"
+    "kitdigital": "Kit Digital",
+    "pometa-link": "/pometa",
+    "manifest-link": "/manifiesto",
+    "projects-link": "/proyectos",
+    "blog-link": "/blog",
+    "contact-link": "/contacte",
+    "breakfast-link": "/esmorza-amb-pomes"
   },
   "footer": {
     "oficinas": "Oficines a Lleida i Barcelona",
@@ -56,7 +62,7 @@
   "manifest": {
     "title": "En què creiem?",
     "subtitle": "Manifest",
-    "claim": "Practiquem el <b>Storybuilding experience</b> per sobre de totes les coses.",
+    "claim": "Practiquem l'<b>Storybuilding Experience</b> per sobre de totes les coses.",
     "lefttext": "<b>Creiem en el poder inspirador i motivador de les històries</b> perquè els altres sentin la teva marca igual que nosaltres, com a part de les nostres vides.",
     "bottom": {
       "topleft": "<b>Ens va la disrupció,</b> el treball dur, el traspassar els límits, crear, somiar i viure al màxim.",

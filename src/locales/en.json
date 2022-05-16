@@ -45,7 +45,7 @@
     "title2": "We are a <span class=\"text-primary\">creative agency</span> that believes in the motivating and inspiring power of stories. \nWe believe in our clients!"
   },
   "manifest": {
-    "claim": "We practice the <b>Storybuilding experience</b> above all things.",
+    "claim": "We practice the <b>Storybuilding Experience</b> above all things.",
     "lefttext": "<b>We believe in the inspiring and motivating power of stories</b> so that others feel your brand as much as we do, as part of our lives.",
     "subtitle": "Manifest",
     "title": "What do we believe?",
@@ -71,7 +71,13 @@
       "publicity": "Online and offline advertising",
       "title": "Services",
       "web": "Advertising and Social Media"
-    }
+    },
+    "pometa-link": "/pometa",
+    "manifest-link": "/manifiesto",
+    "projects-link": "/proyectos",
+    "blog-link": "/blog",
+    "contact-link": "/contact",
+    "breakfast-link": "/breakfast-at-pometas"
   },
   "pometa": {
     "claim": "<b>Fresh, creative and disruptive</b>, <br />we have all the properties of the queen fruit: the apple! \nWe savor our work with bites, with passion!",

@@ -10,14 +10,18 @@ useHead({
 })
 
 const localePath = useLocalePath()
+
+const clear = () => {
+  clearError({
+    redirect: localePath('/'),
+  })
+}
 </script>
 <template>
   <div class="wrapper">
     <h1>{{ error.statusCode }}</h1>
     <h3 class="subtitle text-center" v-html="error.message"></h3>
-    <a :href="localePath('/')">
-      <app-button>{{ $t('error.return') }}</app-button>
-    </a>
+    <app-button @click="clear">{{ $t('error.return') }}</app-button>
   </div>
 </template>
 <style lang="scss" scoped>

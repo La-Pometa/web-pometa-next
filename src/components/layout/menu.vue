@@ -10,15 +10,17 @@ const localePath = useLocalePath()
       }}</nuxt-link>
     </span>
     <span class="item">
-      <nuxt-link :to="localePath('/pometa')">{{ $t('menu.pometa') }}</nuxt-link>
+      <nuxt-link :to="localePath($t('menu.pometa-link'))">{{
+        $t('menu.pometa')
+      }}</nuxt-link>
     </span>
     <span class="item">
-      <nuxt-link :to="localePath('/manifiesto')">{{
+      <nuxt-link :to="localePath($t('menu.manifest-link'))">{{
         $t('menu.manifest')
       }}</nuxt-link>
     </span>
     <span class="item">
-      <nuxt-link :to="localePath('/proyectos')">{{
+      <nuxt-link :to="localePath($t('menu.projects-link'))">{{
         $t('menu.projects')
       }}</nuxt-link>
     </span>
@@ -46,17 +48,17 @@ const localePath = useLocalePath()
       </div>
     </span>
     <span class="item"
-      ><nuxt-link :to="localePath('/blog')">{{
+      ><nuxt-link :to="localePath($t('menu.blog-link'))">{{
         $t('menu.blog')
       }}</nuxt-link></span
     >
     <span class="item"
-      ><nuxt-link :to="localePath('/contacto')">{{
+      ><nuxt-link :to="localePath($t('menu.contact-link'))">{{
         $t('menu.contact')
       }}</nuxt-link></span
     >
     <span class="item"
-      ><nuxt-link :to="localePath('/desayuna-con-manzanas')">{{
+      ><nuxt-link :to="localePath($t('menu.breakfast-link'))">{{
         $t('menu.breakfast')
       }}</nuxt-link></span
     >
