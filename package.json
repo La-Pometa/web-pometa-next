@@ -8,7 +8,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@^8.0.0-alpha.0-27516108.1766d8d",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge@8.0.0-alpha.0-27531750.4e4cffe",
     "@nuxtjs/tailwindcss": "^5.0.3",
     "@types/wpapi": "^1.1.1",
     "@yeger/vue-masonry-wall": "^3.0.29",

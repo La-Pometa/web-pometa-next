@@ -223,7 +223,7 @@ const featuredMembers = computed(() =>
       }
 
       img {
-        @apply absolute w-full h-full object-cover grayscale z-10;
+        @apply absolute w-full h-full object-cover grayscale;
       }
     }
 
