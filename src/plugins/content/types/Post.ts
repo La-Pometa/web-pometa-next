@@ -142,6 +142,7 @@ export interface PostEmbedded {
   taxes: Tax[];
   taxonomies: Record<string, any>;
   author: Author;
+  featuredImage: Image;
 }
 
 export interface Tax {

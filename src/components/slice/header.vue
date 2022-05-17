@@ -9,7 +9,7 @@ const title = params.title.replace(
 )
 </script>
 <template>
-  <header class="header-slice">
+  <header class="header-slice" :class="params.size ? params.size : ''">
     <div class="margins-x container text-center">
       <h1 class="title" v-html="title"></h1>
     </div>
@@ -18,6 +18,12 @@ const title = params.title.replace(
 </template>
 <style lang="scss">
 .header-slice {
+  &.large {
+    .top-image {
+      @apply h-auto aspect-w-9 aspect-h-5;
+    }
+  }
+
   .top-image {
     @apply h-96 w-full relative;
     img {
