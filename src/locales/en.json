@@ -103,5 +103,8 @@
   "projects": {
     "subtitle": "brands",
     "title": "stories of our"
+  },
+  "project": {
+    "related": "Related Posts"
   }
 }

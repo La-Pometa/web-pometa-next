@@ -63,3 +63,12 @@ h2.subtitle {
 blockquote {
   @apply px-5 py-3 sm:-mx-5 border-l-2 border-primary;
 }
+
+.title-mini {
+  @apply text-xl lg:text-2xl font-bold font-butler mb-10 relative inline-block;
+
+  &:after {
+    @apply h-1 left-0 bg-primary absolute -bottom-3 w-5/12;
+    content: '';
+  }
+}

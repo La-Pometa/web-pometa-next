@@ -103,5 +103,8 @@
       "title": "      ¿Hablamos de <br /> <span class=\"featured ml-20 whitespace-nowrap\">tu marca?</span>",
       "button": "Contáctanos"
     }
+  },
+  "project": {
+    "related": "Entradas relacionadas"
   }
 }

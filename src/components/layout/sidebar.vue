@@ -150,23 +150,23 @@ const availableLocales = computed(() => {
                 <span></span>
               </div>
             </div>
-            <a href="localePath('/desayuna-con-manzanas')">
+            <nuxt-link :to="localePath($t('menu.breakfast-link'))">
               <div class="taza responsive-image w-6">
                 <img
                   class="dark:hidden"
-                  alt="desayuno con manzanas"
+                  :alt="$t('menu.breakfast')"
                   :width="141"
                   :height="113"
                   src="@/assets/img/layout/taza_pometa.svg"
                 />
                 <img
                   class="hidden dark:block"
-                  alt="desayuno con manzanas"
+                  :alt="$t('menu.breakfast')"
                   :width="141"
                   :height="113"
                   src="@/assets/img/layout/taza_pometa_white.svg"
                 /></div
-            ></a>
+            ></nuxt-link>
           </div>
         </div>
 
