@@ -69,6 +69,23 @@ export default defineNuxtConfig({
       locale: 'es',
       fallbackLocale: 'es',
     },
+    pages: {
+      projects: {
+        ca: '/projectes',
+        es: '/proyectos',
+        en: '/projects',
+      },
+      team: {
+        ca: '/pometa',
+        es: '/pometa',
+        en: '/team',
+      },
+      manifest: {
+        ca: '/manifest',
+        es: '/manifiesto',
+        en: '/manifest',
+      }
+    }
   },
 
   vueuse: {
