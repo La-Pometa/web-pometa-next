@@ -1,3 +1,5 @@
+import type { Image } from "./Image"
+
 /* eslint-disable camelcase */
 export interface Content {
   rendered: string
@@ -130,7 +132,7 @@ export interface Post {
   tax_info: any[]
   meta_info: MetaInfo
   translation: Translation
-  featured_source: boolean
+  featured_source: boolean | Image
   yoast_head: string
   yoast_head_json: YoastHeadJSON
 }

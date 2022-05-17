@@ -8,16 +8,15 @@ definePageMeta({
 })
 </script>
 <template>
-  <section
-    id="archive-blog"
-    class="container max-w-screen-xl margins space-y-10"
-  >
-    <div class="header text-center">
+  <div id="blog" class="container max-w-screen-xl margins space-y-10">
+    <header class="header text-center">
       <h1>{{ $t('blog.title') }}</h1>
       <h2 class="subtitle">{{ $t('blog.subtitle') }}</h2>
-    </div>
-    <post-list />
-  </section>
+    </header>
+    <section id="archive-posts">
+      <post-list />
+    </section>
+  </div>
 </template>
 <style lang="scss" scoped>
 #pagination {

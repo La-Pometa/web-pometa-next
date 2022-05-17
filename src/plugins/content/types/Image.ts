@@ -8,6 +8,7 @@ export interface Image {
   sizes: any
   image_meta: ImageMeta
   alt_text: string
+  alt: string
   title: string
   pometaImages: number
   original_image?: string

@@ -37,7 +37,7 @@ const featuredMembers = computed(() =>
 )
 </script>
 <template>
-  <div id="member-list">
+  <div id="archive-members">
     <div v-if="members" class="content">
       <div class="featured-wrapper">
         <div class="featured-members">
@@ -118,7 +118,7 @@ const featuredMembers = computed(() =>
   </div>
 </template>
 <style lang="scss">
-#member-list {
+#archive-members {
   .content {
     @apply space-y-16;
   }

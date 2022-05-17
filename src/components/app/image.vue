@@ -33,7 +33,7 @@
 </template>
 
 <script>
-export default {
+export default defineComponent({
   props: {
     blur: {
       type: Boolean,
@@ -43,7 +43,7 @@ export default {
       type: String,
       default: null,
     },
-    data: { type: Object, required: true },
+    data: { required: true },
     format: {
       type: String,
       default: null,
@@ -181,7 +181,7 @@ export default {
       return image
     },
   },
-}
+})
 </script>
 <style lang="scss" scoped>
 .responsive-image {
