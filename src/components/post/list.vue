@@ -85,7 +85,7 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
 <style lang="scss" scoped>
 .layout {
   @apply grid gap-10;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &.loadmore {
     @apply mt-10;

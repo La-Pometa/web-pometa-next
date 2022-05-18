@@ -118,7 +118,7 @@ const { data } = defineProps<{
 
     .layout {
       @apply grid gap-10 sm:gap-28 mx-auto;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
       @screen msm {
         @apply snap-mandatory snap-x overflow-x-auto gap-0;

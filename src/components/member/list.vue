@@ -128,11 +128,11 @@ const featuredMembers = computed(() =>
   }
   .featured-members {
     @apply grid justify-center justify-items-stretch gap-8;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .members {
     @apply sm:grid sm:gap-7;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 
     @screen msm {
       @apply snap-mandatory snap-x overflow-x-auto;
