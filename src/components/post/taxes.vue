@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { Tax } from '~~/src/plugins/content/types/Post'
-defineProps<{
+const { taxes } = defineProps<{
   taxes: Tax[]
 }>()
+
+const string = taxes.map((tax) => tax.name).join(', ')
 </script>
 <template>
-  <span v-for="(tax, i) in taxes" :key="tax.term_id" class="category"
-    ><span v-if="i != 0">, </span>{{ tax.name }}</span
-  >
+  <span v-html="string"></span>
 </template>

@@ -10,9 +10,9 @@ export default class Content extends WPAPI {
 		super({ endpoint: apiUrl })
 		this.endpoint = apiUrl
 		this.path = this.registerRoute('wp/v2', '/path')
-		this.members = this.registerRoute('wp/v2', '/member')
-		this.projects = this.registerRoute('wp/v2', '/project')
-		this.landings = this.registerRoute('wp/v2', '/landing')
+		this.members = this.registerRoute('wp/v2', '/members')
+		this.projects = this.registerRoute('wp/v2', '/projects')
+		this.landings = this.registerRoute('wp/v2', '/landings')
 	}
 
 	public async postFormCf7(fields: any[], formId: number) {

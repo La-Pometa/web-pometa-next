@@ -50,7 +50,7 @@ onMounted(() => {
       card,
       ([{ isIntersecting }], observerElement) => {
         // detect if the video is at the middle of the frame and play it
-        if (isIntersecting && isMobile) {
+        if (isIntersecting && isMobile.value) {
           const videos = document.querySelectorAll('video')
           videos.forEach((video) => {
             video.pause()
@@ -121,7 +121,7 @@ onMounted(() => {
   }
 
   @screen sm {
-    &.is-playing {
+    &:hover {
       .overlay {
         @apply opacity-0;
       }
