@@ -11,9 +11,9 @@ h2.subtitle {
 }
 
 .title {
-  @apply text-4xl lg:text-7xl leading-[1.5rem] lg:leading-[4.5rem] font-semibold mb-5 lg:mb-10;
+  @apply text-4xl lg:text-7xl leading-[2.1rem] lg:leading-[4.5rem] font-semibold mb-5 lg:mb-10;
   .featured {
-    @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[1.5rem] lg:leading-[4.5rem] mb-10 lg:mb-20;
+    @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[2.1rem] lg:leading-[4.5rem] mb-10 lg:mb-20;
   }
 }
 
@@ -68,7 +68,7 @@ blockquote {
   @apply text-xl lg:text-2xl font-bold font-butler mb-10 relative inline-block;
 
   &:after {
-    @apply h-1 left-0 bg-primary absolute -bottom-3 w-5/12;
+    @apply h-1 left-0 bg-primary absolute -bottom-1 lg:-bottom-3 w-5/12;
     content: '';
   }
 }

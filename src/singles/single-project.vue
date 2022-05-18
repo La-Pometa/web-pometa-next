@@ -29,13 +29,24 @@ const { data } = defineProps<{
       <div class="layout">
         <div class="wrapper">
           <div class="left">
-            <div class="the-content" v-html="data.content.rendered"></div>
+            <div class="the-content">
+              <h2
+                class="text-xl font-butler font-bold"
+                v-html="data.embedded.postmeta.featuredText"
+              ></h2>
+              <p>
+                <strong>Client: </strong>
+                <span v-html="data.embedded.postmeta.client"></span><br />
+                <strong class="services"
+                  ><post-taxes
+                    :taxes="data.embedded.postmeta.services"
+                  ></post-taxes
+                ></strong>
+              </p>
+            </div>
           </div>
           <div class="right">
-            <div
-              class="featured"
-              v-html="data.embedded.postmeta.featuredText"
-            ></div>
+            <div class="featured" v-html="data.content.rendered"></div>
           </div>
         </div>
       </div>
@@ -47,7 +58,7 @@ const { data } = defineProps<{
           v-for="(post, index) of data.embedded.postmeta.related"
           :key="index"
           :to="localePath(`/${post.slug}`)"
-          class="hover:text-main-dark dark:hover:text-white no-highlight"
+          class="post hover:text-main-dark dark:hover:text-white no-highlight"
           :title="post.title.rendered"
         >
           <post-card :key="index" :post="post"></post-card>
@@ -106,8 +117,34 @@ const { data } = defineProps<{
     @apply container max-w-screen-xl margins-x;
 
     .layout {
-      @apply grid gap-10 sm:gap-28 max-w-screen-lg mx-auto;
+      @apply grid gap-10 sm:gap-28 mx-auto;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      @screen msm {
+        @apply snap-mandatory snap-x overflow-x-auto gap-0;
+        @apply flex -m-5 pb-3;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .post {
+          @apply snap-center;
+          --slider-margin: 1.25rem;
+
+          margin: 0 calc(var(--slider-margin) / 4);
+          flex: 0 0 calc((100% - (var(--slider-margin) * 2)));
+
+          &:first-child {
+            margin-left: var(--slider-margin);
+          }
+        }
+
+        &:after {
+          content: '';
+          @apply block pr-3;
+        }
+      }
     }
   }
 }
