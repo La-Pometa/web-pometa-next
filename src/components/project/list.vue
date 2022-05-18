@@ -40,7 +40,10 @@ const { data: projectsArchive, pending } = await useLazyAsyncData<
 #projects-list {
   .layout {
     @apply grid gap-5 sm:gap-5;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    @screen sm {
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
   }
 }
 </style>

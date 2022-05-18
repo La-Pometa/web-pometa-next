@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { breakpointsTailwind } from '@vueuse/core'
+import type { Component } from '@nuxt/schema'
 import type { Post } from '@/plugins/content/types'
 
 const { project } = defineProps<{
   project?: Post
+  otherCards?: Component[]
 }>()
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isMobile = breakpoints.smaller('md')
 
 const haveVideo = project && project.embedded.postmeta.video
 
@@ -14,12 +20,20 @@ const getTitle = (post: Post) => {
   )
 }
 
-const video = ref(null)
+const video = ref<HTMLMediaElement>(null)
+const card = ref<HTMLElement>(null)
 
 const { playing, waiting } = useMediaControls(video)
 
 const play = () => {
   if (video.value) {
+    // Select all other videos of the page and pause them before playing if the parent card is before this one
+    const videos = document.querySelectorAll('video')
+    videos.forEach((video) => {
+      video.pause()
+      video.currentTime = 0
+    })
+
     video.value.play()
   }
 }
@@ -29,6 +43,28 @@ const pauseAndReset = () => {
     video.value.currentTime = 0
   }
 }
+
+onMounted(() => {
+  if (haveVideo) {
+    useIntersectionObserver(
+      card,
+      ([{ isIntersecting }], observerElement) => {
+        // detect if the video is at the middle of the frame and play it
+        if (isIntersecting && isMobile) {
+          const videos = document.querySelectorAll('video')
+          videos.forEach((video) => {
+            video.pause()
+            video.currentTime = 0
+          })
+          play()
+        } else if (!isIntersecting) {
+          pauseAndReset()
+        }
+      },
+      { threshold: 0.8 }
+    )
+  }
+})
 </script>
 <template>
   <nuxt-link
@@ -37,11 +73,14 @@ const pauseAndReset = () => {
     class="project-card"
     :class="{ 'have-video': haveVideo, 'is-playing': playing && !waiting }"
     :to="project.slug"
-    @mouseenter="haveVideo && play()"
-    @mouseleave="haveVideo && pauseAndReset()"
+    @mouseenter="haveVideo && !isMobile && play()"
+    @mouseleave="haveVideo && !isMobile && pauseAndReset()"
   >
-    <div v-if="project.featured_source" class="image">
-      <app-image :data="project.featured_source"></app-image>
+    <div class="image">
+      <app-image
+        v-if="project.featured_source"
+        :data="project.featured_source"
+      ></app-image>
     </div>
     <div v-if="haveVideo" class="video">
       <video
@@ -49,6 +88,7 @@ const pauseAndReset = () => {
         :src="project.embedded.postmeta.video"
         muted
         loop
+        playsinline
       ></video>
     </div>
     <div class="overlay">
@@ -65,12 +105,12 @@ const pauseAndReset = () => {
 .project-card {
   @apply relative;
 
-  &:hover {
+  &.is-playing {
     .overlay {
       @apply opacity-0;
     }
 
-    &.have-video.is-playing {
+    &.have-video {
       .video {
         @apply opacity-100;
       }
@@ -80,8 +120,25 @@ const pauseAndReset = () => {
     }
   }
 
+  @screen sm {
+    &.is-playing {
+      .overlay {
+        @apply opacity-0;
+      }
+
+      &.have-video {
+        .video {
+          @apply opacity-100;
+        }
+        .image {
+          @apply opacity-0;
+        }
+      }
+    }
+  }
+
   .image {
-    @apply aspect-w-4 aspect-h-3;
+    @apply aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3;
     @apply transition duration-300;
 
     img {
@@ -90,7 +147,7 @@ const pauseAndReset = () => {
   }
 
   .video {
-    @apply top-0 left-0 absolute w-full h-full opacity-0;
+    @apply top-0 left-0 absolute w-full h-full opacity-0 pointer-events-none;
     @apply transition duration-300;
 
     video {

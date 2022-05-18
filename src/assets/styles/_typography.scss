@@ -12,6 +12,7 @@ h2.subtitle {
 
 .title {
   @apply text-4xl lg:text-7xl leading-[2.1rem] lg:leading-[4.5rem] font-semibold mb-5 lg:mb-10;
+
   .featured {
     @apply font-dearest font-normal text-6xl lg:text-9xl text-primary leading-[2.1rem] lg:leading-[4.5rem] mb-10 lg:mb-20;
   }
