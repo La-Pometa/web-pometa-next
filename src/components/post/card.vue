@@ -45,7 +45,7 @@ defineProps<{
   }
 
   .blog-card-title {
-    @apply font-butler font-bold leading-relaxed text-2xl px-7 text-center;
+    @apply font-butler font-bold leading-tight text-2xl px-7 text-center;
   }
 
   .date {
