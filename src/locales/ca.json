@@ -8,8 +8,12 @@
       "title": "Serveis",
       "marketing": "Branding & Storybuilding",
       "design": "Estratègia & Marketing",
-      "web": "Publicitat",
-      "publicity": "Publicitat online i offline"
+      "web": "Webs fresques",
+      "publicity": "Publicitat & Social Media",
+      "marketing-link": "/branding-i-storybuilding",
+      "design-link": "/estrategia-i-marqueting",
+      "publicity-link": "/publicitat-i-social-media",
+      "web-link": "/webs-fresques"
     },
     "blog": "Blog",
     "contact": "Contacte",

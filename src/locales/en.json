@@ -68,9 +68,13 @@
     "services": {
       "design": "Strategy & Marketing",
       "marketing": "Branding & Storybuilding",
-      "publicity": "Online and offline advertising",
+      "publicity": "Advertising & Social Media",
       "title": "Services",
-      "web": "Advertising and Social Media"
+      "web": "Cool websites",
+      "marketing-link": "/branding-and-storybuilding",
+      "design-link": "/strategy-and-marketing",
+      "publicity-link": "/advertising-and-social-media",
+      "web-link": "/cool-websites"
     },
     "pometa-link": "/pometa",
     "manifest-link": "/manifiesto",

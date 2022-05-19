@@ -78,7 +78,10 @@ const categories = ref<{ name: string; slug: string }[]>(
             }"
           ></post-author>
         </div>
-        <div class="post-content" v-html="data.content.rendered"></div>
+        <div
+          class="post-content prose dark:prose-invert"
+          v-html="data.content.rendered"
+        ></div>
       </div>
     </div>
     <cta-contact />

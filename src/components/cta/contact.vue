@@ -1,17 +1,23 @@
 <script setup lang="ts">
+import { useLocalePath } from 'vue-i18n-routing'
+
 const { variant } = defineProps({
   variant: {
     type: String as () => 'default' | 'light',
     default: 'default',
   },
 })
+
+const localePath = useLocalePath()
 </script>
 <template>
   <div class="cta-contact" :class="variant">
     <h2 v-html="$t('cta.contact.title')"></h2>
-    <AppButton :variant="variant === 'light' ? 'light' : 'primary'">{{
-      $t('cta.contact.button')
-    }}</AppButton>
+    <nuxt-link :to="localePath($t('menu.contact-link'))"
+      ><AppButton :variant="variant === 'light' ? 'light' : 'primary'">{{
+        $t('cta.contact.button')
+      }}</AppButton></nuxt-link
+    >
   </div>
 </template>
 <style lang="scss">

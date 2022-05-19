@@ -2,6 +2,8 @@
 import { breakpointsTailwind } from '@vueuse/core'
 import type { Component } from '@nuxt/schema'
 import type { Post } from '@/plugins/content/types'
+import IconVolume from '~icons/ion/md-volume-high'
+import IconVolumeOff from '~icons/ion/md-volume-off'
 
 const { project } = defineProps<{
   project?: Post
@@ -23,7 +25,7 @@ const getTitle = (post: Post) => {
 const video = ref<HTMLMediaElement>(null)
 const card = ref<HTMLElement>(null)
 
-const { playing, waiting } = useMediaControls(video)
+const { playing, waiting, muted } = useMediaControls(video)
 
 const play = () => {
   if (video.value) {
@@ -86,10 +88,14 @@ onMounted(() => {
       <video
         ref="video"
         :src="project.embedded.postmeta.video"
-        muted
         loop
+        muted
         playsinline
       ></video>
+    </div>
+    <div v-if="haveVideo" class="mute-button" @click.prevent="muted = !muted">
+      <IconVolume v-if="!muted" class="icon"></IconVolume>
+      <IconVolumeOff v-else class="icon"></IconVolumeOff>
     </div>
     <div class="overlay">
       <h3 v-html="getTitle(project)"></h3>
@@ -110,6 +116,10 @@ onMounted(() => {
       @apply opacity-0;
     }
 
+    .mute-button {
+      @apply opacity-100;
+    }
+
     &.have-video {
       .video {
         @apply opacity-100;
@@ -124,6 +134,10 @@ onMounted(() => {
     &:hover {
       .overlay {
         @apply opacity-0;
+      }
+
+      .mute-button {
+        @apply opacity-100;
       }
 
       &.have-video {
@@ -153,6 +167,13 @@ onMounted(() => {
     video {
       @apply w-full h-full object-cover;
     }
+  }
+
+  .mute-button {
+    @apply absolute z-10 m-2 right-0 bottom-0 w-8 h-8 flex items-center justify-center rounded-full;
+    @apply bg-main-dark/70 backdrop-blur-sm backdrop-saturate-200 text-white;
+    @apply transition duration-300;
+    @apply opacity-0;
   }
 
   .overlay {

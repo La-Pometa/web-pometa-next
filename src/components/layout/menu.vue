@@ -28,22 +28,24 @@ const localePath = useLocalePath()
       ><a class="not-click">{{ $t('menu.services.title') }}</a>
       <div class="sub-menu">
         <div class="item">
-          <a href="localePath($t('marketing'))">{{
+          <nuxt-link :to="localePath($t('menu.services.marketing-link'))">{{
             $t('menu.services.marketing')
-          }}</a>
+          }}</nuxt-link>
         </div>
         <div class="item">
-          <a href="localePath($t('design'))">{{
+          <nuxt-link :to="localePath($t('menu.services.design-link'))">{{
             $t('menu.services.design')
-          }}</a>
+          }}</nuxt-link>
         </div>
         <div class="item">
-          <a href="localePath($t('web'))">{{ $t('menu.services.web') }}</a>
-        </div>
-        <div class="item">
-          <a href="localePath($t('publicity'))">{{
+          <nuxt-link :to="localePath($t('menu.services.publicity-link'))">{{
             $t('menu.services.publicity')
-          }}</a>
+          }}</nuxt-link>
+        </div>
+        <div class="item">
+          <nuxt-link :to="localePath($t('menu.services.web-link'))">{{
+            $t('menu.services.web')
+          }}</nuxt-link>
         </div>
       </div>
     </span>

@@ -17,6 +17,7 @@ const { data } = defineProps<{
         subtitle: data.embedded.postmeta.titleFeatured,
         image: data.featured_source,
         size: 'large',
+        video: data.embedded.postmeta.video,
       }"
     ></slice-header>
     <section class="main-content">
@@ -50,6 +51,11 @@ const { data } = defineProps<{
           </div>
         </div>
       </div>
+    </section>
+    <section class="slider">
+      <slider-video-image
+        :slides="data.embedded.postmeta.slider"
+      ></slider-video-image>
     </section>
     <section class="related-posts">
       <h5 class="title-mini">{{ $t('project.related') }}</h5>
@@ -111,6 +117,10 @@ const { data } = defineProps<{
         @apply p-5 bg-primary text-white dark:text-main-dark;
       }
     }
+  }
+
+  .slider {
+    @apply max-w-full overflow-hidden relative;
   }
 
   .related-posts {
