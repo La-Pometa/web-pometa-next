@@ -92,7 +92,7 @@ defineProps<{
 
     @screen msm {
       --items: 1;
-      --inset: 1.25rem;
+      --inset: 0.625rem;
     }
   }
   .slide {
@@ -105,13 +105,6 @@ defineProps<{
       );
 
     margin-right: var(--inset);
-
-    @screen msm {
-      flex: 0 0 calc((100% - (var(--inset) * 2)));
-
-      margin-left: calc(var(--inset) / 4);
-      margin-right: calc(var(--inset) / 4);
-    }
 
     .inner {
       @apply aspect-w-4 aspect-h-3;
