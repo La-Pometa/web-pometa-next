@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Image } from '~~/src/plugins/content/types'
+import ArrowLeft from '~icons/ion/chevron-left'
+import ArrowRight from '~icons/ion/chevron-right'
 
 defineProps<{
   slides: Array<{
@@ -12,12 +14,21 @@ defineProps<{
 </script>
 <template>
   <div class="slider-image-video">
+    <div class="controls">
+      <div class="next">
+        <ArrowLeft />
+      </div>
+      <div class="prev">
+        <ArrowRight />
+      </div>
+    </div>
     <div class="wrapper">
       <div v-for="(slide, index) of slides" :key="index" class="slide">
         <div class="inner">
           <app-image
             v-if="slide.type === 'image'"
             :data="slide.image"
+            :has-title="true"
           ></app-image>
           <div v-else-if="slide.type === 'video'" class="video">
             <video controls :poster="slide.image.sizes.full.source_url">
@@ -31,32 +42,71 @@ defineProps<{
 </template>
 <style lang="scss">
 .slider-image-video {
+  .controls {
+    @apply flex justify-end py-6 gap-2 container margins-x max-w-screen-xl text-xl;
+    @apply msm:hidden;
+
+    .next,
+    .prev {
+      @apply text-primary hover:text-main-dark dark:hover:text-white;
+    }
+  }
   .wrapper {
-    @apply flex overflow-auto snap-x snap-mandatory gap-10 msm:gap-0;
+    @apply flex overflow-auto snap-x snap-mandatory;
     &::-webkit-scrollbar {
       display: none;
     }
     &:after {
       content: '';
-      @apply block pr-3;
+      @apply block;
+      padding-right: var(--margins);
     }
-  }
-  .slide {
-    @apply snap-center;
-    --items: 2.3;
-    --inset: 2.5rem;
 
-    flex: 0 0
-      calc(100% / var(--items) - (var(--inset) / var(--items)) - var(--inset));
+    --boxed-size: 100%;
+    @media (min-width: 640px) {
+      --boxed-size: 640px;
+    }
+    @media (min-width: 768px) {
+      --boxed-size: 768px;
+    }
+    @media (min-width: 1024px) {
+      --boxed-size: 1024px;
+    }
+    @media (min-width: 1280px) {
+      --boxed-size: 1280px;
+    }
 
-    &:first-child {
-      margin-left: var(--inset);
+    --items: 2;
+    --inset: 1.25rem;
+    --margins: max(
+      calc(var(--inset) * 2),
+      calc(((calc(100vw - 312px) - var(--boxed-size)) / 2) + 2.5rem)
+    );
+
+    padding-left: var(--margins);
+    scroll-padding-left: var(--margins);
+
+    @screen 2xl {
+      --items: 2;
     }
 
     @screen msm {
       --items: 1;
       --inset: 1.25rem;
+    }
+  }
+  .slide {
+    @apply snap-start msm:mr-0;
 
+    flex: 0 0
+      calc(
+        (100% / var(--items) - var(--inset) + (var(--inset) / var(--items))) -
+          var(--margins) / var(--items)
+      );
+
+    margin-right: var(--inset);
+
+    @screen msm {
       flex: 0 0 calc((100% - (var(--inset) * 2)));
 
       margin-left: calc(var(--inset) / 4);
@@ -69,7 +119,7 @@ defineProps<{
 
     video,
     img {
-      @apply w-full h-full object-cover;
+      @apply top-0 left-0 z-10 absolute w-full h-full object-cover;
     }
   }
 }
