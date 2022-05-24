@@ -8,23 +8,3 @@
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Dearest';
-    src: url('Dearest-Regular_1.woff2') format('woff2'),
-        url('Dearest-Regular_1.woff') format('woff'),
-        url('Dearest-Regular_1.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Dearest';
-    src: url('Dearest-Regular_2.woff2') format('woff2'),
-        url('Dearest-Regular_2.woff') format('woff'),
-        url('Dearest-Regular_2.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
