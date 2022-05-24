@@ -8,6 +8,10 @@ const localePath = useLocalePath()
 const { data } = defineProps<{
   data: Post
 }>()
+
+const removeHttpFromUrl = (url: string) => {
+  return url.replace(/^https?:\/\//, '')
+}
 </script>
 <template>
   <div id="single-project">
@@ -32,7 +36,7 @@ const { data } = defineProps<{
           <div class="left">
             <div class="the-content">
               <h2
-                class="text-xl font-butler font-bold"
+                class="featured-title"
                 v-html="data.embedded.postmeta.featuredText"
               ></h2>
               <p>
@@ -44,6 +48,14 @@ const { data } = defineProps<{
                   ></post-taxes
                 ></strong>
               </p>
+              <nuxt-link
+                v-if="data.embedded.postmeta.link"
+                :to="data.embedded.postmeta.link"
+                class="link"
+                target="_blank"
+              >
+                {{ removeHttpFromUrl(data.embedded.postmeta.link) }}
+              </nuxt-link>
             </div>
           </div>
           <div class="right">
@@ -109,6 +121,14 @@ const { data } = defineProps<{
 
       .left {
         @apply grid gap-3;
+      }
+
+      .link {
+        @apply font-butler hover:text-primary text-xl mt-3 inline-block;
+      }
+
+      .featured-title {
+        @apply text-xl font-butler font-bold mb-3;
       }
     }
 

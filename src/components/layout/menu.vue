@@ -2,6 +2,11 @@
 import { useLocalePath } from 'vue-i18n-routing'
 const localePath = useLocalePath()
 </script>
+<script lang="ts">
+export default defineComponent({
+  name: 'LayoutMenu',
+})
+</script>
 <template>
   <nav id="menu" class="flex flex-col mt-7 font-medium text-sm gap-3">
     <span class="item">

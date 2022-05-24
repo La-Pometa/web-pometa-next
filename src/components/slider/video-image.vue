@@ -110,6 +110,10 @@ defineProps<{
       @apply aspect-w-4 aspect-h-3;
     }
 
+    &:last-of-type {
+      margin-right: 0;
+    }
+
     video,
     img {
       @apply top-0 left-0 z-10 absolute w-full h-full object-cover;

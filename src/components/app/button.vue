@@ -3,7 +3,11 @@
     <slot></slot>
   </button>
 </template>
-
+<script lang="ts">
+export default defineComponent({
+  name: 'AppButton',
+})
+</script>
 <script setup lang="ts">
 defineProps({
   size: {

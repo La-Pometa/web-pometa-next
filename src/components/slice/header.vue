@@ -29,6 +29,15 @@ if (params.video) {
     }
   )
 }
+
+const toggleMute = () => {
+  muted.value = !muted.value
+}
+</script>
+<script lang="ts">
+export default {
+  name: 'SliceHeader',
+}
 </script>
 <template>
   <header class="header-slice" :class="params.size ? params.size : ''">
@@ -40,11 +49,7 @@ if (params.video) {
       <div v-if="params.video" class="video">
         <video ref="video" :src="params.video" muted playsinline></video>
       </div>
-      <div
-        v-if="params.video"
-        class="mute-button"
-        @click.prevent="muted = !muted"
-      >
+      <div v-if="params.video" class="mute-button" @click.prevent="toggleMute">
         <IconVolume v-if="!muted" class="icon"></IconVolume>
         <IconVolumeOff v-else class="icon"></IconVolumeOff>
       </div>
