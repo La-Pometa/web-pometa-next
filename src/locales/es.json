@@ -10,7 +10,7 @@
       "design": "Estratégia & Marketing",
       "web": "Webs frescas",
       "publicity": "Publicidad & Social Media",
-      "marketing-link": "/branding-y-storybuilding",
+      "marketing-link": "/branding-storybuilding",
       "design-link": "/estrategia-y-marketing",
       "publicity-link": "/publicidad-y-social-media",
       "web-link": "/webs-frescas"
@@ -24,7 +24,8 @@
     "projects-link": "/proyectos",
     "blog-link": "/blog",
     "contact-link": "/contacto",
-    "breakfast-link": "/desayuna-con-manzanas"
+    "breakfast-link": "/desayuna-con-manzanas",
+    "kitdigital-link": "/kit-digital"
   },
   "footer": {
     "oficinas": "Oficinas en Lleida y Barcelona",

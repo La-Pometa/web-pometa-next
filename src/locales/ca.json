@@ -10,7 +10,7 @@
       "design": "Estratègia & Marketing",
       "web": "Webs fresques",
       "publicity": "Publicitat & Social Media",
-      "marketing-link": "/branding-i-storybuilding",
+      "marketing-link": "/branding-storybuilding",
       "design-link": "/estrategia-i-marqueting",
       "publicity-link": "/publicitat-i-social-media",
       "web-link": "/webs-fresques"
@@ -24,7 +24,8 @@
     "projects-link": "/proyectos",
     "blog-link": "/blog",
     "contact-link": "/contacte",
-    "breakfast-link": "/esmorza-amb-pomes"
+    "breakfast-link": "/esmorza-amb-pomes",
+    "kitdigital-link": "/kit-digital"
   },
   "footer": {
     "oficinas": "Oficines a Lleida i Barcelona",

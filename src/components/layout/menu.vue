@@ -70,9 +70,9 @@ export default defineComponent({
       }}</nuxt-link></span
     >
     <span class="item featured-item"
-      ><a href="localePath($t('kitdigital'))">{{
+      ><nuxt-link :to="localePath($t('menu.kitdigital-link'))">{{
         $t('menu.kitdigital')
-      }}</a></span
+      }}</nuxt-link></span
     >
   </nav>
 </template>
@@ -102,8 +102,13 @@ export default defineComponent({
     }
   }
 }
-.featured-item a {
-  @apply bg-primary py-0.5 px-2 hover:bg-gray-700 text-main-dark;
+#menu .item.featured-item a {
+  @apply bg-primary py-0.5 px-2 text-main-dark;
   @apply transition duration-300;
+
+  &:hover,
+  &.router-link-active {
+    @apply bg-gray-700 text-primary;
+  }
 }
 </style>

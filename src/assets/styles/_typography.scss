@@ -18,6 +18,10 @@ h2.subtitle {
   }
 }
 
+.title-dearest {
+  @apply font-dearest font-normal text-6xl lg:text-8xl text-primary;
+}
+
 .title-2 {
   @apply text-2xl lg:text-3xl leading-[1.5rem] lg:leading-[2rem] font-medium;
 

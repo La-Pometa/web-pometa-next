@@ -5,10 +5,12 @@ import type { Params } from '~~/src/plugins/content/types/Page'
 
 const { params } = defineProps<{ params: Params }>()
 
-const title = params.title.replace(
-  '%s',
-  `<span class="featured">${params.subtitle}</span>`
-)
+const title = params.subtitle
+  ? params.title.replace(
+      '%s',
+      `<span class="featured">${params.subtitle}</span>`
+    )
+  : params.title
 
 const video = ref(null)
 const { playing, waiting, muted } = useMediaControls(video)
@@ -41,7 +43,7 @@ export default {
 </script>
 <template>
   <header class="header-slice" :class="params.size ? params.size : ''">
-    <div class="margins-x container text-center">
+    <div class="title-container" :class="{ overlay: params.titleOverlay }">
       <h1 class="title" v-html="title"></h1>
     </div>
     <div class="image" :class="{ playing }">
@@ -59,6 +61,15 @@ export default {
 <style lang="scss">
 .header-slice {
   @apply relative;
+
+  .title-container {
+    &:not(.overlay) {
+      @apply margins-x container text-center;
+    }
+    &.overlay {
+      @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-30 text-white;
+    }
+  }
 
   &.large {
     .top-image {

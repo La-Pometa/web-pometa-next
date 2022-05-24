@@ -71,7 +71,7 @@
       "publicity": "Advertising & Social Media",
       "title": "Services",
       "web": "Cool websites",
-      "marketing-link": "/branding-and-storybuilding",
+      "marketing-link": "/branding-storybuilding",
       "design-link": "/strategy-and-marketing",
       "publicity-link": "/advertising-and-social-media",
       "web-link": "/cool-websites"
@@ -81,7 +81,8 @@
     "projects-link": "/proyectos",
     "blog-link": "/blog",
     "contact-link": "/contact",
-    "breakfast-link": "/breakfast-at-pometas"
+    "breakfast-link": "/breakfast-at-pometas",
+    "kitdigital-link": "/kit-digital"
   },
   "pometa": {
     "claim": "<b>Fresh, creative and disruptive</b>, <br />we have all the properties of the queen fruit: the apple! \nWe savor our work with bites, with passion!",

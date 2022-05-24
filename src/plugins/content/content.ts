@@ -1,4 +1,5 @@
 import WPAPI from "wpapi";
+import type { Post } from "./types";
 export default class Content extends WPAPI {
 	public path: WPAPI.WPRequestFactory
 	public members: WPAPI.WPRequestFactory
@@ -31,5 +32,13 @@ export default class Content extends WPAPI {
 		})
 
 		return res
+	}
+
+	public getMeta(post: Post, key: string): any | null {
+		if (key in post.embedded.postmeta) {
+			return post.embedded.postmeta[key]
+		}
+
+		return null
 	}
 }
