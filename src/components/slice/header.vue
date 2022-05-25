@@ -68,6 +68,10 @@ export default {
     }
     &.overlay {
       @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-10 text-white;
+
+      .title {
+        @apply mb-0;
+      }
     }
   }
 

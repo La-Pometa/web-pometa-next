@@ -55,7 +55,20 @@ const [formOpen, toggleForm] = useToggle(false)
         :slides="$content.getMeta(data, 'slider')"
       ></slider-video-image>
     </section>
-    <section class="content" v-html="data.content.rendered"></section>
+    <section
+      v-if="data.content.rendered"
+      class="content"
+      v-html="data.content.rendered"
+    ></section>
+    <section v-if="!$content.getMeta(data, 'links').length" class="common cta">
+      <cta-contact></cta-contact>
+    </section>
+    <section v-if="$content.getMeta(data, 'links').length" class="common links">
+      <cta-contact-links
+        :links="$content.getMeta(data, 'links')"
+        :subtitle="$content.getMeta(data, 'linksSubtitle')"
+      ></cta-contact-links>
+    </section>
   </div>
 </template>
 <style lang="scss">
