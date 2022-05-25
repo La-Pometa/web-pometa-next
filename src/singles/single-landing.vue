@@ -33,7 +33,7 @@ const [formOpen, toggleForm] = useToggle(false)
           ? data.embedded.postmeta.title
           : data.title.rendered,
         image: data.featured_source,
-        size: 'large',
+        size: 'desktop',
         titleOverlay: true,
       }"
     ></slice-header>

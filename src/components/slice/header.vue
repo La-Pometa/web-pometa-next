@@ -77,6 +77,12 @@ export default {
 
   &.large {
     .top-image {
+      @apply h-auto aspect-w-8 aspect-h-11 sm:aspect-w-9 sm:aspect-h-5;
+    }
+  }
+
+  &.desktop {
+    .top-image {
       @apply h-auto aspect-w-9 aspect-h-5;
     }
   }
