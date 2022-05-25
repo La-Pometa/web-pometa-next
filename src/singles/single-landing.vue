@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import type { Post } from '../plugins/content/types'
 
-defineProps<{
+const { $content } = useNuxtApp()
+
+const { data } = defineProps<{
   data: Post
 }>()
 
 const [formOpen, toggleForm] = useToggle(false)
+
+const content = $content.getMeta(data, 'content')
 </script>
 <template>
   <div id="single-landing">
@@ -55,6 +59,24 @@ const [formOpen, toggleForm] = useToggle(false)
         :slides="$content.getMeta(data, 'slider')"
       ></slider-video-image>
     </section>
+    <section v-if="content" class="common content-columns">
+      <div class="top">
+        <h3 v-html="content.title"></h3>
+        <div class="text" v-html="content.html"></div>
+        <img
+          src="@/assets/img/single-landing/arrow-down.svg"
+          alt=""
+          class="floating-arrow"
+        />
+      </div>
+      <div class="columns">
+        <div v-for="(box, index) of content.boxes" :key="index" class="column">
+          <h3 v-html="box.title"></h3>
+          <h4 v-html="box.subtitle"></h4>
+          <div class="text" v-html="box.html"></div>
+        </div>
+      </div>
+    </section>
     <section
       v-if="data.content.rendered"
       class="content"
@@ -101,6 +123,38 @@ const [formOpen, toggleForm] = useToggle(false)
 
   .top-form {
     @apply container margins-x flex justify-end sticky top-10 z-40 -mb-12 sm:-mb-20;
+  }
+
+  .content-columns {
+    @apply grid gap-20;
+
+    .top {
+      @apply max-w-lg mx-auto relative;
+
+      .floating-arrow {
+        @apply absolute right-0 sm:top-0 msm:bottom-0 w-20 sm:w-28 translate-y-full sm:translate-x-full sm:translate-y-1/2;
+      }
+    }
+
+    .text {
+      @apply text-center text-xl;
+    }
+
+    h3 {
+      @apply text-center text-primary font-bold font-butler text-xl sm:text-3xl;
+    }
+
+    h4 {
+      @apply font-semibold uppercase text-center mb-6;
+    }
+
+    .columns {
+      @apply flex gap-10 justify-center flex-wrap;
+
+      .column {
+        @apply w-full max-w-[20rem];
+      }
+    }
   }
 }
 </style>
