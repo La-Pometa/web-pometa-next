@@ -1,7 +1,7 @@
 <template>
   <div class="settings-wrapper">
     <div class="top">
-      <h2>{{ $t('cookies.settings') }}</h2>
+      <h1 class="title">{{ $t('cookies.settings') }}</h1>
       <p class="mt-4">{{ $t('cookies.info') }}</p>
     </div>
     <div class="content">
@@ -38,14 +38,14 @@
     </div>
     <div class="bottom">
       <div class="top">
-        <app-button variant="void" @click="save(false, true)">{{
+        <app-button variant="light" @click="save(false, true)">{{
           $t('cookies.reject')
         }}</app-button>
-        <app-button variant="void" @click="save(false)">{{
+        <app-button variant="light" @click="save(false)">{{
           $t('cookies.save')
         }}</app-button>
       </div>
-      <app-button variant="black" @click="save(true)">{{
+      <app-button variant="primary" @click="save(true)">{{
         $t('cookies.acceptAll')
       }}</app-button>
     </div>
@@ -56,10 +56,11 @@ import { computed, defineComponent, nextTick } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 export default defineComponent({
+  emits: ['save'],
   setup(_props, { emit }) {
     const { $content, i18n } = useNuxtApp()
 
-    const cookiesGroups = $content.getSettings()[i18n.locale].cookies
+    const cookiesGroups = []
 
     const cookiesConfig = useStorage(
       'cookies-config',
@@ -128,6 +129,10 @@ export default defineComponent({
 <style lang="scss">
 .settings-wrapper {
   @apply grid gap-5;
+
+  .title {
+    @apply text-3xl;
+  }
 
   .bottom {
     @apply grid gap-5;

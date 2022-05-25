@@ -26,7 +26,7 @@ const { params } = defineProps<{ params: Params }>()
   @apply container margins-x;
 
   &.form {
-    @apply max-w-screen-md;
+    @apply md:max-w-screen-md;
   }
 
   &.textform {

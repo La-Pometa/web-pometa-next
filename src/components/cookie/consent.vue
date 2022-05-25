@@ -10,23 +10,26 @@
             </div>
           </div>
           <div class="bottom">
-            <app-button variant="void" size="lg" @click="togglePreferences()">{{
-              $t('cookies.preferences')
-            }}</app-button>
+            <app-button
+              variant="light"
+              size="lg"
+              @click="togglePreferences()"
+              >{{ $t('cookies.preferences') }}</app-button
+            >
             <app-button variant="primary" size="lg" @click="accept()">{{
               $t('cookies.accept')
             }}</app-button>
           </div>
         </div>
       </Transition>
-      <!--       <app-modal
+      <app-modal
         :is-open="preferencesOpen"
         :card="true"
         size="md"
         @close="togglePreferences(false)"
       >
         <cookie-preferences @save="accept" />
-      </app-modal> -->
+      </app-modal>
     </div>
   </client-only>
 </template>
@@ -54,7 +57,7 @@ const accept = () => {
     }
 
     .title {
-      @apply text-2xl font-bold font-butler;
+      @apply text-2xl font-bold font-butler mb-0;
     }
     .description {
       @apply px-7;

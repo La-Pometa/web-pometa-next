@@ -4,12 +4,32 @@ import type { Post } from '../plugins/content/types'
 defineProps<{
   data: Post
 }>()
+
+const [formOpen, toggleForm] = useToggle(false)
 </script>
 <template>
   <div id="single-landing">
+    <div class="top-form">
+      <app-button @click="toggleForm()">{{ $t('landing.callyou') }}</app-button>
+      <client-only>
+        <teleport to="#modal-outlet">
+          <app-modal
+            :is-open="formOpen"
+            :card="true"
+            size="xs"
+            @close="toggleForm(false)"
+          >
+            <form-cf7
+              v-if="$content.getMeta(data, 'form')"
+              v-html="$content.getMeta(data, 'form')"
+            ></form-cf7>
+          </app-modal>
+        </teleport>
+      </client-only>
+    </div>
     <slice-header
       :params="{
-        title: data.embedded.postmeta.title
+        title: $content.getMeta(data, 'title')
           ? data.embedded.postmeta.title
           : data.title.rendered,
         image: data.featured_source,
@@ -17,12 +37,18 @@ defineProps<{
         titleOverlay: true,
       }"
     ></slice-header>
-    <section class="sub-head">
+    <section class="common title">
       <h2
         v-if="$content.getMeta(data, 'title')"
         class="title-dearest"
-        v-html="$content.getMeta(data, 'title')"
+        v-html="data.title.rendered"
       ></h2>
+    </section>
+    <section class="common description">
+      <blockquote
+        v-if="$content.getMeta(data, 'description')"
+        v-html="$content.getMeta(data, 'description')"
+      ></blockquote>
     </section>
     <section v-if="$content.getMeta(data, 'slider')" class="slider">
       <slider-video-image
@@ -33,7 +59,31 @@ defineProps<{
   </div>
 </template>
 <style lang="scss">
-.content {
-  @apply container margins-header;
+#single-landing {
+  @apply margins-y space-y-8 sm:space-y-16 msm:pt-0;
+  .content {
+    @apply container margins-x;
+  }
+
+  .title {
+    h2 {
+      @apply text-center;
+    }
+  }
+
+  .description {
+    blockquote {
+      @apply text-lg md:text-3xl;
+
+      strong,
+      b {
+        @apply font-butler;
+      }
+    }
+  }
+
+  .top-form {
+    @apply container margins-x flex justify-end sticky top-10 z-40 -mb-12 sm:-mb-20;
+  }
 }
 </style>

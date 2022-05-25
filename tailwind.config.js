@@ -1,4 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const containerScreens = Object.assign({}, defaultTheme.screens)
+
+// Delete the 2xl breakpoint from the object
+delete containerScreens['2xl']
 
 module.exports = {
   content: [
@@ -9,6 +13,9 @@ module.exports = {
     './src/blocks/**/*.{js,ts}',
   ],
   theme: {
+    container: {
+      screens: containerScreens,
+    },
     screens: {
       m2xl: { max: '1535px' },
       // => @media (max-width: 1535px) { ... }

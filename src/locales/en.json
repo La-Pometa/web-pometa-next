@@ -17,7 +17,17 @@
     "accept": "To accept",
     "policy": "Cookies policy",
     "preferences": "Personalize",
-    "uses": "We use cookies to improve your experience 💚."
+    "uses": "We use cookies to improve your experience 💚.",
+    "acceptAll": "Accept all cookies",
+    "reject": "Refuse all cookies",
+    "save": "Save current configuration",
+    "info": "A cookie is a small piece of text that websites you visit send to your browser. \nCookies allow sites to remember information about your visit, which can make the sites easier to revisit and more useful to you.",
+    "item": {
+      "desc": "Description",
+      "expires": "Duration",
+      "name": "Name"
+    },
+    "settings": "Cookie settings"
   },
   "cta": {
     "contact": {
@@ -111,5 +121,8 @@
   },
   "project": {
     "related": "Related Posts"
+  },
+  "landing": {
+    "callyou": "Want to talk?"
   }
 }

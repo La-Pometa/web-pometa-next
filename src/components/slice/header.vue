@@ -67,7 +67,7 @@ export default {
       @apply margins-x container text-center;
     }
     &.overlay {
-      @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-30 text-white;
+      @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-10 text-white;
     }
   }
 
@@ -78,7 +78,7 @@ export default {
   }
 
   .top-image {
-    @apply h-96 w-full relative z-20;
+    @apply h-96 w-full relative;
     @apply transition duration-500;
     img {
       @apply absolute w-full h-full object-cover;

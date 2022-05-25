@@ -32,7 +32,7 @@ button {
   }
 
   &.size-md {
-    @apply px-7 py-1.5;
+    @apply px-7 py-2;
   }
 
   &.size-lg {

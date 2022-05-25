@@ -38,7 +38,17 @@
     "policy": "Política de cookies",
     "uses": "Utilitzem cookies per millorar la vostra experiència 💚.",
     "preferences": "Personalitzar",
-    "accept": "Acceptar"
+    "accept": "Acceptar",
+    "acceptAll": "Acceptar totes les cookies",
+    "reject": "Rebutjar totes les cookies",
+    "save": "Desar configuració actual",
+    "info": "Una galeta és un petit fragment de text que els llocs web que visites envien al teu navegador. \nLes cookies permeten que els llocs recordin informació sobre la teva visita, cosa que pot fer que sigui més fàcil tornar a visitar els llocs i que aquests et resultin més útils.",
+    "item": {
+      "desc": "Descripció",
+      "expires": "Durada",
+      "name": "Nom"
+    },
+    "settings": "Configuració de cookies"
   },
   "blog": {
     "title": "T'expliquem coses",
@@ -111,5 +121,8 @@
   },
   "project": {
     "related": "Entrades relacionades"
+  },
+  "landing": {
+    "callyou": "Et truquem?"
   }
 }

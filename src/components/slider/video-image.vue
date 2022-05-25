@@ -41,9 +41,20 @@ defineProps<{
   </div>
 </template>
 <style lang="scss">
+#sidebar-wrapper.toggleable {
+  &:not(.open) {
+    & ~ main {
+      .slider-image-video {
+        .wrapper {
+          --sidebar-width: 56px;
+        }
+      }
+    }
+  }
+}
 .slider-image-video {
   .controls {
-    @apply flex justify-end py-6 gap-2 container margins-x max-w-screen-xl text-xl;
+    @apply flex justify-end pb-6 gap-2 container margins-x xl:max-w-screen-xl text-xl;
     @apply msm:hidden;
 
     .next,
@@ -63,6 +74,7 @@ defineProps<{
     }
 
     --boxed-size: 100%;
+
     @media (min-width: 640px) {
       --boxed-size: 640px;
     }
@@ -78,9 +90,13 @@ defineProps<{
 
     --items: 2;
     --inset: 1.25rem;
+    --sidebar-width: 312px;
+
     --margins: max(
       calc(var(--inset) * 2),
-      calc(((calc(100vw - 312px) - var(--boxed-size)) / 2) + 2.5rem)
+      calc(
+        ((calc(100vw - var(--sidebar-width)) - var(--boxed-size)) / 2) + 2.5rem
+      )
     );
 
     padding-left: var(--margins);

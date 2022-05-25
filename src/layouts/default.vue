@@ -13,6 +13,7 @@ const [isOpen, toggleOpen] = useToggle(false)
       <div class="overlay" :class="{ open: isMobile && isOpen }"></div>
       <NuxtPage />
     </main>
+    <div id="modal-outlet"></div>
     <cookie-consent></cookie-consent>
   </div>
 </template>

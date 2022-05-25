@@ -94,7 +94,7 @@ const removeHttpFromUrl = (url: string) => {
 
     .top,
     .wrapper {
-      @apply container max-w-screen-xl margins-x;
+      @apply container xl:max-w-screen-xl margins-x;
     }
 
     .top {
@@ -144,7 +144,7 @@ const removeHttpFromUrl = (url: string) => {
   }
 
   .related-posts {
-    @apply container max-w-screen-xl margins-x;
+    @apply container xl:max-w-screen-xl margins-x;
 
     .layout {
       @apply grid gap-10 sm:gap-28 mx-auto;

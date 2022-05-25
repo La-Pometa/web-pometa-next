@@ -52,7 +52,7 @@ body {
   }
 
   .margins-header {
-    @apply mx-auto py-10 msm:py-10 px-10 msm:px-5;
+    @apply margins-x sm:mt-5 mt-16;
   }
 }
 
@@ -66,18 +66,18 @@ section.common {
   @apply container margins-x;
 
   &-sm {
-    @apply container margins-x max-w-screen-sm;
+    @apply container margins-x sm:max-w-screen-sm;
   }
 
   &-md {
-    @apply container margins-x max-w-screen-md;
+    @apply container margins-x md:max-w-screen-md;
   }
 
   &-lg {
-    @apply container margins-x max-w-screen-lg;
+    @apply container margins-x lg:max-w-screen-lg;
   }
 
   &-xl {
-    @apply container margins-x max-w-screen-xl;
+    @apply container margins-x xl:max-w-screen-xl;
   }
 }
