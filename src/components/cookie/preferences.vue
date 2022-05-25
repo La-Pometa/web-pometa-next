@@ -54,11 +54,19 @@
 <script lang="ts">
 import { computed, defineComponent, nextTick } from 'vue'
 import { useStorage } from '@vueuse/core'
+import { useI18n } from 'vue-i18n'
+import type { Cookie } from '~~/src/plugins/content/types'
 
 export default defineComponent({
   emits: ['save'],
-  setup(_props, { emit }) {
-    const { $content, i18n } = useNuxtApp()
+  async setup(_props, { emit }) {
+    const { $content } = useNuxtApp()
+    const { locale } = useI18n()
+
+    const { data: cookies } = useAsyncData<Cookie[]>(
+      `cookies_${locale.value}`,
+      () => $content.cookies().get()
+    )
 
     const cookiesGroups = []
 
@@ -122,6 +130,7 @@ export default defineComponent({
       mapedCookies,
       toggleCookie,
       save,
+      cookies,
     }
   },
 })

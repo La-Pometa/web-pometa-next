@@ -5,6 +5,7 @@ export default class Content extends WPAPI {
 	public members: WPAPI.WPRequestFactory
 	public projects: WPAPI.WPRequestFactory
 	public landings: WPAPI.WPRequestFactory
+	public cookies: WPAPI.WPRequestFactory
 	private endpoint: string
 
 	public constructor(apiUrl: string) {
@@ -14,6 +15,7 @@ export default class Content extends WPAPI {
 		this.members = this.registerRoute('wp/v2', '/members')
 		this.projects = this.registerRoute('wp/v2', '/projects')
 		this.landings = this.registerRoute('wp/v2', '/landings')
+		this.cookies = this.registerRoute('wp/v2', '/cookies')
 	}
 
 	public async postFormCf7(fields: any[], formId: number) {
