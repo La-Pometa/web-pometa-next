@@ -92,7 +92,8 @@ export default defineComponent({
     & > a {
       @apply cursor-pointer;
     }
-    &:hover {
+    &:hover,
+    &:focus-within {
       .sub-menu {
         @apply max-h-96 pt-4 pb-2 opacity-100;
       }

@@ -75,6 +75,10 @@ const [formOpen, toggleForm] = useToggle(false)
     blockquote {
       @apply text-lg md:text-3xl;
 
+      br {
+        @apply msm:hidden;
+      }
+
       strong,
       b {
         @apply font-butler;
