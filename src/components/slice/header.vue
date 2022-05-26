@@ -47,18 +47,24 @@ export default {
       <h1 class="title" v-html="title"></h1>
     </div>
     <div class="image" :class="{ playing }">
-      <app-image
-        v-if="params.image"
-        :data="params.image"
-        class="top-image w-full"
-      ></app-image>
-      <PuSkeleton v-else height="100%"></PuSkeleton>
-      <div v-if="params.video" class="video">
-        <video ref="video" :src="params.video" muted playsinline></video>
-      </div>
-      <div v-if="params.video" class="mute-button" @click.prevent="toggleMute">
-        <IconVolume v-if="!muted" class="icon"></IconVolume>
-        <IconVolumeOff v-else class="icon"></IconVolumeOff>
+      <div class="inner">
+        <app-image
+          v-if="params.image"
+          :data="params.image"
+          class="top-image w-full"
+        ></app-image>
+        <PuSkeleton v-else height="100%"></PuSkeleton>
+        <div v-if="params.video" class="video">
+          <video ref="video" :src="params.video" muted playsinline></video>
+        </div>
+        <div
+          v-if="params.video"
+          class="mute-button"
+          @click.prevent="toggleMute"
+        >
+          <IconVolume v-if="!muted" class="icon"></IconVolume>
+          <IconVolumeOff v-else class="icon"></IconVolumeOff>
+        </div>
       </div>
     </div>
   </header>

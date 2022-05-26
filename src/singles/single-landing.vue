@@ -10,6 +10,7 @@ const { data } = defineProps<{
 const [formOpen, toggleForm] = useToggle(false)
 
 const content = $content.getMeta(data, 'content')
+const subcontent = $content.getMeta(data, 'subcontent')
 </script>
 <template>
   <div id="single-landing">
@@ -43,6 +44,7 @@ const content = $content.getMeta(data, 'content')
           ? data.embedded.postmeta.title
           : data.title.rendered,
         image: data.featured_source,
+        video: data.embedded.postmeta.video,
         size: 'desktop',
         titleOverlay: true,
       }"
@@ -66,7 +68,7 @@ const content = $content.getMeta(data, 'content')
       ></slider-video-image>
     </section>
     <section
-      v-if="content.title || content.html"
+      v-if="content && (content.title || content.html)"
       class="common content-columns"
     >
       <div class="top">
@@ -83,6 +85,30 @@ const content = $content.getMeta(data, 'content')
           <h3 v-html="box.title"></h3>
           <h4 v-html="box.subtitle"></h4>
           <div class="text" v-html="box.html"></div>
+        </div>
+      </div>
+    </section>
+    <section
+      v-if="subcontent && (subcontent.title || subcontent.html)"
+      class="common sub-content-columns"
+    >
+      <div class="top">
+        <h3 v-html="subcontent.title"></h3>
+        <div class="text" v-html="subcontent.html"></div>
+      </div>
+      <div class="columns">
+        <div
+          v-for="(box, index) of subcontent.boxes"
+          :key="index"
+          class="column"
+        >
+          <div v-if="box.image" class="image">
+            <app-image :data="box.image"></app-image>
+          </div>
+          <div class="wrapper">
+            <h3 v-html="box.title"></h3>
+            <div class="text" v-html="box.html"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -134,6 +160,41 @@ const content = $content.getMeta(data, 'content')
     @apply container margins-x flex justify-end sticky top-10 z-40 -mb-12 sm:-mb-20;
   }
 
+  .sub-content-columns {
+    @apply grid gap-20;
+
+    .top {
+      @apply max-w-screen-md mx-auto relative;
+    }
+
+    .text {
+      @apply text-center text-xl;
+    }
+
+    h3 {
+      @apply text-center text-primary font-bold font-butler text-xl sm:text-3xl;
+    }
+
+    h4 {
+      @apply font-semibold uppercase text-center mb-6;
+    }
+
+    .columns {
+      @apply grid md:grid-cols-2 gap-y-10;
+
+      .image {
+        @apply aspect-w-4 aspect-h-3;
+
+        img {
+          @apply absolute w-full h-full object-cover;
+        }
+      }
+
+      .wrapper {
+        @apply p-10;
+      }
+    }
+  }
   .content-columns {
     @apply grid gap-20;
 
