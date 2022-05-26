@@ -1,7 +1,7 @@
 <template>
   <section id="page-manifest">
     <header class="container margins text-center">
-      <h1>
+      <h1 class="title">
         {{ $t('manifest.title') }}
       </h1>
       <h2 class="subtitle">

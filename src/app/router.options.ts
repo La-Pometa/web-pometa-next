@@ -6,7 +6,8 @@ export default <RouterConfig>{
 		if (savedPosition) {
 			return savedPosition
 		} else {
-			return { top: 0, left: 0 }
+			return { top: 0, left: 0, behavior: 'smooth' }
 		}
-	}
+	},
+
 }

@@ -24,7 +24,7 @@ defineProps<{
     </div>
     <div class="wrapper">
       <div v-for="(slide, index) of slides" :key="index" class="slide">
-        <div class="inner">
+        <div v-if="slide.image || slide.video" class="inner">
           <app-image
             v-if="slide.type === 'image'"
             :data="slide.image"

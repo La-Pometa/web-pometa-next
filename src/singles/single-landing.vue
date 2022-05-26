@@ -31,7 +31,13 @@ const content = $content.getMeta(data, 'content')
         </teleport>
       </client-only>
     </div>
+    <header
+      v-if="$content.getMeta(data, 'header') === 'color'"
+      class="header-color"
+      :style="'--header-color:' + $content.getMeta(data, 'headerColor')"
+    ></header>
     <slice-header
+      v-else
       :params="{
         title: $content.getMeta(data, 'title')
           ? data.embedded.postmeta.title
@@ -54,12 +60,15 @@ const content = $content.getMeta(data, 'content')
         v-html="$content.getMeta(data, 'description')"
       ></blockquote>
     </section>
-    <section v-if="$content.getMeta(data, 'slider')" class="slider">
+    <section v-if="$content.getMeta(data, 'slider').length" class="slider">
       <slider-video-image
         :slides="$content.getMeta(data, 'slider')"
       ></slider-video-image>
     </section>
-    <section v-if="content" class="common content-columns">
+    <section
+      v-if="content.title || content.html"
+      class="common content-columns"
+    >
       <div class="top">
         <h3 v-html="content.title"></h3>
         <div class="text" v-html="content.html"></div>
@@ -154,6 +163,139 @@ const content = $content.getMeta(data, 'content')
       .column {
         @apply w-full max-w-[20rem];
       }
+    }
+  }
+}
+</style>
+<style lang="scss">
+#single-landing .content {
+  .pg-row-col2 {
+    @apply grid sm:grid-cols-2 gap-3;
+
+    img {
+      @apply w-full;
+    }
+  }
+
+  h3 {
+    @apply font-butler font-bold text-lg;
+  }
+
+  img {
+    @apply my-5;
+  }
+
+  .landing-icons-grid .image_with_text > p {
+    flex-direction: row !important;
+    height: auto !important;
+  }
+  .landing-icons-grid .image_with_text a {
+    flex: 0 0 100px;
+    text-align: right !important;
+    margin-top: unset !important;
+    margin-left: auto;
+  }
+  .kit-digital-solucion .wpb_wrapper > .vc_separator + .wpb_text_column {
+    border-left: 1px solid #cccccc;
+    padding-left: 15px;
+    margin-left: 15px;
+  }
+  .kit-digital-solucion + .kit-digital-solucion {
+    margin-top: 35px;
+  }
+
+  .landing-icons-grid .image_with_text img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .landing-icons-grid .landing-bullet-title {
+    font-size: 24px !important;
+    text-align: left !important;
+    line-height: 28px !important;
+  }
+
+  @media (max-width: 768px) {
+    .landing-icons-grid .image_with_text img {
+      width: 80px !important;
+      height: 80px !important;
+    }
+    .landing-icons-grid .landing-bullet-title {
+      font-size: 20px !important;
+      line-height: 24px !important;
+    }
+    .landing-icons-grid .image_with_text > p {
+      gap: 5px !important;
+    }
+  }
+
+  h2,
+  h1 {
+    @apply py-5;
+  }
+
+  table {
+    @apply w-full max-w-none prose dark:prose-invert my-5;
+  }
+
+  img {
+    @apply inline-block;
+  }
+
+  .landing-icons-grid .landing-bullet-title {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+  }
+  .landing-icons-grid .landing-bullet-title {
+    font-size: 24px !important;
+    text-align: left !important;
+    line-height: 28px !important;
+  }
+
+  .landing-icons-grid .image_with_text a {
+    margin-top: auto;
+    font-size: 12px;
+  }
+
+  .landing-icons-grid .image_with_text a {
+    flex: 0 0 100px;
+    text-align: right !important;
+    margin-top: unset !important;
+    margin-left: auto;
+  }
+
+  .image_with_text {
+    & > p {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 170px;
+      gap: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      transition: all 0.4s;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: hue-rotate(166deg) opacity(0.3);
+    }
+
+    & > p {
+      flex-direction: row !important;
+      height: auto !important;
+    }
+  }
+
+  .landing {
+    &-box {
+      @apply border p-5 my-4 border-primary;
+    }
+    &-featured {
+      @apply p-5 my-4 bg-primary;
     }
   }
 }

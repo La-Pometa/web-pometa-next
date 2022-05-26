@@ -47,7 +47,12 @@ export default {
       <h1 class="title" v-html="title"></h1>
     </div>
     <div class="image" :class="{ playing }">
-      <app-image :data="params.image" class="top-image w-full"></app-image>
+      <app-image
+        v-if="params.image"
+        :data="params.image"
+        class="top-image w-full"
+      ></app-image>
+      <PuSkeleton v-else height="100%"></PuSkeleton>
       <div v-if="params.video" class="video">
         <video ref="video" :src="params.video" muted playsinline></video>
       </div>
@@ -68,23 +73,24 @@ export default {
     }
     &.overlay {
       @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-10 text-white;
+      @apply text-center p-8;
 
       .title {
-        @apply mb-0;
+        @apply mb-0 leading-tight;
       }
     }
   }
 
-  &.large {
-    .top-image {
-      @apply h-auto aspect-w-8 aspect-h-11 sm:aspect-w-9 sm:aspect-h-5;
-    }
+  .top-image {
+    @apply h-auto;
   }
 
-  &.desktop {
-    .top-image {
-      @apply h-auto aspect-w-9 aspect-h-5;
-    }
+  &.large .image {
+    @apply aspect-w-8 aspect-h-11 sm:aspect-w-9 sm:aspect-h-5;
+  }
+
+  &.desktop .image {
+    @apply aspect-w-9 aspect-h-5;
   }
 
   .top-image {

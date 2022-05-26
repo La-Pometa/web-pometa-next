@@ -39,7 +39,8 @@ const localePath = useLocalePath()
         :to="link.link"
       >
         <div class="left">
-          <app-image class="image" :data="link.image" />
+          <app-image v-if="link.image" class="image" :data="link.image" />
+          <PuSkeleton v-else height="100%"></PuSkeleton>
         </div>
         <h4 v-html="link.title"></h4>
       </nuxt-link>

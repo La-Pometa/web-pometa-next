@@ -19,7 +19,7 @@ const clear = () => {
 </script>
 <template>
   <div class="wrapper">
-    <h1>{{ error.statusCode }}</h1>
+    <h1 class="title">{{ error.statusCode }}</h1>
     <h3 class="subtitle text-center" v-html="error.message"></h3>
     <app-button @click="clear">{{ $t('error.return') }}</app-button>
   </div>
