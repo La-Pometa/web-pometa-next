@@ -1,3 +1,4 @@
+import type { HeadTag } from "./HeadTag"
 import type { Image } from "./Image"
 
 /* eslint-disable camelcase */
@@ -135,6 +136,7 @@ export interface Post {
   featured_source: boolean | Image
   yoast_head: string
   yoast_head_json: YoastHeadJSON
+  head_tags: HeadTag[]
 }
 
 export interface PostEmbedded {

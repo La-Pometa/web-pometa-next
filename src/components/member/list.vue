@@ -5,7 +5,7 @@ import type { ArchiveResponse, Post } from '@/plugins/content/types'
 
 const localePath = useLocalePath()
 
-const { $content } = useNuxtApp()
+const { $content, $seo } = useNuxtApp()
 
 const { locale } = useI18n()
 
@@ -35,6 +35,14 @@ const featuredMembers = computed(() =>
       )
     : null
 )
+
+if (membersArchive.value) {
+  useHead($seo.getHead({ head_tags: membersArchive.value.head_tags } as Post))
+} else {
+  watch(membersArchive, (archive) => {
+    useHead($seo.getHead({ head_tags: archive.head_tags } as Post))
+  })
+}
 </script>
 <template>
   <div id="archive-members">

@@ -1,5 +1,8 @@
+import type { HeadTag } from "./HeadTag";
+
 export interface ArchiveResponse<T> {
 	meta: ArchiveResponseMeta;
+	head_tags: HeadTag[];
 	entries: T[];
 	page_id: string;
 	post_type: PostTypeEnum;

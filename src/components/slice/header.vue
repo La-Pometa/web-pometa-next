@@ -91,12 +91,22 @@ export default {
     @apply h-auto;
   }
 
-  &.large .image {
-    @apply aspect-w-8 aspect-h-11 sm:aspect-w-9 sm:aspect-h-5;
+  &.large {
+    .top-image {
+      @apply h-full;
+    }
+    .image {
+      @apply aspect-w-8 aspect-h-11 sm:aspect-w-9 sm:aspect-h-5;
+    }
   }
 
-  &.desktop .image {
-    @apply aspect-w-9 aspect-h-5;
+  &.desktop {
+    .top-image {
+      @apply h-full;
+    }
+    .image {
+      @apply aspect-w-9 aspect-h-5;
+    }
   }
 
   .top-image {
@@ -108,7 +118,9 @@ export default {
   }
 
   .video {
-    @apply absolute top-0 left-0 w-full h-full;
+    @apply absolute top-0 left-0 w-full h-full opacity-0;
+    @apply transition duration-500;
+
     video {
       @apply object-cover w-full h-full;
     }
@@ -124,6 +136,10 @@ export default {
 
       .top-image {
         @apply opacity-0;
+      }
+
+      .video {
+        @apply opacity-100;
       }
     }
   }

@@ -4,9 +4,6 @@ import Icons from 'unplugin-icons/vite'
 export default defineNuxtConfig({
   meta: {
     title: 'La Pometa Agencia',
-    meta: [
-      { name: 'theme-color', content: '#bfd5c2' },
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
     ]
@@ -60,7 +57,7 @@ export default defineNuxtConfig({
     locales: [
       { code: 'es', name: 'Esp', iso: 'es-ES', file: 'es.json', dir: 'ltr' },
       { code: 'ca', name: 'Cat', iso: 'ca', file: 'ca.json', dir: 'ltr' },
-      { code: 'en', name: 'Eng', iso: 'en-GB', file: 'en.json', dir: 'ltr' },
+      // { code: 'en', name: 'Eng', iso: 'en-GB', file: 'en.json', dir: 'ltr' },
     ],
     lazy: true,
     defaultLocale: 'es',

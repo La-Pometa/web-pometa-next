@@ -5,7 +5,7 @@ import { useI18nStore } from '../stores/i18n'
 import type { Page, Post } from '../plugins/content/types'
 
 const route = useRoute()
-const { $content } = useNuxtApp()
+const { $content, $seo } = useNuxtApp()
 const { locale } = useI18n()
 
 const { slug } = route.params
@@ -27,6 +27,8 @@ if (error.value) {
 const i18nStore = useI18nStore()
 
 i18nStore.setRouteParams(data.value.translation)
+
+useHead($seo.getHead(data.value as Post))
 </script>
 <template>
   <component :is="`single-${data.type}`" v-if="data" :data="data"></component>

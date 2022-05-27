@@ -5,7 +5,7 @@ import type { ArchiveResponse, Post } from '@/plugins/content/types'
 
 const localePath = useLocalePath()
 
-const { $content } = useNuxtApp()
+const { $content, $seo } = useNuxtApp()
 
 const { locale } = useI18n()
 
@@ -58,6 +58,13 @@ useIntersectionObserver(pagination, ([{ isIntersecting }]) => {
     loadMore()
   }
 })
+if (postsArchive.value) {
+  useHead($seo.getHead({ head_tags: postsArchive.value.head_tags } as Post))
+} else {
+  watch(postsArchive, (archive) => {
+    useHead($seo.getHead({ head_tags: archive.head_tags } as Post))
+  })
+}
 </script>
 <template>
   <div v-if="posts.length > 0">
