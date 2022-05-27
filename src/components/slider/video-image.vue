@@ -42,11 +42,13 @@ defineProps<{
 </template>
 <style lang="scss">
 #sidebar-wrapper.toggleable {
-  &:not(.open) {
-    & ~ main {
-      .slider-image-video {
-        .wrapper {
-          --sidebar-width: 56px;
+  @screen md {
+    &:not(.open) {
+      & ~ main {
+        .slider-image-video {
+          .wrapper {
+            --sidebar-width: 56px;
+          }
         }
       }
     }
@@ -95,7 +97,8 @@ defineProps<{
     --margins: max(
       calc(var(--inset) * 2),
       calc(
-        ((calc(100vw - var(--sidebar-width)) - var(--boxed-size)) / 2) + 2.5rem
+        ((calc(100vw - var(--sidebar-width)) - var(--boxed-size)) / 2) +
+          calc(var(--inset) * 2)
       )
     );
 
@@ -110,6 +113,10 @@ defineProps<{
       --items: 1;
       --inset: 0.625rem;
     }
+
+    @screen mmd {
+      --sidebar-width: 0px;
+    }
   }
   .slide {
     @apply snap-start msm:mr-0;
@@ -119,6 +126,14 @@ defineProps<{
         (100% / var(--items) - var(--inset) + (var(--inset) / var(--items))) -
           var(--margins) / var(--items)
       );
+
+    @screen msm {
+      flex: 0 0
+        calc(
+          (100% / var(--items) + (var(--inset) / var(--items))) - var(--margins) /
+            var(--items)
+        );
+    }
 
     margin-right: var(--inset);
 

@@ -26,7 +26,7 @@ defineProps({
 const localePath = useLocalePath()
 </script>
 <template>
-  <div class="cta-contact" :class="variant">
+  <div class="cta-contact-links" :class="variant">
     <div class="top">
       <h2 v-html="$t('cta.contact.title')"></h2>
       <h3 v-if="subtitle" v-html="subtitle"></h3>
@@ -48,7 +48,7 @@ const localePath = useLocalePath()
   </div>
 </template>
 <style lang="scss">
-.cta-contact {
+.cta-contact-links {
   @apply flex flex-col items-center justify-center gap-16 py-5;
 
   h2 {

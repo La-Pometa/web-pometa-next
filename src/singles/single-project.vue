@@ -69,7 +69,7 @@ const removeHttpFromUrl = (url: string) => {
         :slides="data.embedded.postmeta.slider"
       ></slider-video-image>
     </section>
-    <section class="related-posts">
+    <section v-if="data.embedded.postmeta.related.length" class="related-posts">
       <h5 class="title-mini">{{ $t('project.related') }}</h5>
       <div class="layout">
         <nuxt-link
@@ -116,7 +116,7 @@ const removeHttpFromUrl = (url: string) => {
 
       &::before {
         content: '';
-        @apply mmd:hidden bg-primary absolute right-0 inset-y-0 w-1/2 -z-10;
+        @apply mmd:hidden bg-secondary absolute right-0 inset-y-0 w-1/2 -z-10;
       }
 
       .left {
@@ -134,7 +134,7 @@ const removeHttpFromUrl = (url: string) => {
 
     .right {
       .featured {
-        @apply p-5 bg-primary text-white dark:text-main-dark;
+        @apply p-5 bg-secondary text-white font-bold dark:text-main-dark;
       }
     }
   }

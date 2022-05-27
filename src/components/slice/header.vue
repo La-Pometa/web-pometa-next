@@ -76,6 +76,9 @@ export default {
   .title-container {
     &:not(.overlay) {
       @apply margins-x container text-center;
+      .title {
+        @apply mb-5 sm:mb-10;
+      }
     }
     &.overlay {
       @apply absolute bg-main-dark/50 inset-0 flex items-center justify-center z-10 text-white;
