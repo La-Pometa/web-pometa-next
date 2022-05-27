@@ -19,6 +19,6 @@ const { slices } = defineProps<{
 
 <style lang="scss">
 .slices {
-  @apply space-y-8 sm:space-y-16 margins-y;
+  @apply space-y-8 sm:space-y-16;
 }
 </style>

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+
+useHead({
+  titleTemplate: `${t('manifest.subtitle')} | %s`,
+})
+</script>
 <template>
   <section id="page-manifest">
     <header class="container margins text-center">
