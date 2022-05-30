@@ -183,7 +183,7 @@ const subcontent = $content.getMeta(data, 'subcontent')
       @apply grid md:grid-cols-2 gap-y-10;
 
       .image {
-        @apply aspect-w-4 aspect-h-3;
+        @apply aspect-w-13 aspect-h-7;
 
         img {
           @apply absolute w-full h-full object-cover;

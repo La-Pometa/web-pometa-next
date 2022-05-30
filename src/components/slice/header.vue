@@ -47,7 +47,7 @@ export default {
       <h1 class="title" v-html="title"></h1>
     </div>
     <div
-      v-if="!params.titleOverlay && params.image"
+      v-if="params.titleOverlay || params.image"
       class="image"
       :class="{ playing }"
     >

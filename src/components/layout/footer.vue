@@ -4,6 +4,7 @@ const localePath = useLocalePath()
 </script>
 <template>
   <footer class="mt-auto flex flex-col gap-8 pt-10">
+    <social-links></social-links>
     <div id="info" class="flex flex-col gap-1 text-center text-xs font-thin">
       <nuxt-link :to="localePath($t('menu.contact-link'))">{{
         $t('footer.oficinas')
