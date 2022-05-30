@@ -3,6 +3,11 @@ import type { Params } from '~~/src/plugins/content/types/Page'
 
 const { params } = defineProps<{ params: Params }>()
 </script>
+<script lang="ts">
+export default defineComponent({
+  name: 'SliceForm',
+})
+</script>
 <template>
   <section class="slice-form" :class="params.type">
     <div class="content">

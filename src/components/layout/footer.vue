@@ -2,6 +2,11 @@
 import { useLocalePath } from 'vue-i18n-routing'
 const localePath = useLocalePath()
 </script>
+<script lang="ts">
+export default defineComponent({
+  name: 'LayoutFooter',
+})
+</script>
 <template>
   <footer class="mt-auto flex flex-col gap-8 pt-10">
     <social-links></social-links>
