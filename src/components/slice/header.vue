@@ -46,7 +46,11 @@ export default {
     <div class="title-container" :class="{ overlay: params.titleOverlay }">
       <h1 class="title" v-html="title"></h1>
     </div>
-    <div class="image" :class="{ playing }">
+    <div
+      v-if="!params.titleOverlay && params.image"
+      class="image"
+      :class="{ playing }"
+    >
       <div class="inner">
         <app-image
           v-if="params.image"

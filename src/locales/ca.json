@@ -13,7 +13,7 @@
       "marketing-link": "/branding-i-storybuilding",
       "design-link": "/estrategia-i-marqueting",
       "publicity-link": "/anuncis-i-social-media",
-      "web-link": "/web-e-commerce"
+      "web-link": "/web-y-e-commerce"
     },
     "blog": "Blog",
     "contact": "Contacte",
@@ -32,7 +32,11 @@
     "privacidad": "Política de Privacitat",
     "cookies": "Política de Cookies",
     "aviso": "Avís legal",
-    "map": "Mapa del lloc"
+    "map": "Mapa del lloc",
+    "privacity-link": "/politica-de-privacitat",
+    "cookies-link": "/politica-de-cookies",
+    "legal": "/avís-legal",
+    "map-link": "/mapa-del-lloc"
   },
   "cookies": {
     "policy": "Política de cookies",

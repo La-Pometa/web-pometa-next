@@ -30,6 +30,10 @@
 #page-pometa {
   @apply space-y-10 sm:space-y-14;
 
+  .title {
+    @apply mb-5 sm:mb-10;
+  }
+
   .brands {
     @apply bg-white dark:bg-black py-10 sm:py-20;
     .inner {

@@ -8,9 +8,9 @@ definePageMeta({
 })
 </script>
 <template>
-  <div id="blog" class="container max-w-screen-xl margins space-y-10">
+  <div id="blog" class="container max-w-screen-xl margins">
     <header class="header text-center">
-      <h1 class="title mb-10">
+      <h1 class="title">
         {{ $t('blog.title') }} <br />
         <span class="featured">{{ $t('blog.subtitle') }}</span>
       </h1>
@@ -21,6 +21,9 @@ definePageMeta({
   </div>
 </template>
 <style lang="scss" scoped>
+#blog {
+  @apply space-y-10 sm:space-y-14;
+}
 #pagination {
   @apply h-14 flex justify-center items-center;
 

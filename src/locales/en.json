@@ -43,7 +43,11 @@
     "cookies": "Cookies policy",
     "map": "Site Map",
     "oficinas": "Offices in Lleida and Barcelona",
-    "privacidad": "Privacy Policy"
+    "privacidad": "Privacy Policy",
+    "privacity-link": "/privacy-policy",
+    "cookies-link": "/cookies-policy",
+    "legal": "/legal-notice",
+    "map-link": "/site-map"
   },
   "home": {
     "manifest": "Manifest",
@@ -84,7 +88,7 @@
       "marketing-link": "/branding-storybuilding",
       "design-link": "/strategy-and-marketing",
       "publicity-link": "/ads-and-social-media",
-      "web-link": "/cool-websites"
+      "web-link": "/web-and-e-commerce"
     },
     "pometa-link": "/pometa",
     "manifest-link": "/manifiesto",
