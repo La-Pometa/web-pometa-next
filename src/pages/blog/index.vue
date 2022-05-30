@@ -10,10 +10,8 @@ definePageMeta({
 <template>
   <div id="blog" class="container max-w-screen-xl margins">
     <header class="header text-center">
-      <h1 class="title">
-        {{ $t('blog.title') }} <br />
-        <span class="featured">{{ $t('blog.subtitle') }}</span>
-      </h1>
+      <h1 class="title">{{ $t('blog.title') }} <br /></h1>
+      <h2 class="subtitle">{{ $t('blog.subtitle') }}</h2>
     </header>
     <section id="archive-posts">
       <post-list />

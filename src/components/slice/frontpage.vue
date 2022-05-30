@@ -159,6 +159,9 @@
 
   &.slide-1,
   &.slide-2 {
+    .title {
+      @apply mb-5 sm:mb-10;
+    }
     .content {
       @apply absolute inset-0 w-full h-full;
     }
