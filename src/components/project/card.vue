@@ -152,7 +152,7 @@ onMounted(() => {
   }
 
   .image {
-    @apply aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3;
+    @apply aspect-w-8 aspect-h-11 sm:aspect-w-4 sm:aspect-h-3;
     @apply transition duration-300;
 
     img {

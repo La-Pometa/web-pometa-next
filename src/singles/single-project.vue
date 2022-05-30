@@ -64,10 +64,22 @@ const removeHttpFromUrl = (url: string) => {
         </div>
       </div>
     </section>
-    <section class="slider">
+    <section v-if="data.embedded.postmeta.slider.length" class="slider">
       <slider-video-image
         :slides="data.embedded.postmeta.slider"
       ></slider-video-image>
+    </section>
+    <section class="common navigator">
+      <project-navigator
+        :next="
+          data.embedded.postmeta.navigator.next &&
+          data.embedded.postmeta.navigator.next.slug
+        "
+        :prev="
+          data.embedded.postmeta.navigator.prev &&
+          data.embedded.postmeta.navigator.prev.slug
+        "
+      ></project-navigator>
     </section>
     <section v-if="data.embedded.postmeta.related.length" class="related-posts">
       <h5 class="title-mini">{{ $t('project.related') }}</h5>
