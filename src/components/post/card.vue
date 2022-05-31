@@ -61,7 +61,7 @@ defineProps<{
     }
   }
   .read-more {
-    @apply font-butler cursor-pointer text-primary hover:text-white dark:hover:text-main-dark bg-transparent hover:bg-primary transition-all px-2 py-1 inline-block mx-auto;
+    @apply font-butler cursor-pointer underline text-secondary hover:text-white dark:hover:text-main-dark bg-transparent hover:bg-secondary transition-all px-2 py-1 inline-block mx-auto;
   }
 }
 </style>

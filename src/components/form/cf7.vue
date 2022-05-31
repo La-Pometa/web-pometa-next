@@ -136,14 +136,14 @@ export default defineComponent({
   textarea,
   select {
     max-width: 100%;
-    @apply dark:placeholder:text-white w-full border-0 border-b-2 focus:placeholder:text-primary border-b-primary bg-transparent focus:ring-0 focus:ring-secondary/20 px-0;
+    @apply dark:placeholder:text-white w-full border-0 border-b-2 focus:placeholder:text-secondary border-b-secondary bg-transparent focus:ring-0 focus:ring-secondary/20 px-0;
 
     &.invalid {
       @apply border-b-red-400;
     }
   }
   select {
-    @apply focus:text-primary;
+    @apply focus:text-secondary;
   }
   form > p {
     @apply mb-5;
@@ -185,14 +185,14 @@ export default defineComponent({
     @apply mr-2;
   }
   [type='checkbox'] {
-    @apply inline-block border-primary rounded-full text-secondary focus:border-secondary checked:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20 mr-2;
+    @apply inline-block border-secondary rounded-full text-secondary focus:border-secondary checked:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20 mr-2;
 
     & ~ span {
       @apply text-sm;
     }
   }
   [type='submit'] {
-    @apply w-auto block px-8 mx-auto relative outline-none py-2 cursor-pointer hover:bg-secondary hover:text-white transition-all bg-gray-100 shadow-sm focus:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20;
+    @apply w-auto text-main-dark dark:bg-primary  block px-8 mx-auto relative outline-none py-2 cursor-pointer hover:bg-secondary hover:text-white transition-all bg-gray-100 shadow-sm focus:border-secondary focus:ring-4 focus:ring-offset-0 focus:ring-secondary/20;
 
     &.loading {
       @apply bg-secondary transition-all text-white;

@@ -41,11 +41,11 @@ export default defineComponent({
       @apply md:col-span-6 prose dark:prose-invert relative;
 
       h1 {
-        @apply text-primary text-3xl font-bold;
+        @apply text-secondary text-3xl font-bold;
       }
 
       a {
-        @apply text-primary no-underline;
+        @apply text-secondary no-underline;
       }
     }
 

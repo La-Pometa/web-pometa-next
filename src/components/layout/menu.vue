@@ -83,11 +83,11 @@ export default defineComponent({
     span {
       &:hover,
       &.router-link-active {
-        @apply text-primary;
+        @apply text-secondary;
       }
     }
     .not-click {
-      @apply hover:text-primary cursor-pointer;
+      @apply hover:text-secondary cursor-pointer;
     }
     & > a {
       @apply cursor-pointer;

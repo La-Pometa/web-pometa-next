@@ -136,7 +136,7 @@ const removeHttpFromUrl = (url: string) => {
       }
 
       .link {
-        @apply font-butler hover:text-primary text-xl mt-3 inline-block;
+        @apply font-bold hover:text-primary text-xl mt-3 inline-block;
       }
 
       .featured-title {
