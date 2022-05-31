@@ -123,11 +123,75 @@ const availableLocales = computed(() => {
         class="border-l border-gray-100 dark:border-dark-500 bg-white dark:bg-dark-900 px-3 transition-all duration-500 relative z-10"
       >
         <div id="sidebarToggler" ref="sidebarToggler" @click="toggleOpen()">
-          <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="button">
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
+          <NuxtLink class="logo" :to="localePath('/')">
+            <div v-if="$i18n.locale == 'ca'" class="cat">
+              <div class="responsive-image">
+                <img
+                  class="dark:hidden"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-cat.svg"
+                />
+              </div>
+              <div class="responsive-image">
+                <img
+                  class="hidden dark:block"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-cat-white.svg"
+                />
+              </div>
+            </div>
+            <div v-if="$i18n.locale == 'es'" class="esp">
+              <div class="responsive-image">
+                <img
+                  class="dark:hidden"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-esp.svg"
+                />
+              </div>
+              <div class="responsive-image">
+                <img
+                  class="hidden dark:block"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-esp-white.svg"
+                />
+              </div>
+            </div>
+            <div v-if="$i18n.locale == 'en'" class="eng">
+              <div class="responsive-image">
+                <img
+                  class="dark:hidden"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-eng.svg"
+                />
+              </div>
+              <div class="responsive-image">
+                <img
+                  class="hidden dark:block"
+                  alt="logo la pometa"
+                  :width="300"
+                  :height="82"
+                  src="@/assets/img/layout/logos-pometa-eng-white.svg"
+                />
+              </div>
+            </div>
+          </NuxtLink>
         </div>
         <div
           id="visible-content"
@@ -202,7 +266,18 @@ const availableLocales = computed(() => {
 </template>
 <style lang="scss">
 #sidebarToggler {
-  @apply md:opacity-0 md:pointer-events-none absolute top-0 -left-px text-white w-14 h-14 flex items-center justify-center text-xl bg-main-dark transition-all duration-500 z-20;
+  @apply md:opacity-0 md:pointer-events-none absolute top-0 -left-px w-screen flex transition-all duration-500 z-20;
+  .button {
+    @apply text-main-dark w-14 h-14 flex items-center justify-center text-xl bg-primary;
+  }
+  .logo {
+    @apply max-h-14 p-3 px-4 bg-white/90 backdrop-filter backdrop-blur-md backdrop-saturate-200 dark:bg-black/90 flex items-center justify-center flex-1;
+    @apply flex items-center;
+
+    img {
+      @apply h-11;
+    }
+  }
 }
 @screen mmd {
   #content {
@@ -213,7 +288,7 @@ const availableLocales = computed(() => {
   }
   #sidebar-wrapper:not(.open) {
     #sidebarToggler {
-      @apply transform translate-x-full;
+      @apply transform translate-x-14;
     }
     #left-sideBar {
       transform: translateX(-100%);
@@ -271,7 +346,7 @@ const availableLocales = computed(() => {
 .burger {
   @apply flex flex-col space-y-2;
   span {
-    @apply bg-white;
+    @apply bg-main-dark;
     width: 2rem;
     height: 2px;
   }
@@ -289,7 +364,7 @@ const availableLocales = computed(() => {
   }
   &:hover {
     span {
-      @apply bg-primary;
+      @apply bg-white;
     }
   }
 }

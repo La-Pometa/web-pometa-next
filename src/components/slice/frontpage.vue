@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Params } from '~~/src/plugins/content/types/Page'
+
+defineProps<{
+  params: Params
+}>()
+</script>
 <template>
   <section id="page-home" class="wrapper">
     <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
