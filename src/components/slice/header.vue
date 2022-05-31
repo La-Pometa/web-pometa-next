@@ -117,7 +117,7 @@ export default {
   }
 
   .top-image {
-    @apply h-96 w-full relative;
+    @apply h-44 sm:h-96 w-full relative;
     @apply transition duration-500;
     img {
       @apply absolute w-full h-full object-cover;

@@ -120,7 +120,7 @@ const removeHttpFromUrl = (url: string) => {
     }
 
     .wrapper {
-      @apply grid md:grid-cols-2 gap-4;
+      @apply grid md:grid-cols-2 gap-10;
     }
 
     .layout {
@@ -128,7 +128,8 @@ const removeHttpFromUrl = (url: string) => {
 
       &::before {
         content: '';
-        @apply mmd:hidden bg-secondary absolute right-0 inset-y-0 w-1/2 -z-10;
+        @apply mmd:hidden bg-secondary absolute right-0 inset-y-0 -z-10;
+        width: calc(50% - 1.25rem);
       }
 
       .left {
