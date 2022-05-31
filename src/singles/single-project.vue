@@ -99,7 +99,7 @@ const removeHttpFromUrl = (url: string) => {
 </template>
 <style lang="scss">
 #single-project {
-  @apply margins-y space-y-8 sm:space-y-16;
+  @apply margins-y space-y-8 sm:space-y-24;
 
   .main-content {
     @apply grid gap-3 relative;

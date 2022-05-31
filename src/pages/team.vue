@@ -14,11 +14,93 @@
     <section class="common-xl"><member-list /></section>
     <div class="brands">
       <div class="inner">
-        <h4 class="title-2 text-center">
-          <b>Diseñamos y desarrollamos experiencias</b><br />
-          que mejoran la vida de nuestros clientes,<br />
-          y por ende, de sus usuarios.
-        </h4>
+        <h4 class="title-2 text-center" v-html="$t('pometa.colaborators')"></h4>
+        <div class="layout">
+          <img
+            src="@/assets/img/collaborators/ajuntamentdelleida.svg"
+            alt=""
+            class="item"
+          />
+          <img src="@/assets/img/collaborators/argal.svg" alt="" class="item" />
+          <img
+            src="@/assets/img/collaborators/barcelonaturisme.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/cafesbatalla.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/catedradeperiodismo.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/claranuts.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/dauliba.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/diputaciodelleida.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/diputaciotursimebarcelona.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/elpalace.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/fruitaaitona.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/fruitsdeponent.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/fundacioorfeo.svg"
+            alt=""
+            class="item"
+          />
+          <img src="@/assets/img/collaborators/gac.svg" alt="" class="item" />
+          <img
+            src="@/assets/img/collaborators/generalitatdecatalunya.svg"
+            alt=""
+            class="item"
+          />
+          <img src="@/assets/img/collaborators/il3.svg" alt="" class="item" />
+          <img
+            src="@/assets/img/collaborators/lallotja.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/plataformaperlallengua.svg"
+            alt=""
+            class="item"
+          />
+          <img
+            src="@/assets/img/collaborators/ponentenergia.svg"
+            alt=""
+            class="item"
+          />
+          <img src="@/assets/img/collaborators/sic24.svg" alt="" class="item" />
+        </div>
       </div>
     </div>
     <section class="common">
@@ -37,7 +119,16 @@
   .brands {
     @apply bg-white dark:bg-black py-10 sm:py-20;
     .inner {
-      @apply container margins-x max-w-screen-xl;
+      @apply container margins-x max-w-screen-xl space-y-10;
+    }
+
+    .layout {
+      @apply grid gap-7;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      img {
+        @apply grayscale hover:grayscale-0 transition duration-300;
+      }
     }
   }
 }
