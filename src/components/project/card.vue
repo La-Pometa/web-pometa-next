@@ -81,13 +81,23 @@ onMounted(() => {
     <div class="image">
       <app-image
         v-if="project.featured_source"
+        class="msm:hidden"
         :data="project.featured_source"
+      ></app-image>
+      <app-image
+        v-if="project.embedded.postmeta.imageVertical"
+        class="sm:hidden"
+        :data="project.embedded.postmeta.imageVertical"
       ></app-image>
     </div>
     <div v-if="haveVideo" class="video">
       <video
         ref="video"
-        :src="project.embedded.postmeta.video"
+        :src="
+          !isMobile
+            ? project.embedded.postmeta.video
+            : project.embedded.postmeta.videoVertical
+        "
         loop
         muted
         playsinline

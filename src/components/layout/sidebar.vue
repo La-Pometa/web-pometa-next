@@ -122,8 +122,8 @@ const availableLocales = computed(() => {
         id="sidebar-visible"
         class="border-l border-gray-100 dark:border-dark-500 bg-white dark:bg-dark-900 px-3 transition-all duration-500 relative z-10"
       >
-        <div id="sidebarToggler" ref="sidebarToggler" @click="toggleOpen()">
-          <div class="button">
+        <div id="sidebarToggler" ref="sidebarToggler">
+          <div class="button" @click="toggleOpen()">
             <div class="burger">
               <span></span>
               <span></span>

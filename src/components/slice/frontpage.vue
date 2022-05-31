@@ -109,24 +109,25 @@ const getTitle = (title: string, subtitle: string) => {
             loop
             muted
             playsinline
-            poster="https://cms.lapometa.com/wp-content/uploads/2021/09/campanya-conreem-talent-lapometa.png.webp"
+            :poster="params.videoSlice.videoPreview.srcset.full.source_url"
             class="absolute inset-0 w-full h-full object-cover"
           >
-            <source
-              src="https://cms.lapometa.com/wp-content/uploads/2021/09/VIDEO_CONREEM_TALENT_OPT.mp4"
-              type="video/mp4"
-            />
+            <source :src="params.videoSlice.video" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div class="overlay"></div>
           <div class="content relative z-10">
-            <h2 class="text-white">
-              UNA HISTORIA
-              <div class="featured ml-24 whitespace-nowrap">
-                llena de talento
-              </div>
-            </h2>
-            <AppButton>Descúbrela</AppButton>
+            <h2
+              class="text-white"
+              v-html="
+                getTitle(params.videoSlice.title, params.videoSlice.subtitle)
+              "
+            ></h2>
+            <nuxt-link :to="localePath(`/${params.videoSlice.link.to}`)">
+              <app-button>
+                <span v-html="params.videoSlice.link.title"></span>
+              </app-button>
+            </nuxt-link>
           </div>
         </div>
         <div class="controls">
