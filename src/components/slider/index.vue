@@ -65,6 +65,8 @@ onMounted(() => {
 .slider {
   @apply flex overflow-x-auto scroll-smooth snap-x snap-mandatory;
 
+  scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }

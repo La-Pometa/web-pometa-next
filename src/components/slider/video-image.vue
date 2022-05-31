@@ -66,9 +66,13 @@ defineProps<{
   }
   .wrapper {
     @apply flex overflow-auto snap-x snap-mandatory;
+
+    scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     &:after {
       content: '';
       @apply block;

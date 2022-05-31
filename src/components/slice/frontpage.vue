@@ -1,9 +1,15 @@
 <script setup lang="ts">
+import { useLocalePath } from 'vue-i18n-routing'
 import type { Params } from '~~/src/plugins/content/types/Page'
+const localePath = useLocalePath()
 
-defineProps<{
+const { params } = defineProps<{
   params: Params
 }>()
+
+const getTitle = (title: string, subtitle: string) => {
+  return title.replace('%s', `<div class="featured">${subtitle}</div>`)
+}
 </script>
 <template>
   <section id="page-home" class="wrapper">
@@ -40,39 +46,32 @@ defineProps<{
         <div class="slide-wrapper">
           <div class="w-full h-full grid lg:grid-cols-2 lg:grid-rows-2">
             <div class="left relative lg:row-span-2">
-              <div class="mobile-square mlg:aspect-w-1 mlg:aspect-h-1">
-                <div>
-                  <div class="content">
-                    <img
-                      src="@/assets/img/home/claranuts.jpg"
-                      class="bg-image"
-                      alt="Claranuts"
-                    />
-                    <div class="hover-overlay">
-                      <h2>
-                        LAS NUECES <br />
-                        MÁS LOCAS
-                        <div class="featured ml-20">del mundo</div>
-                      </h2>
-                      <AppButton class="sm:mt-5">Descúbrelas</AppButton>
+              <div class="mobile-square">
+                <div class="h-full">
+                  <slider-fade class="slider-fade">
+                    <div
+                      v-for="(slide, index) of params.projectSlider"
+                      :key="index"
+                      class="slide"
+                    >
+                      <div class="content">
+                        <app-image :data="slide.image"></app-image>
+                        <div class="hover-overlay">
+                          <h2
+                            v-html="getTitle(slide.title, slide.subtitle)"
+                          ></h2>
+                          <nuxt-link :to="localePath(`/${slide.link}`)"
+                            ><AppButton class="sm:mt-5">{{
+                              $t('home.projects')
+                            }}</AppButton></nuxt-link
+                          >
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </slider-fade>
                   <SliderInfiniteLinks
                     class="links"
-                    :links="[
-                      {
-                        title: 'Claranuts',
-                        url: 'claranuts',
-                      },
-                      {
-                        title: 'Conreem Talent',
-                        url: 'csadsadsa',
-                      },
-                      {
-                        title: 'Esther Grup',
-                        url: 'dsdsadsaasdaad',
-                      },
-                    ]"
+                    :links="params.projectList"
                   ></SliderInfiniteLinks>
                 </div>
               </div>
@@ -139,6 +138,20 @@ defineProps<{
     </Slider>
   </section>
 </template>
+<style lang="scss">
+.slide-wrapper {
+  h3 {
+    @apply font-butler font-semibold text-xl lg:text-3xl;
+  }
+  h2 {
+    @apply font-butler font-semibold text-3xl lg:text-5xl text-center leading-[2rem] lg:leading-[3rem];
+
+    .featured {
+      @apply font-dearest text-primary text-5xl lg:text-8xl leading-[2rem] lg:leading-[3rem] font-normal;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 .wrapper {
   @apply dark:bg-dark-800 bg-primary-gray;
@@ -156,11 +169,7 @@ defineProps<{
   }
 
   .mobile-square {
-    @apply h-full;
-
-    & > div {
-      @apply h-full;
-    }
+    @apply h-full mlg:aspect-w-8 mlg:aspect-h-11;
   }
 
   &.slide-1,
@@ -197,17 +206,6 @@ defineProps<{
     .inner {
       @apply relative flex flex-col items-center justify-center gap-7;
     }
-
-    h3 {
-      @apply font-butler font-semibold text-xl lg:text-3xl;
-    }
-    h2 {
-      @apply font-butler font-semibold text-3xl lg:text-5xl text-center leading-[2rem] lg:leading-[3rem];
-
-      .featured {
-        @apply font-dearest text-primary text-5xl lg:text-8xl leading-[2rem] lg:leading-[3rem] font-normal;
-      }
-    }
   }
 }
 
@@ -232,6 +230,17 @@ defineProps<{
 
   .prev {
     @apply left-0 top-1/2 -translate-y-1/2;
+  }
+}
+</style>
+<style lang="scss">
+.slider-fade {
+  .responsive-image {
+    @apply absolute inset-0 w-full h-full;
+
+    img {
+      @apply w-full h-full object-cover;
+    }
   }
 }
 </style>

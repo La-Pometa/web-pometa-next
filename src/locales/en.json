@@ -56,7 +56,8 @@
     "prev1": "No one resists a good story",
     "prev2": "We believe in our clients!",
     "title1": "No one can resist a good story… Let's start building it <span class=\"featured\">together.</span>",
-    "title2": "We are a <span class=\"text-primary\">creative agency</span> that believes in the motivating and inspiring power of stories. \nWe are dedicated to Branding, Advertising, and Digital Marketing."
+    "title2": "We are a <span class=\"text-primary\">creative agency</span> that believes in the motivating and inspiring power of stories. \nWe are dedicated to Branding, Advertising, and Digital Marketing.",
+    "projects": "Read more"
   },
   "manifest": {
     "claim": "We practice the <b>Storybuilding Experience</b> above all things.",
@@ -88,7 +89,7 @@
       "marketing-link": "/branding-storybuilding",
       "design-link": "/strategy-and-marketing",
       "publicity-link": "/ads-and-social-media",
-      "web-link": "/web-and-e-commerce"
+      "web-link": "/web-and-ecommerce"
     },
     "pometa-link": "/pometa",
     "manifest-link": "/manifiesto",

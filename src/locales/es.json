@@ -13,7 +13,7 @@
       "marketing-link": "/branding-y-storybuilding",
       "design-link": "/estrategia-y-marketing",
       "publicity-link": "/anuncios-y-social-media",
-      "web-link": "/web-y-e-commerce"
+      "web-link": "/web-y-ecommerce"
     },
     "blog": "Blog",
     "contact": "Contacto",
@@ -115,7 +115,8 @@
     "title2": "Somos una                   <span class=\"text-primary\">agencia creativa</span> que cree en                   el poder motivador e inspirador de las historias. Nos dedicamos al Branding, la Publicidad, y el Marketing digital.",
     "next2": "Una historia llena de talento",
     "prev1": "Nadie se resiste a una buena historia",
-    "prev2": "¡Creemos en nuestros clientes!"
+    "prev2": "¡Creemos en nuestros clientes!",
+    "projects": "Descúbrelo"
   },
   "cta": {
     "contact": {

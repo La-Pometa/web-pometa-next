@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+import { useLocalePath } from 'vue-i18n-routing'
+const localePath = useLocalePath()
+
+const { links } = defineProps<{
+  links: { title: string; link: string }[]
+}>()
 
 const slider = ref<HTMLElement>(null)
 const wrapper = ref<HTMLElement>(null)
 
 const tween: gsap.core.Tween[] = []
-
-const duration = 12
 
 onMounted(() => {
   setTimeout(() => {
@@ -14,6 +18,8 @@ onMounted(() => {
     const sliderWidth = slider.value.clientWidth
 
     const nToClone = Math.ceil(sliderWidth / wrapperWidth) * 2
+
+    const duration = links.length * 3
 
     const duplicates = Array.from({ length: nToClone }, () =>
       wrapper.value.cloneNode(true)
@@ -54,10 +60,6 @@ const pause = () => {
 const play = () => {
   tween.forEach((tween) => tween.play())
 }
-
-defineProps<{
-  links: { title: string; url: string }[]
-}>()
 </script>
 <template>
   <div
@@ -68,8 +70,8 @@ defineProps<{
   >
     <div ref="wrapper" class="wrapper">
       <div v-for="(link, index) of links" :key="index" class="link-wrapper">
-        <nuxt-link :to="link.url" class="slide-link">
-          {{ link.title }}
+        <nuxt-link :to="localePath(`/${link.link}`)" class="slide-link">
+          <span v-html="link.title"></span>
         </nuxt-link>
       </div>
     </div>
