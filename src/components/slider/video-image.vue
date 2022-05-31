@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Image } from '~~/src/plugins/content/types'
-import ArrowLeft from '~icons/ion/chevron-left'
-import ArrowRight from '~icons/ion/chevron-right'
+import ArrowLeft from '~icons/ic/baseline-arrow-back'
+import ArrowRight from '~icons/ic/baseline-arrow-forward'
 
 defineProps<{
   slides: Array<{
@@ -11,18 +11,52 @@ defineProps<{
     video: string
   }>
 }>()
+
+const slider = ref<HTMLElement>()
+
+const { x, arrivedState } = useScroll(slider)
+
+const { left, right } = toRefs(arrivedState)
+
+const getSlideWidth = () => {
+  const slide = slider.value.children[0]
+  return slide.clientWidth
+}
+
+const moveSlide = (direction: 'next' | 'prev') => {
+  const slideWidth = getSlideWidth()
+
+  slider.value.scrollTo({
+    left: direction === 'next' ? x.value + slideWidth : x.value - slideWidth,
+    behavior: 'smooth',
+  })
+}
+
+const nextSlide = () => {
+  if (!right.value) {
+    moveSlide('next')
+  }
+}
+
+const prevSlide = () => {
+  if (!left.value) {
+    moveSlide('prev')
+  }
+}
 </script>
 <template>
   <div class="slider-image-video">
     <div class="controls">
-      <div class="next">
-        <ArrowLeft />
-      </div>
-      <div class="prev">
-        <ArrowRight />
+      <div class="inner">
+        <div :class="{ show: !left }" class="prev" @click="prevSlide()">
+          <ArrowLeft />
+        </div>
+        <div :class="{ show: !right }" class="next" @click="nextSlide()">
+          <ArrowRight />
+        </div>
       </div>
     </div>
-    <div class="wrapper">
+    <div ref="slider" class="wrapper">
       <div v-for="(slide, index) of slides" :key="index" class="slide">
         <div v-if="slide.image || slide.video" class="inner">
           <app-image
@@ -55,13 +89,42 @@ defineProps<{
   }
 }
 .slider-image-video {
+  @apply relative;
+
+  &:hover {
+    .controls {
+      .inner {
+        .prev,
+        .next {
+          &.show {
+            @apply opacity-100 scale-100;
+          }
+        }
+      }
+    }
+  }
+
   .controls {
-    @apply flex justify-end pb-6 gap-2 container margins-x xl:max-w-screen-xl text-xl;
+    @apply margins-x absolute inset-0 container xl:max-w-screen-xl text-lg left-1/2 -translate-x-1/2 z-20 pointer-events-none;
     @apply msm:hidden;
+
+    .inner {
+      @apply relative h-full;
+    }
 
     .next,
     .prev {
-      @apply text-primary hover:text-main-dark dark:hover:text-white;
+      @apply cursor-pointer pointer-events-auto absolute top-1/2 -translate-y-1/2;
+      @apply w-10 h-10 text-main-dark bg-primary/70 backdrop-blur backdrop-saturate-200 flex items-center justify-center;
+      @apply transition duration-300 scale-75 opacity-0;
+    }
+
+    .next {
+      @apply right-0 origin-right;
+    }
+
+    .prev {
+      @apply left-0 origin-left;
     }
   }
   .wrapper {
@@ -106,9 +169,6 @@ defineProps<{
       )
     );
 
-    padding-left: var(--margins);
-    scroll-padding-left: var(--margins);
-
     @screen 2xl {
       --items: 2;
     }
@@ -121,6 +181,9 @@ defineProps<{
     @screen mmd {
       --sidebar-width: 0px;
     }
+
+    padding-left: var(--margins);
+    scroll-padding-left: var(--margins);
   }
   .slide {
     @apply snap-start msm:mr-0;
