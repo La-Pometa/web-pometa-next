@@ -10,10 +10,10 @@
       "design": "Estratégia & Marketing",
       "web": "Web y E-commerce",
       "publicity": "Publicidad & Social Media",
-      "marketing-link": "/branding-y-storybuilding",
-      "design-link": "/estrategia-y-marketing",
-      "publicity-link": "/anuncios-y-social-media",
-      "web-link": "/web-y-ecommerce"
+      "marketing-link": "/branding-storybuilding",
+      "design-link": "/estrategia-marketing",
+      "publicity-link": "/anuncios-social-media",
+      "web-link": "/web-ecommerce"
     },
     "blog": "Blog",
     "contact": "Contacto",
