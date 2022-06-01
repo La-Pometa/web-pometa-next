@@ -22,15 +22,8 @@ export default defineComponent({
     this.acceptanceElm = form.querySelector('.wpcf7-acceptance input')
 
     if (this.acceptanceElm) {
-      this.submitElm.disabled = true
-
-      this.acceptanceElm.addEventListener('change', () => {
-        if (this.acceptanceElm.checked) {
-          this.submitElm.disabled = false
-        } else {
-          this.submitElm.disabled = true
-        }
-      })
+      this.elm.removeAttribute('novalidate')
+      this.acceptanceElm.setAttribute('required', 'required')
     }
 
     form.addEventListener('submit', async (evt) => {

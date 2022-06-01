@@ -1,4 +1,5 @@
 import WPAPI from "wpapi";
+import axios from "axios";
 import type { Post } from "./types";
 export default class Content extends WPAPI {
 	public path: WPAPI.WPRequestFactory
@@ -18,22 +19,21 @@ export default class Content extends WPAPI {
 		this.cookies = this.registerRoute('wp/v2', '/cookies')
 	}
 
-	public async postFormCf7(fields: any[], formId: number) {
+	async postFormCf7(fields: any[], formId: number) {
 		const formData = new FormData()
 
 		fields.forEach((field) => {
 			formData.append(field.name, field.value)
 		})
 
-		const res = await $fetch(`${this.endpoint}/contact-form-7/v1/contact-forms/${formId}/feedback`, {
-			method: 'POST',
-			body: formData,
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
+		const res = await axios({
+			method: 'post',
+			url: `${this.endpoint}/contact-form-7/v1/contact-forms/${formId}/feedback`,
+			data: formData,
+			headers: { 'Content-Type': 'multipart/form-data' },
 		})
 
-		return res
+		return res.data
 	}
 
 	public getMeta(post: Post, key: string): any | null {

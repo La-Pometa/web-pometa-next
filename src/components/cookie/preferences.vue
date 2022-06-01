@@ -53,9 +53,9 @@
 </template>
 <script lang="ts">
 import { computed, defineComponent, nextTick } from 'vue'
-import { useStorage } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
 import type { Cookie } from '~~/src/plugins/content/types'
+import { useStorage } from '@vueuse/core'
 
 export default defineComponent({
   emits: ['save'],

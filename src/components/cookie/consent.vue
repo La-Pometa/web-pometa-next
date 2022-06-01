@@ -34,6 +34,8 @@
   </client-only>
 </template>
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
+
 const accepted = useStorage('cookie-consent', false)
 
 const [preferencesOpen, togglePreferences] = useToggle(false)

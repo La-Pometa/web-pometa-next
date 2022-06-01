@@ -94,7 +94,7 @@ const play = () => {
   @apply flex;
 }
 .slide-link {
-  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block relative hover:text-primary whitespace-nowrap;
+  @apply text-white font-butler text-xl sm:text-4xl py-8 px-4 block relative hover:text-secondary whitespace-nowrap;
 
   &::after {
     content: '';

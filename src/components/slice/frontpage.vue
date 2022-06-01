@@ -27,7 +27,9 @@ const getTitle = (title: string, subtitle: string) => {
                 class="title text-center max-w-[45rem]"
                 v-html="$t('home.title1')"
               ></h1>
-              <AppButton>{{ $t('home.manifest') }}</AppButton>
+              <nuxt-link :to="localePath('/manifest')">
+                <AppButton>{{ $t('home.manifest') }}</AppButton>
+              </nuxt-link>
               <img
                 class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
                 src="@/assets/img/home/arrow-right.svg"
@@ -222,7 +224,7 @@ const getTitle = (title: string, subtitle: string) => {
     text-orientation: mixed;
 
     &:hover {
-      @apply text-primary mix-blend-normal;
+      @apply text-secondary mix-blend-normal;
     }
   }
   .next {

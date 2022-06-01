@@ -119,7 +119,7 @@
   .brands {
     @apply bg-white dark:bg-black py-10 sm:py-20;
     .inner {
-      @apply container margins-x max-w-screen-xl space-y-10;
+      @apply container margins-x max-w-screen-xl space-y-20;
     }
 
     .layout {
