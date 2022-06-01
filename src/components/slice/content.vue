@@ -11,7 +11,7 @@ const { params } = defineProps<{ params: Params }>()
 <style lang="scss">
 .the-content {
   .inner-content {
-    @apply prose dark:prose-invert max-w-none;
+    @apply prose dark:prose-invert max-w-none prose-strong:text-main-dark prose-p:text-main-dark dark:prose-strong:text-white dark:prose-p:text-white;
   }
   br {
     @apply msm:hidden;
