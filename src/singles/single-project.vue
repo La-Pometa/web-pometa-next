@@ -16,12 +16,23 @@ const removeHttpFromUrl = (url: string) => {
 <template>
   <div id="single-project">
     <slice-header
+      class="msm:hidden"
       :params="{
         title: data.embedded.postmeta.title,
         subtitle: data.embedded.postmeta.titleFeatured,
         image: data.featured_source,
         size: 'large',
         video: data.embedded.postmeta.video,
+      }"
+    ></slice-header>
+    <slice-header
+      class="sm:hidden"
+      :params="{
+        title: data.embedded.postmeta.title,
+        subtitle: data.embedded.postmeta.titleFeatured,
+        image: data.embedded.postmeta.imageVertical,
+        size: 'large',
+        video: data.embedded.postmeta.videoVertical,
       }"
     ></slice-header>
     <section class="main-content">
