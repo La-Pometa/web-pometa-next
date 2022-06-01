@@ -52,7 +52,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: process.env.BASE_URL || 'https://new.lapometa.com',
+    baseUrl: process.env.BASE_URL || 'https://www.lapometa.com',
     langDir: 'locales',
     locales: [
       { code: 'es', name: 'Esp', iso: 'es-ES', file: 'es.json', dir: 'ltr' },
