@@ -17,7 +17,7 @@ if (error.value) {
   throwError(
     createError({
       statusCode: errorCaptured.status,
-      message: JSON.parse(errorCaptured.response.text).message,
+      message: JSON.parse(errorCaptured.response).message,
     })
   )
 }
