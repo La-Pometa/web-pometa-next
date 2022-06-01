@@ -91,32 +91,23 @@ const prevSlide = () => {
 .slider-image-video {
   @apply relative;
 
-  &:hover {
-    .controls {
-      .inner {
-        .prev,
-        .next {
-          &.show {
-            @apply opacity-100 scale-100;
-          }
-        }
-      }
-    }
-  }
-
   .controls {
-    @apply margins-x absolute inset-0 container xl:max-w-screen-xl text-lg left-1/2 -translate-x-1/2 z-20 pointer-events-none;
+    @apply margins-x container xl:max-w-screen-xl text-lg z-20 pointer-events-none;
     @apply msm:hidden;
 
     .inner {
-      @apply relative h-full;
+      @apply relative h-full flex justify-end;
     }
 
     .next,
     .prev {
-      @apply cursor-pointer pointer-events-auto absolute top-1/2 -translate-y-1/2;
+      @apply cursor-pointer pointer-events-auto;
       @apply w-10 h-10 text-main-dark bg-primary/70 backdrop-blur backdrop-saturate-200 flex items-center justify-center;
-      @apply transition duration-300 scale-75 opacity-0;
+      @apply transition duration-300 scale-75 opacity-0 pointer-events-none;
+
+      &.show {
+        @apply opacity-100 scale-100 pointer-events-auto;
+      }
     }
 
     .next {
