@@ -12,7 +12,7 @@ defineProps<{
     <div class="controls">
       <div class="prev">
         <nuxt-link v-if="prev" :to="localePath(`/${prev}`)" class="prev">
-          <span>Historia anterior</span>
+          <span>{{ $t('projects.navigator.prev') }}</span>
         </nuxt-link>
       </div>
       <div class="middle">
@@ -23,12 +23,13 @@ defineProps<{
             <span></span>
             <span></span>
           </div>
-          <span>Historias de nuestras marcas</span>
+          <span></span>
+          <span>{{ $t('projects.navigator.back') }}</span>
         </nuxt-link>
       </div>
       <div class="next">
         <nuxt-link v-if="next" :to="localePath(`/${next}`)" class="next">
-          <span>Historia siguiente</span>
+          <span>{{ $t('projects.navigator.next') }}</span>
         </nuxt-link>
       </div>
     </div>

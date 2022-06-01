@@ -123,7 +123,12 @@
   },
   "projects": {
     "subtitle": "brands",
-    "title": "stories of our"
+    "title": "stories of our",
+    "navigator": {
+      "next": "next story",
+      "back": "Stories of our brands",
+      "prev": "previous story"
+    }
   },
   "project": {
     "related": "Related Posts"

@@ -8,7 +8,7 @@
       "title": "Serveis",
       "marketing": "Branding & Storybuilding",
       "design": "Estratègia & Marketing",
-      "web": "Web i E-commerce",
+      "web": "Web & e-commerce",
       "publicity": "Publicitat & Social Media",
       "marketing-link": "/branding-storybuilding",
       "design-link": "/estrategia-marketing",
@@ -101,7 +101,12 @@
   },
   "projects": {
     "subtitle": "Marques",
-    "title": "Històries de les nostres"
+    "title": "Històries de les nostres",
+    "navigator": {
+      "next": "Història següent",
+      "back": "Històries de les nostres marques",
+      "prev": "Història anterior"
+    }
   },
   "breakfast": {
     "title": "Esmorza<br /><span class=\"featured\">amb Pomes</span>"
