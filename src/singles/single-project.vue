@@ -15,26 +15,28 @@ const removeHttpFromUrl = (url: string) => {
 </script>
 <template>
   <div id="single-project">
-    <slice-header
-      class="msm:hidden"
-      :params="{
-        title: data.embedded.postmeta.title,
-        subtitle: data.embedded.postmeta.titleFeatured,
-        image: data.featured_source,
-        size: 'large',
-        video: data.embedded.postmeta.video,
-      }"
-    ></slice-header>
-    <slice-header
-      class="sm:hidden"
-      :params="{
-        title: data.embedded.postmeta.title,
-        subtitle: data.embedded.postmeta.titleFeatured,
-        image: data.embedded.postmeta.imageVertical,
-        size: 'large',
-        video: data.embedded.postmeta.videoVertical,
-      }"
-    ></slice-header>
+    <div class="top">
+      <slice-header
+        class="msm:hidden"
+        :params="{
+          title: data.embedded.postmeta.title,
+          subtitle: data.embedded.postmeta.titleFeatured,
+          image: data.featured_source,
+          size: 'large',
+          video: data.embedded.postmeta.video,
+        }"
+      ></slice-header>
+      <slice-header
+        class="sm:hidden"
+        :params="{
+          title: data.embedded.postmeta.title,
+          subtitle: data.embedded.postmeta.titleFeatured,
+          image: data.embedded.postmeta.imageVertical,
+          size: 'large',
+          video: data.embedded.postmeta.videoVertical,
+        }"
+      ></slice-header>
+    </div>
     <section class="main-content">
       <div class="top">
         <h1 class="title" v-html="data.title.rendered"></h1>
@@ -110,7 +112,7 @@ const removeHttpFromUrl = (url: string) => {
 </template>
 <style lang="scss">
 #single-project {
-  @apply margins-y space-y-8 sm:space-y-24;
+  @apply margins-y space-y-14 sm:space-y-24;
 
   .main-content {
     @apply grid gap-3 relative;

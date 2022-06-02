@@ -266,12 +266,13 @@ const availableLocales = computed(() => {
 </template>
 <style lang="scss">
 #sidebarToggler {
-  @apply md:opacity-0 md:pointer-events-none absolute -top-px -left-px w-screen flex transition-all duration-500 z-20;
+  @apply md:opacity-0 md:pointer-events-none absolute -top-px -left-px w-screen flex gap-0 transition-all duration-500 z-20;
+  @apply dark:bg-dark-800/90 bg-primary-gray/90 backdrop-filter backdrop-blur-md backdrop-saturate-200;
   .button {
     @apply text-main-dark w-14 h-14 flex items-center justify-center text-xl bg-primary;
   }
   .logo {
-    @apply max-h-14 p-3 px-4 dark:bg-dark-800/70 bg-primary-gray/70 backdrop-filter backdrop-blur-md backdrop-saturate-200 flex items-center justify-center flex-1;
+    @apply max-h-14 p-3 px-4 flex items-center justify-center flex-1;
     @apply flex items-center;
 
     img {
