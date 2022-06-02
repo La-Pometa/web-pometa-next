@@ -116,6 +116,10 @@
     @apply mb-5 sm:mb-10;
   }
 
+  .title-2 {
+    @apply leading-tight;
+  }
+
   .brands {
     @apply bg-white dark:bg-black py-10 sm:py-20;
     .inner {

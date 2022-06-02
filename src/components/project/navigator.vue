@@ -57,13 +57,13 @@ defineProps<{
     }
 
     .projects {
-      @apply flex flex-col gap-3 justify-center items-center uppercase text-sm;
+      @apply flex flex-col gap-2 sm:gap-3 justify-center items-center uppercase text-xs msm:text-sm;
 
       .square {
         @apply grid grid-cols-2 grid-rows-2 gap-1;
 
         span {
-          @apply bg-primary w-5 h-5;
+          @apply bg-primary w-5 h-5 msm:w-3 msm:h-3;
         }
       }
     }
