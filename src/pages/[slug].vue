@@ -35,6 +35,5 @@ useHead($seo.getHead(data.value as Post))
     :is="`single-${data.type}`"
     v-if="data"
     :data="data"
-    class="margins-y"
   ></component>
 </template>

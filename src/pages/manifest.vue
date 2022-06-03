@@ -107,7 +107,7 @@ useHead({
 }
 
 .second {
-  @apply bg-primary py-20 relative;
+  @apply bg-primary dark:text-main-dark py-20 relative;
 
   .hand {
     @apply absolute top-0 right-0 mlg:w-44;

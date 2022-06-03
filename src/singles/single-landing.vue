@@ -120,11 +120,13 @@ const subcontent = $content.getMeta(data, 'subcontent')
     <section v-if="!$content.getMeta(data, 'links').length" class="common cta">
       <cta-contact></cta-contact>
     </section>
-    <section v-if="$content.getMeta(data, 'links').length" class="common links">
-      <cta-contact-links
-        :links="$content.getMeta(data, 'links')"
-        :subtitle="$content.getMeta(data, 'linksSubtitle')"
-      ></cta-contact-links>
+    <section v-if="$content.getMeta(data, 'links').length" class="links">
+      <div class="inner common">
+        <cta-contact-links
+          :links="$content.getMeta(data, 'links')"
+          :subtitle="$content.getMeta(data, 'linksSubtitle')"
+        ></cta-contact-links>
+      </div>
     </section>
   </div>
 </template>
@@ -133,6 +135,10 @@ const subcontent = $content.getMeta(data, 'subcontent')
   @apply margins-y space-y-8 sm:space-y-16 msm:pt-0;
   .content {
     @apply container margins-x;
+  }
+
+  section.links {
+    @apply bg-white dark:bg-dark-800 py-14 msm:py-7 -mb-20 msm:-mb-10 #{!important};
   }
 
   .title {
@@ -207,11 +213,11 @@ const subcontent = $content.getMeta(data, 'subcontent')
     }
 
     .text {
-      @apply text-center text-xl;
+      @apply text-center text-lg sm:text-xl;
     }
 
     h3 {
-      @apply text-center text-primary font-bold font-butler text-xl sm:text-3xl;
+      @apply text-center text-primary font-bold font-butler text-2xl sm:text-3xl;
     }
 
     h4 {
