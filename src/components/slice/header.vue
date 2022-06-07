@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import IconVolume from '~icons/ion/md-volume-high'
-import IconVolumeOff from '~icons/ion/md-volume-off'
 import type { Params } from '~~/src/plugins/content/types/Page'
 
 const { params } = defineProps<{ params: Params }>()
@@ -53,22 +51,20 @@ export default {
     >
       <div class="inner">
         <app-image
-          v-if="params.image"
+          v-if="params.image && !params.video"
           :data="params.image"
           class="top-image w-full"
         ></app-image>
+        <app-video
+          v-else-if="params.video"
+          :video="params.video"
+          :play-on-intersect="true"
+          :autoplay="false"
+          :loop="false"
+          :muted="true"
+          class="video"
+        ></app-video>
         <PuSkeleton v-else height="100%"></PuSkeleton>
-        <div v-if="params.video" class="video">
-          <video ref="video" :src="params.video" muted playsinline></video>
-        </div>
-        <div
-          v-if="params.video"
-          class="mute-button"
-          @click.prevent="toggleMute"
-        >
-          <IconVolume v-if="!muted" class="icon"></IconVolume>
-          <IconVolumeOff v-else class="icon"></IconVolumeOff>
-        </div>
       </div>
     </div>
   </header>
@@ -125,7 +121,7 @@ export default {
   }
 
   .video {
-    @apply absolute top-0 left-0 w-full h-full opacity-0;
+    @apply absolute top-0 left-0 w-full h-full;
     @apply transition duration-500;
 
     video {
