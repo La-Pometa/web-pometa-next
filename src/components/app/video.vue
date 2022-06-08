@@ -141,7 +141,10 @@ export default defineComponent({
       @click.prevent="togglePlay"
     >
       <IconVolumeReset v-if="ended" class="icon"></IconVolumeReset>
-      <IconVolumePlay v-else-if="!playing" class="icon"></IconVolumePlay>
+      <IconVolumePlay
+        v-else-if="!playing"
+        class="icon translate-x-0.5"
+      ></IconVolumePlay>
       <IconVolumePause v-else class="icon"></IconVolumePause>
     </div>
   </div>
