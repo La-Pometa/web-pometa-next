@@ -187,6 +187,10 @@ export default defineComponent({
 .responsive-image {
   @apply max-w-full overflow-hidden relative;
 
+  img {
+    @apply w-full h-full object-cover;
+  }
+
   &::after {
     content: '';
     @apply absolute inset-0 backdrop-blur-3xl;

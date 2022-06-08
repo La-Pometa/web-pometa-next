@@ -106,17 +106,14 @@ const getTitle = (title: string, subtitle: string) => {
       </SliderSlide>
       <SliderSlide>
         <div class="slide-wrapper slide-2">
-          <video
-            autoplay
-            loop
-            muted
-            playsinline
-            :poster="params.videoSlice.videoPreview.srcset.full.source_url"
+          <app-video
+            :video="params.videoSlice.video"
+            :play-on-intersect="true"
+            :loop="true"
+            :muted="true"
+            :show-controls="false"
             class="absolute inset-0 w-full h-full object-cover"
-          >
-            <source :src="params.videoSlice.video" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          ></app-video>
           <div class="overlay"></div>
           <div class="content relative z-10">
             <h2

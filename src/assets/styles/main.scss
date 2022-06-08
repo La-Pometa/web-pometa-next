@@ -47,7 +47,9 @@ body {
   .margins-y {
     @apply py-20 msm:py-10 msm:mt-14;
   }
-
+  .-margins-y{
+    @apply -my-20 sm:-my-10 sm:-mt-14;
+  }
   .margins-t{
     @apply pt-20 msm:py-10 msm:mt-14;
   }

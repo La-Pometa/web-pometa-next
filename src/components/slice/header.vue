@@ -59,9 +59,9 @@ export default {
           v-else-if="params.video"
           :video="params.video"
           :play-on-intersect="true"
-          :autoplay="false"
-          :loop="false"
           :muted="true"
+          :show-controls="!params.titleOverlay"
+          :loop="params.titleOverlay"
           class="video"
         ></app-video>
         <PuSkeleton v-else height="100%"></PuSkeleton>

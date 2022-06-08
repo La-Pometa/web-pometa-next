@@ -29,5 +29,10 @@ i18nStore.setRouteParams(data.value.translation)
 useHead($seo.getHead(data.value as Post))
 </script>
 <template>
-  <component :is="`single-${data.type}`" v-if="data" :data="data"></component>
+  <component
+    :is="`single-${data.type}`"
+    v-if="data"
+    :data="data"
+    :margins="false"
+  ></component>
 </template>

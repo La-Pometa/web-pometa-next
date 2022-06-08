@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import type { Video } from '../app/video.vue'
 import type { Image } from '~~/src/plugins/content/types'
 import ArrowLeft from '~icons/ic/baseline-arrow-back'
 import ArrowRight from '~icons/ic/baseline-arrow-forward'
@@ -8,7 +9,7 @@ defineProps<{
   slides: Array<{
     type: string
     image: Image
-    video: string
+    video: Video
   }>
 }>()
 
@@ -63,12 +64,13 @@ const prevSlide = () => {
             v-if="slide.type === 'image'"
             :data="slide.image"
             :has-title="true"
+            class="image"
           ></app-image>
-          <div v-else-if="slide.type === 'video'" class="video">
-            <video controls :poster="slide.image.sizes.full.source_url">
-              <source :src="slide.video" type="video/mp4" />
-            </video>
-          </div>
+          <app-video
+            v-else-if="slide.type === 'video'"
+            :video="slide.video"
+            class="video"
+          ></app-video>
         </div>
       </div>
     </div>
@@ -102,7 +104,7 @@ const prevSlide = () => {
     .next,
     .prev {
       @apply cursor-pointer pointer-events-auto;
-      @apply w-10 h-10 text-main-dark bg-primary/70 backdrop-blur backdrop-saturate-200 flex items-center justify-center;
+      @apply w-10 h-10 text-main-dark bg-primary backdrop-blur backdrop-saturate-200 flex items-center justify-center;
       @apply transition duration-300 scale-75 opacity-0 pointer-events-none;
 
       &.show {
@@ -201,11 +203,6 @@ const prevSlide = () => {
 
     &:last-of-type {
       margin-right: 0;
-    }
-
-    video,
-    img {
-      @apply top-0 left-0 z-10 absolute w-full h-full object-cover;
     }
   }
 }
