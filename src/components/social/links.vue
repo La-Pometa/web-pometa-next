@@ -24,7 +24,7 @@ import IconLinkedin from '~icons/ph/linkedin-logo-light'
       <IconInstagram />
     </a>
     <a
-      href="http://facebook.com/lapometaagencia/"
+      href="https://facebook.com/lapometaagencia/"
       target="_blank"
       title="Facebook La Pometa"
       class="no-highlight"
