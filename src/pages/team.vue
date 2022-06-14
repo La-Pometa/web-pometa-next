@@ -112,6 +112,15 @@
 #page-pometa {
   @apply space-y-10 sm:space-y-14;
 
+  .team-banner {
+    @apply h-80 w-full overflow-hidden;
+    @apply -mt-10 sm:-mt-14 #{!important  };
+
+    img {
+      @apply h-full w-full object-cover;
+    }
+  }
+
   .title {
     @apply mb-5 sm:mb-10;
   }
