@@ -11,6 +11,8 @@ const localePath = useLocalePath()
 const categories = ref<{ name: string; slug: string }[]>(
   data.embedded.taxonomies.category
 )
+
+const url = useRoute().fullPath
 </script>
 <template>
   <article id="single-post" class="layout">
@@ -33,7 +35,13 @@ const categories = ref<{ name: string; slug: string }[]>(
             image: data.embedded.author.image.rendered,
           }"
         ></post-author>
-        <app-button>{{ $t('post.share') }}</app-button>
+        <post-share-button
+          :options="{
+            url,
+            title: data.title.rendered,
+            text: data.excerpt.rendered,
+          }"
+        ></post-share-button>
         <div class="categories">
           <span class="title">{{ $t('post.categories') }}</span>
           <div class="list">
