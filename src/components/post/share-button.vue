@@ -8,7 +8,9 @@ const { options } = defineProps<{
 const { isSupported, share } = useShare()
 </script>
 <template>
-  <app-button v-if="isSupported" @click="share(options)">{{
-    $t('post.share')
-  }}</app-button>
+  <div>
+    <app-button v-if="isSupported" class="w-full" @click="share(options)">{{
+      $t('post.share')
+    }}</app-button>
+  </div>
 </template>
