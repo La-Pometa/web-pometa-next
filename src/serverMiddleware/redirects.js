@@ -31,7 +31,6 @@ const redirects = [
 ]
 module.exports = function(req, res, next) {
     const url = req.url.split('?')[0];
-    let urlParams = null;
     let newLocation;
 
     const redirect = redirects.find(r => r.from === url)
