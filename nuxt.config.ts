@@ -47,6 +47,12 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
+  //Server redirects
+  serverMiddleware: [
+    // Server-side redirects
+    '~/serverMiddleware/redirects',
+  ],
+  
   tailwindcss: {
     configPath: '~~/tailwind.config.js',
   },
