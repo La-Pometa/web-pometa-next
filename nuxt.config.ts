@@ -47,9 +47,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
 
-  //Server redirects
   serverMiddleware: [
-    //Server-side redirects
     '~/serverMiddleware/redirects',
   ],
   

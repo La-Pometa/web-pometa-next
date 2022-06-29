@@ -30,13 +30,9 @@ const redirects = [
 
 ]
 module.exports = function(req, res, next) {
-    let url = req.url.split('?')[0];
+    const url = req.url.split('?')[0];
     let urlParams = null;
     let newLocation;
-
-    if (req.url.includes("?")) {
-        urlParams = '?' + req.url.split('?')[1]
-    }
 
     const redirect = redirects.find(r => r.from === url)
     if (redirect) {
