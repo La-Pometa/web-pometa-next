@@ -1,7 +1,6 @@
 const redirects = [
 
 
-    //Serveis
     { from: '/disseny-pagines-web-responsive', to: '/ca/web-ecommerce' },
     { from: '/disseny-pagines-web-responsive/', to: '/ca/web-ecommerce' },
 
@@ -15,7 +14,6 @@ const redirects = [
     { from: '/ca/agencia-publicitat-terrassa/', to: '/ca/publicitat-social-media-a-barcelona' },
 
 
-    //Projectes
     { from: '/ca/proyecto', to: '/ca/projectes' },
     { from: '/ca/proyecto/', to: '/ca/projectes' },
 
@@ -25,7 +23,6 @@ const redirects = [
     { from: '/argal', to: '/argal-internacional' },
     { from: '/argal/', to: '/argal-internacional' },
 
-    //Blog
     { from: '/tendencias-digitales-2021', to: '/tendencias-digitales-en-el-2021' },
     { from: '/tendencias-digitales-2021/', to: '/tendencias-digitales-en-el-2021' },
 
