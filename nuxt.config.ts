@@ -49,7 +49,7 @@ export default defineNuxtConfig({
 
   //Server redirects
   serverMiddleware: [
-    // Server-side redirects
+    //Server-side redirects
     '~/serverMiddleware/redirects',
   ],
   
