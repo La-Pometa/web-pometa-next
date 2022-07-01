@@ -53,7 +53,7 @@ const url = useRoute().fullPath
               <nuxt-link
                 :to="
                   localePath({
-                    path: `/blog/${category.slug}`,
+                    path: `/blog/category/${category.slug}`,
                   })
                 "
                 >{{ category.name }}</nuxt-link

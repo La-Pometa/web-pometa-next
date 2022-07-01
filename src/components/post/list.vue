@@ -3,6 +3,10 @@ import { useLocalePath } from 'vue-i18n-routing'
 import { useI18n } from 'vue-i18n'
 import type { ArchiveResponse, Post } from '@/plugins/content/types'
 
+const { category } = defineProps<{
+  category?: string
+}>()
+
 const localePath = useLocalePath()
 
 const { $content, $seo } = useNuxtApp()
@@ -13,15 +17,24 @@ const page = ref(1)
 
 const getPosts = async (page: number) => {
   return useLazyAsyncData<ArchiveResponse<Post>>(
-    `posts_${locale.value}_${page}`,
+    `posts_${locale.value}_${page}_${category}`,
     () =>
-      $content
-        .posts()
-        .perPage(9)
-        .page(page)
-        .param('lang', locale.value)
-        .orderby('date')
-        .get()
+      category
+        ? $content
+            .posts()
+            .perPage(9)
+            .page(page)
+            .param('lang', locale.value)
+            .param('category_slug', category)
+            .orderby('date')
+            .get()
+        : $content
+            .posts()
+            .perPage(9)
+            .page(page)
+            .param('lang', locale.value)
+            .orderby('date')
+            .get()
   )
 }
 
