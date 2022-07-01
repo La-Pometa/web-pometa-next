@@ -4,9 +4,7 @@ import Icons from 'unplugin-icons/vite'
 export default defineNuxtConfig({
   meta: {
     title: 'La Pometa Agencia',
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   vite: {
@@ -37,15 +35,9 @@ export default defineNuxtConfig({
     '~/assets/fonts/dearest/stylesheet.css',
   ],
 
-  modules: [
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxtjs/i18n'],
 
-  buildModules: [
-    '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-  ],
+  buildModules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
 
   tailwindcss: {
     configPath: '~~/tailwind.config.js',
@@ -81,8 +73,8 @@ export default defineNuxtConfig({
         ca: '/manifest',
         es: '/manifiesto',
         en: '/manifest',
-      }
-    }
+      },
+    },
   },
 
   vueuse: {
@@ -90,7 +82,7 @@ export default defineNuxtConfig({
   },
 
   publicRuntimeConfig: {
-    WP_URL: process.env.WP_URL
+    WP_URL: process.env.WP_URL,
   },
 
   build: {
@@ -102,8 +94,7 @@ export default defineNuxtConfig({
         minifyJS: true,
         useShortDoctype: true,
         removeEmptyAttributes: true,
-      }
-    }
+      },
+    },
   },
-
 })
