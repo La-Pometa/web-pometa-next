@@ -126,7 +126,8 @@ export default defineComponent({
     @apply h-full flex items-center pointer-events-none;
 
     .card {
-      @apply bg-white p-5 pointer-events-auto shadow-xl w-full relative max-h-full overflow-y-auto;
+      
+      @apply bg-white dark:bg-dark-900 p-5 pointer-events-auto shadow-xl w-full relative max-h-full overflow-y-auto;
 
       .close {
         @apply absolute top-0 right-0 z-10;
