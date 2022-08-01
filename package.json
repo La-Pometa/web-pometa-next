@@ -30,7 +30,7 @@
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
-    "@vueuse/nuxt": "^8.3.1",
+    "@vueuse/nuxt": "^9.0.2",
     "@wordpress/base-styles": "^4.4.0",
     "@wordpress/block-library": "^7.4.0",
     "eslint": "^8.14.0",
