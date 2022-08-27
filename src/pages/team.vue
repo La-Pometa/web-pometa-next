@@ -139,7 +139,7 @@
       @apply grid gap-7 grid-cols-2 sm:grid-cols-4;
 
       img {
-        @apply grayscale hover:grayscale-0 transition duration-300;
+        @apply grayscale dark:bg-white hover:grayscale-0 transition duration-300;
       }
     }
   }
