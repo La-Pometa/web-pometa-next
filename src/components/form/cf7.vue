@@ -82,20 +82,24 @@ export default defineComponent({
     parseResponse(res) {
       if (res.status === 'validation_failed') {
         res.invalid_fields.forEach((field) => {
-          field.elm = this.elm.querySelector(`${field.into} > *`)
+          field.elm = this.elm.querySelector(`.wpcf7-form-control-wrap[data-name="${ field.field }"] .wpcf7-form-control`)
+          if ( field.elm ) {
+            const errorSpan = document.createElement('span')
+            errorSpan.innerHTML = field.message
+            errorSpan.classList.add('error_message')
+            field.elm.parentElement.appendChild(errorSpan)
 
-          const errorSpan = document.createElement('span')
-          errorSpan.innerHTML = field.message
-          errorSpan.classList.add('error_message')
-          field.elm.parentElement.appendChild(errorSpan)
-
-          field.elm.classList.add('invalid')
-          const listener = () => {
-            field.elm.classList.remove('invalid')
-            field.elm.parentElement.removeChild(errorSpan)
-            field.elm.removeEventListener('focus', listener)
+            field.elm.classList.add('invalid')
+            const listener = () => {
+              field.elm.classList.remove('invalid')
+              field.elm.parentElement.removeChild(errorSpan)
+              field.elm.removeEventListener('focus', listener)
+            }
+            field.elm.addEventListener('focus', listener)
           }
-          field.elm.addEventListener('focus', listener)
+          else {
+            console.log("Field '"+field.into+"' Not found!")
+          }
         })
       } else if (this.submitElm) {
         this.elm.reset()
