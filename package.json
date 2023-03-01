@@ -15,7 +15,7 @@
     "axios": "^0.27.2",
     "gsap": "^3.10.4",
     "pinia": "^2.0.13",
-    "swiper": "^8.1.4",
+    "swiper": "^9.1.0",
     "vue-gtag-next": "^1.14.0",
     "vue-loading-skeleton": "^2.0.0-beta.1",
     "wpapi": "^1.2.2"
