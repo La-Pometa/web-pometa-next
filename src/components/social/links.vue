@@ -45,16 +45,21 @@ import IconLinkedin from '~icons/ph/linkedin-logo-light'
       title="Twitter La Pometa"
       class="no-highlight"
     >
-      <IconTwitter />
+      <img src="@/assets/img/layout/twitter.svg" alt="X" title="X" />
     </a>
   </div>
 </template>
 <style lang="scss">
 #social {
-  @apply flex gap-3 justify-center text-lg;
+  @apply flex gap-3 justify-center text-lg items-center;
 
   a {
     @apply hover:text-secondary;
+
+    img {
+      width:18px;
+      height:19px;
+    }
   }
 }
 </style>
