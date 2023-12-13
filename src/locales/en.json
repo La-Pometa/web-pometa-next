@@ -131,7 +131,8 @@
     }
   },
   "project": {
-    "related": "Related Posts"
+    "related": "Related Posts",
+    "client" : "Client: "
   },
   "landing": {
     "callyou": "Want to talk?"

@@ -1,7 +1,7 @@
 {
   "menu": {
     "home": "Inici",
-    "pometa": "¡La Pometa!",
+    "pometa": "La Pometa!",
     "projects": "Projectes",
     "manifest": "Manifest",
     "services": {
@@ -28,7 +28,7 @@
     "kitdigital-link": "/kit-digital"
   },
   "footer": {
-    "oficinas": "Oficines a Lleida i Barcelona",
+    "oficinas": "Oficines a Lleida, Barcelona i Mèxic",
     "privacidad": "Política de Privacitat",
     "cookies": "Política de Cookies",
     "aviso": "Avís legal",
@@ -131,7 +131,8 @@
     "projects": "Descobreix-ho"
   },
   "project": {
-    "related": "Entrades relacionades"
+    "related": "Entrades relacionades",
+    "client" : "Client: "
   },
   "landing": {
     "callyou": "Et truquem?"

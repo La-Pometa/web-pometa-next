@@ -28,7 +28,7 @@
     "kitdigital-link": "/kit-digital"
   },
   "footer": {
-    "oficinas": "Oficinas en Lleida y Barcelona",
+    "oficinas": "Oficinas en Lleida, Barcelona y Méjico",
     "privacidad": "Política de Privacidad",
     "cookies": "Política de Cookies",
     "aviso": "Aviso legal",
@@ -131,7 +131,9 @@
     }
   },
   "project": {
-    "related": "Entradas relacionadas"
+    "related": "Entradas relacionadas",
+    "client" : "Cliente: "
+
   },
   "landing": {
     "callyou": "¿Te llamamos?"

@@ -53,7 +53,7 @@ const removeHttpFromUrl = (url: string) => {
                 v-html="data.embedded.postmeta.featuredText"
               ></h2>
               <p>
-                <strong>Client: </strong>
+                <strong>{{ $t('project.client') }}</strong>
                 <span v-html="data.embedded.postmeta.client"></span><br />
                 <strong class="services"
                   ><post-taxes
@@ -76,7 +76,13 @@ const removeHttpFromUrl = (url: string) => {
           </div>
         </div>
       </div>
+      <div v-if="data.embedded.postmeta.extracontent" class="extra-content extra-content-wrapper">
+        <div class="prose msm:prose-sm max-w-none w-full">
+          <div class="content" v-html="data.embedded.postmeta.extracontent"></div>
+        </div>
+      </div>
     </section>
+    
     <section v-if="data.embedded.postmeta.slider.length" class="slider">
       <slider-video-image
         :slides="data.embedded.postmeta.slider"
@@ -161,6 +167,17 @@ const removeHttpFromUrl = (url: string) => {
     .right {
       .featured {
         @apply p-5 bg-secondary text-white font-bold dark:text-main-dark;
+      }
+    }
+
+    .extra-content {
+      @apply mt-3;
+
+      &.extra-content-wrapper {
+          @apply  container xl:max-w-screen-xl margins-x;
+      }
+      * {
+        @apply text-white;
       }
     }
   }
