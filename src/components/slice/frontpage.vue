@@ -14,36 +14,7 @@ const getTitle = (title: string, subtitle: string) => {
 <template>
   <section id="page-home" class="wrapper">
     <Slider :selectors="{ next: '.next-slide', prev: '.prev-slide' }">
-      <SliderSlide>
-        <div class="slide-wrapper slide-1">
-          <img
-            class="absolute bottom-0 right-0 mb-5 msm:w-2/3"
-            src="@/assets/img/home/hand-apple.png"
-            alt=""
-          />
-          <div class="content">
-            <div class="inner">
-              <h1
-                class="title text-center max-w-[45rem]"
-                v-html="$t('home.title1')"
-              ></h1>
-              <nuxt-link :to="localePath('/manifest')">
-                <AppButton>{{ $t('home.manifest') }}</AppButton>
-              </nuxt-link>
-              <img
-                class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
-                src="@/assets/img/home/arrow-right.svg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="controls">
-          <div class="next next-slide">
-            <span> {{ $t('home.next1') }} </span>
-          </div>
-        </div>
-      </SliderSlide>
+
       <SliderSlide>
         <div class="slide-wrapper">
           <div class="w-full h-full grid lg:grid-cols-2 lg:grid-rows-2">
@@ -97,13 +68,46 @@ const getTitle = (title: string, subtitle: string) => {
         </div>
         <div class="controls">
           <div class="next next-slide">
-            <span> {{ $t('home.next2') }} </span>
-          </div>
-          <div class="prev prev-slide">
             <span> {{ $t('home.prev1') }} </span>
           </div>
         </div>
       </SliderSlide>
+
+
+      <SliderSlide>
+        <div class="slide-wrapper slide-1">
+          <img
+            class="absolute bottom-0 right-0 mb-5 msm:w-2/3"
+            src="@/assets/img/home/hand-apple.png"
+            alt=""
+          />
+          <div class="content">
+            <div class="inner">
+              <h1
+                class="title text-center max-w-[45rem]"
+                v-html="$t('home.title1')"
+              ></h1>
+              <nuxt-link :to="localePath('/manifest')">
+                <AppButton>{{ $t('home.manifest') }}</AppButton>
+              </nuxt-link>
+              <img
+                class="absolute -top-5 right-0 mxl:w-32 h-auto mxl:translate-x-0 translate-x-2/3 -translate-y-full"
+                src="@/assets/img/home/arrow-right.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="prev prev-slide">
+            <span> {{ $t('home.prev2') }} </span>
+          </div>
+          <div class="next next-slide">
+            <span> {{ $t('home.next2') }} </span>
+          </div>
+        </div>
+      </SliderSlide>
+      
       <SliderSlide>
         <div class="slide-wrapper slide-2">
           <app-video
@@ -131,7 +135,7 @@ const getTitle = (title: string, subtitle: string) => {
         </div>
         <div class="controls">
           <div class="prev prev-slide">
-            <span> {{ $t('home.next1') }} </span>
+            <span> {{ $t('home.prev1') }} </span>
           </div>
         </div>
       </SliderSlide>
@@ -169,7 +173,7 @@ const getTitle = (title: string, subtitle: string) => {
   }
 
   .mobile-square {
-    @apply h-full mlg:aspect-w-8 mlg:aspect-h-11;
+    @apply h-full mlg:aspect-w-8 mlg:aspect-h-8;
   }
 
   &.slide-1,
@@ -234,6 +238,13 @@ const getTitle = (title: string, subtitle: string) => {
 }
 </style>
 <style lang="scss">
+#page-home .slide .responsive-image {
+    @apply absolute inset-0 w-full h-full;
+    img {
+      @apply w-full h-full object-cover;
+    }
+
+}
 .slider-fade {
   .responsive-image {
     @apply absolute inset-0 w-full h-full;
