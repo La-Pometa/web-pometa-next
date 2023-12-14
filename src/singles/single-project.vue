@@ -177,7 +177,7 @@ const removeHttpFromUrl = (url: string) => {
           @apply  container xl:max-w-screen-xl margins-x;
       }
       * {
-        @apply text-white;
+        @apply text-main-dark dark:text-white;
       }
     }
   }
