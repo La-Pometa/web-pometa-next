@@ -40,12 +40,12 @@ import IconLinkedin from '~icons/ph/linkedin-logo-light'
       <IconLinkedin />
     </a>
     <a
-      href="https://twitter.com/LaPometaAgencia"
+      href="https://x.com/LaPometaAgencia"
       target="_blank"
-      title="Twitter La Pometa"
+      title="X La Pometa"
       class="no-highlight"
     >
-      <img src="@/assets/img/layout/twitter.svg" alt="X" title="X" />
+      <img src="@/assets/img/layout/x.svg" alt="X" title="X" />
     </a>
   </div>
 </template>
