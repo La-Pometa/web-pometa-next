@@ -17,6 +17,16 @@
 @import '@wordpress/block-library/src/theme.scss';
 @import '@wordpress/block-library/src/common.scss';
 
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-[4px] bg-[#BFD5C2];
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+ @apply w-[7px] h-[7px];
+}
+
 html,
 body,
 #__nuxt {
